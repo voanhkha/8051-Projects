@@ -1,0 +1,481 @@
+•	Mở đầu chương trình:
+  ORG 0
+	SJMP MAIN
+
+	ORG 30H	
+
+•	Bắt đầu thiết lập các cấu hình cổng xuất, nhập cho 8051, 8255, khởi động LED 7 đoạn
+
+MAIN:	MOV P2, #0FFH 		; Port 2 8051 la input
+	MOV R0, #43H		; tu dieu khien cau hinh 8255. Luu y, dia chiexternal 8bit chinh la R0, thay cho DPTR
+	MOV A, #10010010B	; PA PB input PC output mode 0
+	MOVX @R0, A
+	MOV R1, #1 		; R1 la so tang dang hien hanh, default = tang 1
+	CALL LED7DOAN
+	MOV R0, #42H
+	MOV A, #11111111B
+	MOVX @R0, A		; BAT DEN LED 7 DOAN
+	CLR CY			; Dua co C ve 0
+	CALL LED
+ 
+•	Trạng thái “Đứng yên” trên sơ đồ thuật toán tương ứng:
+
+DUNGYEN:
+	CALL UPOUT 		
+	JNC DUNGYEN_1		; xet ben ngoai (tang hien hanh) co tin hieu goi len hay khong
+	CLR P3.4
+	CLR P3.5
+	CALL XOA		; vi LEN=XUONG=1 (muc thap) nen khong xoa duoc tin hieu trong ham MOCUA, can xoa truoc o day
+	SETB P3.4
+	SETB P3.5
+	LJMP MOCUA		; neu co thi chay den MoCua, neu khong thi xet tiep co ai goi thang xuong ko
+DUNGYEN_1: CALL DOWNOUT
+	JNC DUNGYEN_2		; xet ben ngoai co tin hieu goi xuong hay khong
+	CLR P3.4
+	CLR P3.5
+	CALL XOA		; vi LEN=XUONG=1 (muc thap) nen khong xoa duoc tin hieu trong ham MOCUA, can xoa truoc o day
+	SETB P3.4
+	SETB P3.5	
+	LJMP MOCUA		
+DUNGYEN_2: 
+	MOV A, P2
+	CJNE A, #0, DUNGYEN_3	; xet trong buong thang co tin hieu khong 
+	CALL DELAY01S		; neu khong co thi delay3s roi kiem tra lai (de cho nguoi trong thang nhan nut)
+	MOV A, P2
+	CJNE A, #0, DUNGYEN_3
+	MOV R0, #40H
+	MOVX A, @R0		; kiem tra xem tang tren va tang duoi co goi thang khong (len hay xuong cung duoc)
+	CALL MASKLEN		; dau tien kiem tra xem o tren co ai goi len khong
+	JC CHAYLEN_A		; neu co tin hieu goi thi nhay den CHAYLEN
+	MOV R0, #40H
+	MOVX A, @R0
+	CALL MASKXU		; kiem tra xem o duoi co ai goi len khong
+	JC CHAYXUONG_A		; neu co thi CHAYXUONG		
+	MOV R0, #41H
+	MOVX A, @R0		; tiep theo kiem tra xem o tren co ai goi xuong khong
+	CALL MASKLEN
+	JC CHAYLEN_A		; neu co thi CHAYLEN
+	MOV R0, #41H
+	MOVX A, @R0	
+	CALL MASKXU		; tiep theo kiem tra xem o duoi co ai goi di xuong khong
+	JC CHAYXUONG_A		; neu co thi CHAYXUONG
+	SJMP DUNGYEN		; neu lai khong co thi tro lai vong lap DUNGYEN va kiem tra cac nut lai
+DUNGYEN_3: CALL MASKR1		; luc nay trong thanh ghi A da duoc ghi san P2 vao
+	JB ACC.0, MOCUA		; neu bit ACC.0 (tang hien hanh trong buong thang) bang 1 (co tin hieu) thi MOCUA 
+	MOV A, P2		; doc lai port P2 (trong buong thang)
+	CALL MASKLEN		; kiem tra xem trong buong thang duoc bam tang tren hay tang duoi
+	JC CHAYLEN_A		; neu co nhu cau len tang tren thi CHAYLEN
+	MOV A, P2		; neu khong co nhu cau thi dua lai P2 vao A va xem xem co bam tang duoi khong
+	CALL MASKXU
+	JC CHAYXUONG_A		; neu co nhu cau di xuong thi CHAYXUONG
+	SJMP DUNGYEN
+RET
+
+CHAYLEN_A: LJMP CHAYLEN
+CHAYXUONG_A: LJMP CHAYXUONG
+
+•	Trạng thái “Mở cửa” trên sơ đồ thuật toán và vòng lặp chính cho cả thuật toán, sử dụng các lệnh SJMP và các câu lệnh kiểm tra cờ nhớ CY tương ứng.
+
+MOCUA: CALL CHOP 	
+MOCUA_1:  
+	MOV R0, #42H
+	MOV A, #11111110B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111100B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111000B
+	MOVX @R0, A
+CALL DELAY01S
+	MOV A, #11110000B
+	MOVX @R0, A
+	CALL DELAY1S 	; mo xong cua thi delay 3s de nguoi ta ra vao thang
+	CALL XOA 	; xoa so trong buong thang va ngoai thang (tang hien hanh)
+DONGCUA:  ;  DAY LA QUA TRINH DONG CUA
+DONGCUA_1: ;MOV R0, #42H
+	MOV A, #11111000B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111100B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111110B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111111B
+	MOVX @R0, A
+LOOP:	MOV A, P2	; bat dau kiem tra trong thang co ai can ra khong
+	CALL MASKR1
+	JB ACC.0, MOCUA
+	JNB P3.4, LOOP1	; dang di LEN phai khong (muc 0 = tich cuc) 
+	JB P3.5, DUNGYEN_A;  neu khong phai dang LEN thi co phai dang di XUONG khong?
+	CALL DOWNOUT	; neu cung khong phai thi nhay toi DUNGYEN, nguoc lai thi xet tiep co ai goi xuong ben ngoai khong
+	JC MOCUA	; neu co ai goi di xuong ben ngoai thi MOCUA
+	CALL DOWNIN	; neu khong thi kiem tra xem trong thang co can di xuong nua khong
+	JC CHAYXUONG	; neu co thi CHAYXUONG
+	CALL DOWNNEED	; neu khong co thi kiem xem cac tang duoi co ai goi di xuong khong
+	JC CHAYXUONG	; neu co thi LOOP2 (LOOP2: dat chieu XUONG = 0, xuong 1 tang, quay lai LOOP)
+	SETB P3.5	; neu  tang duoi khong co nhu cau di xuong thi dat chieu xuong = 1, roi quay lai DUNGYEN
+	LJMP DUNGYEN
+LOOP1:	CALL UPOUT	; co ai can di len tu ben ngoai thang khong
+	JC MOCUA
+	CALL UPIN	; kiem tra xem trong buong thang co ai can di len nua khong
+	JC CHAYLEN
+	CALL UPNEED 	; neu khong co thi kiem xem cac tang tren co ai can di len nua khong
+	JC CHAYLEN
+	SETB P3.4
+	LJMP DUNGYEN
+CHAYXUONG: CLR P3.5		; dat chieu XUONG = 0 (tich cuc muc 0)
+	CALL DELAY1S	
+	DEC R1		; xuong 1 tang
+	CALL LED7DOAN
+	CALL LED
+	SJMP LOOP
+CHAYLEN: CLR P3.4
+	CALL DELAY1S
+	INC R1
+	CALL LED7DOAN
+	CALL LED
+	SJMP LOOP
+
+DUNGYEN_A: LJMP DUNGYEN		; ham nhay trung gian cho cau lenh JB P3.5, DUNGYEN_1 trong vong LOOP
+	
+
+•	Hàm MASKR1 dùng để đưa bit kiểm tra số tấng (x) của thanh ghi ACC(x). Mục tiêu: đưa ACC(x) về ACC(0) bằng các lệnh xoay. Ví dụ, thang đang ở tầng 3, muốn kiểm tra xem có người nhấn nút ở bên ngoài cửa thang không. Trước tiên, trong chương trình chính ta đưa port tương ứng của các nút nhấn lên vào thanh ghi ACC, sau đó dùng hàm MASKR1 để đưa bit ACC.3 (tầng 3) về ACC.0 để thực hiện các thuật toán kiểm tra khác, chỉ dựa trên 1 bit ACC.0.
+
+
+MASKR1:				; Ham dua bit kiem tra cua tang R1 (trong thanh ghi ACC) quay den vi tri ACC.0 de so sanh sau nay. 
+	CJNE R1, #1, MASKR1_1	; truoc khi goi ham can dua Port can kiem tra vao ACC
+	SJMP END_MASKR1		; Vi du: neu R0 = 3 thi ACC.0 <- ACC.3, neu R0 = 6 thi ACC.0 <- ACC.6
+MASKR1_1: CJNE R1, #2, MASKR1_2
+	RRC A
+	SJMP END_MASKR1
+MASKR1_2: CJNE R1, #3, MASKR1_3
+	RRC A
+	RRC A	
+	SJMP END_MASKR1
+MASKR1_3: CJNE R1, #4, MASKR1_4
+	RRC A
+	RRC A
+	RRC A
+	SJMP END_MASKR1
+MASKR1_4: CJNE R1, #5, MASKR1_5
+	RRC A
+	RRC A
+	RRC A
+	RRC A
+	SJMP END_MASKR1
+MASKR1_5: CJNE R1, #6, MASKR1_6
+	RLC A
+	RLC A
+	RLC A
+	SJMP END_MASKR1
+MASKR1_6: CJNE R1, #7, MASKR1_7
+	RLC A
+	RLC A
+	SJMP END_MASKR1
+MASKR1_7: RLC A
+END_MASKR1: 
+	RET	
+
+
+
+
+
+•	Hàm LED7DOAN dùng để xuất nhập số tầng hiện hành của thang máy (được lưu trong thanh ghi R1) hiển thị lên LED 7 đoạn, với địa chỉ ngoài của LED 7 đoạn là 80H.
+
+  LED7DOAN:			; ham dua ma 7 doan vao thanh ghi A va xuat ra LED 7 doan (so tang la R0)
+	MOV A, R1		; R1: so tang
+	MOV R0, #80H		; dia chi LED 7 doan
+	MOVX @R0, A
+	RET	
+
+•	Hàm UPOUT dùng để kiểm tra ở tầng hiện hành, bên ngoài thang có ai nhấn gọi lên không. Đầu tiên đưa PortA của 8255 (là port nút nhấn gọi lên của tất cả các tầng), sau đó gọi MASKR1 để đưa bit gọi lên của tầng cần xét về ACC.0, kiểm tra xem có gọi lên hay không, nếu có thì set cờ C = 1, ngược lại C = 0.
+
+
+UPOUT:				; Ham kiem tra xem ben ngoai co nhan goi thang di len khong (chi kiem tra tang hien hanh)
+	MOV R0, #40H		; 
+	MOVX A, @R0		; doc Port A (tin hieu goi thang len cua cac tang)
+	CALL MASKR1	
+JNB ACC.0, UPOUT_1	; xet ben ngoai co tin hieu goi len hay khong
+	SETB CY
+	SJMP END_UPOUT		; neu ben ngoai co nhan goi thang len thi C = 1
+UPOUT_1:
+	CLR CY			; nguoc lai C = 0
+END_UPOUT:	RET
+	
+
+•	Hàm DOWNOUT dùng để kiểm tra ở tầng hiện hành, bên ngoài thang có ai nhấn gọi xuống không. Đầu tiên đưa PortB của 8255 (là port nút nhấn gọi xuống của tất cả các tầng), sau đó gọi MASKR1 để đưa bit gọi lên của tầng cần xét về ACC.0, kiểm tra xem có gọi xuống hay không, nếu có thì set cờ C = 1, ngược lại C = 0.
+
+
+DOWNOUT:			; Ham kiem tra xem ben ngoai co nhan goi thang di xuong khong (chi kiem tra tang hien hanh)
+	MOV R0, #41H		; 
+	MOVX A, @R0		; doc Port B (tin hieu goi thang xuong cua cac tang)
+	CALL MASKR1	
+	JNB ACC.0, DOWNOUT_1	; xet ben ngoai co tin hieu goi xuong hay khong
+	SETB CY
+	SJMP END_DOWNOUT	; neu ben ngoai co nhan goi thang xuong thi C = 1
+DOWNOUT_1:
+	CLR CY			; nguoc lai C = 0
+END_DOWNOUT:	RET
+
+
+
+•	Hàm UPNEED dùng để kiểm tra ở các tầng trên của tầng hiện hành, bên ngoài thang có ai nhấn gọi thang không (lên hay xuống cũng được). Đầu tiên đưa PortA của 8255 (là port nút nhấn gọi lên của tất cả các tầng), sau đó gọi MASKLEN để kiểm tra có ai gọi thang ở các tầng trên không, nếu có thì set cờ C = 1, ngược lại kiểm tra tiếp PortB (các nút gọi xuống), nếu có thì set C=1, ngược lại C = 0 (không ai gọi lên cũng không ai gọi xuống ở ngoài thang, thuộc các tầng trên tầng hiện hành).
+
+
+UPNEED:		; Ham kiem tra xem ben ngoai co nhan goi thang di len khong (kiem tra cac tang tren)
+	MOV R0, #40H		; 
+	MOVX A, @R0		; doc Port A (tin hieu goi thang len cua cac tang)	CALL MASKLEN
+	JC END_UPNEED	; kiem tra xem cac tang tren co ai bam len khong, neu khong thi kiem tiep
+	MOV R0, #41H	; cac tang tren co ai bam xuong khong
+	MOVX A, @R0
+	CALL MASKLEN	
+END_UPNEED:	RET
+
+•	Hàm UPIN dùng để kiểm tra ở các tầng trên của tầng hiện hành, trong buồng thang có ai nhấn gọi thang cần lên trên cao nữa không 
+
+UPIN:		; Ham kiem tra xem ben trong co nhan goi thang di len khong (kiem tra cac tang tren) 
+	MOV A, P2		; doc Port A (tin hieu goi thang len cua cac tang)	CALL MASKLEN	
+END_UPIN:	RET
+
+•	Hàm DOWNNEED dùng để kiểm tra ở các tầng dưới của tầng hiện hành, bên ngoài thang có ai nhấn gọi thang không (lên hay xuống cũng được). Đầu tiên đưa PortA của 8255 (là port nút nhấn gọi lên của tất cả các tầng), sau đó gọi MASKXU để kiểm tra có gọi thang ở các tầng dưới hay không, nếu có thì set cờ C = 1, ngược lại kiểm tra tiếp PortB (các nút gọi xuống), nếu có thì set C=1, ngược lại C = 0 (không ai gọi lên cũng không ai gọi xuống ở ngoài thang, thuộc các tầng dưới tầng hiện hành).
+
+ DOWNNEED:		; Ham kiem tra xem ben ngoai co nhan goi khong (kiem tra cac tang duoi)
+	MOV R0, #41H		; 
+	MOVX A, @R0		; doc Port B (tin hieu goi thang xuong cua cac tang)
+	CALL MASKXU	
+	JC END_DOWNNEED	; kiem tra xem cac tang duoi co ai bam xuong khong,
+neu khong thi kiem tiep
+	MOV R0, #40H	; cac tang duoi co ai bam len khong
+	MOVX A, @R0
+	CALL MASKXU
+END_DOWNNEED:	RET
+
+•	 Hàm DOWNIN dùng để kiểm tra ở các tầng dưới của tầng hiện hành, trong buồng thang có ai nhấn gọi thang cần đi xuống thấp nữa không.
+
+DOWNIN:		; Ham kiem tra xem ben trong co nhan goi thang di XUONG khong (kiem tra cac tang tren) 
+	MOV A, P2		; doc Port A (tin hieu goi thang len cua cac tang)
+CALL MASKXU	
+END_DOWNIN:	RET
+
+•		Hàm MASKLEN dùng để kiểm tra các tầng trên tầng hiện hành có tín hiệu gọi thang hay không. Thuật toán ở đây khá phức tạp. Chẳng hạn đang ở tầng 2, để kiểm tra các tầng trên có gọi thang hay không, ta đầu tiên đưa port cần kiểm tra vào thanh ghi ACC, sau đó gọi MASKLEN. MASKLEN sẽ dùng thuật toán AND để hợp các tín hiệu tầng trên tầng hiện hành (chẳng hạn trong ví dụ này là tầng 2, thì ta AND thanh ghi ACC với #11111100B (tức là 2 tầng dưới cùng là 00 để bỏ qua việc AND). Sau đó so sánh ACC với 0. Nếu ACC khác 0 tức là có người gọi thang lên ở một tầng nào đó ở trên, set C = 1. Ngược lại C = 0.
+
+MASKLEN: CJNE R1, #1, MASKLEN_1	; Ham kiem tin hieu cac tang tren cua tang hien hanh. Tin hieu tu cac tang duoi va tang hien hanh dc 	
+	ANL A, #11111110B	; clear ve 0 het. Tin hieu goi len cac tang (port PA) duoc dua san vao thanh ghi ACC
+	SJMP END_MASKLEN	; Neu co tin hieu goi thang len thi CY =1, nguoc lai CY = 0
+MASKLEN_1: CJNE R1, #2, MASKLEN_2
+	ANL A, #11111100B
+	SJMP END_MASKLEN
+MASKLEN_2: CJNE R1, #3, MASKLEN_3
+	ANL A, #11111000B
+	SJMP END_MASKLEN
+MASKLEN_3: CJNE R1, #4, MASKLEN_4
+	ANL A, #11110000B
+	SJMP END_MASKLEN
+MASKLEN_4: CJNE R1, #5, MASKLEN_5
+	ANL A, #11100000B
+	SJMP END_MASKLEN
+MASKLEN_5: CJNE R1, #6, MASKLEN_6
+	ANL A, #11000000B
+	SJMP END_MASKLEN
+MASKLEN_6: CJNE R1, #7, MASKLEN_7	
+	ANL A, #10000000B
+	SJMP END_MASKLEN
+MASKLEN_7: CJNE R1, #8, END_MASKLEN
+	ANL A, #00000000B
+END_MASKLEN:	CJNE A, #0, NHAY_MASKLEN
+		CLR CY
+		SJMP END_MASKLEN1
+NHAY_MASKLEN:	SETB CY
+END_MASKLEN1:	RET
+
+
+
+
+•	Hàm MASKXU dùng để kiểm tra các tầng dưới tầng hiện hành có tín hiệu gọi thang hay không. Giải thuật tương tự MASKLEN.
+
+MASKXU: CJNE R1, #1, MASKXU_1	; Ham kiem tin hieu cac tang duoi cua tang hien hanh. 	
+	ANL A, #00000000B	; 
+	SJMP END_MASKXU	; 
+MASKXU_1: CJNE R1, #2, MASKXU_2
+	ANL A, #00000001B
+	SJMP END_MASKXU
+MASKXU_2: CJNE R1, #3, MASKXU_3
+	ANL A, #00000011B
+	SJMP END_MASKXU
+MASKXU_3: CJNE R1, #4, MASKXU_4
+	ANL A, #00000111B
+	SJMP END_MASKXU
+MASKXU_4: CJNE R1, #5, MASKXU_5
+	ANL A, #00001111B
+	SJMP END_MASKXU
+MASKXU_5: CJNE R1, #6, MASKXU_6
+	ANL A, #00011111B
+	SJMP END_MASKXU
+MASKXU_6: CJNE R1, #7, MASKXU_7	
+	ANL A, #00111111B
+	SJMP END_MASKXU
+MASKXU_7: CJNE R1, #8, END_MASKXU
+	ANL A, #01111111B
+END_MASKXU:	CJNE A, #0, NHAY_MASKXU
+		CLR CY
+		SJMP END_MASKXU1
+NHAY_MASKXU:	SETB CY
+END_MASKXU1:	RET
+
+
+•	Hàm XOA dùng để xoá tín hiệu gọi thang sau khi buồng thang đã mở cửa. Việc đưa xung ra port1  của 8051 cũng dựa vào số tầng hiện hành, được lưu trong thanh ghi R1.
+
+XOA: 	CJNE R1, #1, XOA_1	; Ham xoa tin hieu goi thang tu ben ngoai va trong buong(phu thuoc chieu di len hay di xuong) 	
+	CLR P1.0		; Luc thang dang len thi xoa tin hieu goi thang len, nguoc lai
+	CALL DELAY01S
+	SETB P1.0
+	SJMP END_XOA	; 
+XOA_1: CJNE R1, #2, XOA_2
+	CLR P1.1
+	CALL DELAY01S
+	SETB P1.1
+	SJMP END_XOA
+XOA_2: CJNE R1, #3, XOA_3
+	CLR P1.2
+	CALL DELAY01S
+	SETB P1.2
+	SJMP END_XOA
+XOA_3: CJNE R1, #4, XOA_4
+	CLR P1.3
+	CALL DELAY01S
+	SETB P1.3
+	SJMP END_XOA
+XOA_4: CJNE R1, #5, XOA_5
+	CLR P1.4
+	CALL DELAY01S
+	SETB P1.4
+	SJMP END_XOA
+XOA_5: CJNE R1, #6, XOA_6
+	CLR P1.5
+	CALL DELAY01S
+	SETB P1.5
+	SJMP END_XOA
+XOA_6: CJNE R1, #7, XOA_7	
+	CLR P1.6
+	CALL DELAY01S
+	SETB P1.6
+	SJMP END_XOA
+XOA_7: CJNE R1, #8, END_XOA
+	CLR P1.7
+	CALL DELAY01S
+	SETB P1.7
+END_XOA:	RET
+
+
+•	Các hàm delay khác nhau phục vụ việc chờ.
+
+DELAY01S: MOV R6, #100
+LOOP01_1:	MOV R5, #100
+LOOP01_2:	MOV R4, #10
+	DJNZ R4, $
+	DJNZ R5, LOOP01_2
+	DJNZ R6, LOOP01_1
+RET
+
+DELAY1S: MOV R6, #100
+LOOP1_1:	MOV R5, #100
+LOOP1_2:	MOV R4, #100
+	DJNZ R4, $
+	DJNZ R5, LOOP1_2
+	DJNZ R6, LOOP1_1
+RET
+
+DELAY3S: 
+	CALL DELAY1S
+	CALL DELAY1S
+	CALL DELAY1S
+RET
+
+AGAIN: 	MOV R0, #42H; PORT  C
+	MOV A, #10101010B
+	MOVX @R0, A
+	SJMP $
+
+•	Hàm LED dùng để giải mã số tầng và hiện LED tương ứng với số tầng hiện hành (1 trong 6 LED sẽ sáng tương ứng với số tầng). Các chân P3.0 tới P3.2 được dùng làm 3 bit giải mã cho 74138.
+
+
+LED: CJNE R1, #1, LED_1	;  	
+	CLR P3.2
+	CLR P3.1
+	CLR P3.0
+	SJMP END_LED
+LED_1: CJNE R1, #2, LED_2
+	CLR P3.2
+	CLR P3.1
+	SETB P3.0
+	SJMP END_LED
+LED_2: CJNE R1, #3, LED_3
+	CLR P3.2
+	SETB P3.1
+	CLR P3.0
+	SJMP END_LED
+LED_3: CJNE R1, #4, LED_4
+	CLR P3.2
+	SETB P3.1
+	SETB P3.0
+	SJMP END_LED
+LED_4: CJNE R1, #5, LED_5
+	SETB P3.2
+	CLR P3.1
+	CLR P3.0
+	SJMP END_LED
+LED_5: CJNE R1, #6, LED_6
+	SETB P3.2
+	CLR P3.1
+	SETB P3.0
+	SJMP END_LED
+LED_6: CJNE R1, #7, LED_7	
+	SETB P3.2
+	SETB P3.1
+	CLR P3.0
+	SJMP END_LED
+LED_7: CJNE R1, #8, END_LED
+	SETB P3.2
+	SETB P3.1
+	SETB P3.0
+	SJMP END_LED
+END_LED:	RET
+
+•	Hàm CHOP dùng để nháy LED 7 đoạn hiệu ứng chớp tắt  (do chân nguồn P1.7 được nối với anode chung của LED 7 đoạn.
+
+CHOP:	CALL BUZZ
+	CLR P1.7
+	CALL DELAY01S
+	SETB P1.7
+	CALL DELAY01S
+	CLR P1.7
+	CALL DELAY01S
+	SETB P1.7
+	CALL DELAY01S
+	CLR P1.7
+	CALL DELAY01S
+	SETB P1.7
+	CALL DELAY01S
+RET 
+
+•	Hàm BUZZ để đưa tín hiệu “tít tít tít” ra chuông mỗi khi cần báo động. Chân C.7 của 8255 được dùng để nối với buzzer.
+
+BUZZ:	MOV R0, #42H
+	MOV A, #01111111B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111111B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #01111111B
+	MOVX @R0, A
+	CALL DELAY01S
+	MOV A, #11111111B
+	MOVX @R0, A
+	CALL DELAY01S
+RET
+
+END
