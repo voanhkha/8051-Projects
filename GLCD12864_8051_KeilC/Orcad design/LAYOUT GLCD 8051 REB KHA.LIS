@@ -1,0 +1,12 @@
+AutoECO Report
+FILE-A: C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+FILE-B: C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\GLCD 8051 REVB KHA.MNL
+If "*EOF*" immediately follows, no changes were made
+Deleting J1.2 from net GND
+Deleting J1.1 from net VIN
+Adding MOD_SW.1 to net N1798015
+Adding INC_SW.1 to net N1808838
+Adding J22.3 to net N1803718
+Deleting component J1
+*EOF*
+No errors found

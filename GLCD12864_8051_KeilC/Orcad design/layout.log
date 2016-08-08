@@ -1,0 +1,2081 @@
+Wed Mar 04 09:37:52 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:37:52 Saved as file BACKUP1.MAX
+Wed Mar 04 09:37:52 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:37:52 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 09:37:52 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:37:52 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 09:37:52 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:52 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 09:37:52 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 09:37:52 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 09:37:53 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:37:53 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:37:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:38:07 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:41:55 Saved as file ~undo.max
+Wed Mar 04 09:42:09 Saved as file ~undo.max
+Wed Mar 04 09:42:23 Saved as file ~undo.max
+Wed Mar 04 09:42:39 Saved as file ~undo.max
+Wed Mar 04 09:42:48 Saved as file ~undo.max
+Wed Mar 04 09:42:53 Saved as file ~undo.max
+Wed Mar 04 09:42:56 Saved as file ~undo.max
+Wed Mar 04 09:43:52 Saved as file ~undo.max
+Wed Mar 04 09:44:00 Saved as file ~undo.max
+Wed Mar 04 09:44:04 Saved as file ~undo.max
+Wed Mar 04 09:44:10 Saved as file ~undo.max
+Wed Mar 04 09:44:11 Saved as file ~undo.max
+Wed Mar 04 09:44:12 Saved as file ~undo.max
+Wed Mar 04 09:44:13 Saved as file ~undo.max
+Wed Mar 04 09:44:13 Saved as file ~undo.max
+Wed Mar 04 09:44:22 Saved as file ~undo.max
+Wed Mar 04 09:44:22 Saved as file ~undo.max
+Wed Mar 04 09:44:22 Saved as file ~undo.max
+Wed Mar 04 09:44:22 Saved as file ~undo.max
+Wed Mar 04 09:44:53 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:45:25 Saved as file BACKUP1.MAX
+Wed Mar 04 09:45:25 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:45:25 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 09:45:25 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:45:25 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 09:45:25 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 09:45:25 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 09:45:26 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 09:45:26 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:45:26 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:46:16 Saved as file ~undo.max
+Wed Mar 04 09:46:20 Saved as file ~undo.max
+Wed Mar 04 09:46:35 Saved as file ~undo.max
+Wed Mar 04 09:46:49 Saved as file ~undo.max
+Wed Mar 04 09:46:51 Saved as file ~undo.max
+Wed Mar 04 09:46:53 Saved as file ~undo.max
+Wed Mar 04 09:47:19 Saved as file ~undo.max
+Wed Mar 04 09:47:20 Saved as file ~undo.max
+Wed Mar 04 09:47:47 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:48:32 Saved as file BACKUP1.MAX
+Wed Mar 04 09:49:34 Saved as file BACKUP1.MAX
+Wed Mar 04 09:49:34 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:49:34 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 09:49:34 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:49:34 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 09:49:34 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 09:49:34 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 09:49:35 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 09:49:36 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 09:49:37 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 09:49:37 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:49:37 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:49:37 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:49:47 Error code 5200.306
+Wed Mar 04 09:49:47 Saved as file Backup0.max
+Wed Mar 04 09:49:47 Windows which were open at time of error:
+Wed Mar 04 09:49:47 	ActiveWindow: Library Manager
+Wed Mar 04 09:49:47 End-of-list
+Wed Mar 04 09:49:47 Loaded file BACKUP0.MAX
+Wed Mar 04 09:49:57 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA.MAX
+Wed Mar 04 09:50:20 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:50:20 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:50:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:50:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:50:23 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 09:50:24 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:03 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:51:04 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:04 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 09:52:45 Saved as file ~undo.max
+Wed Mar 04 09:52:55 Saved as file ~undo.max
+Wed Mar 04 09:53:13 Saved as file ~undo.max
+Wed Mar 04 09:53:19 Saved as file ~undo.max
+Wed Mar 04 09:53:29 Saved as file ~undo.max
+Wed Mar 04 09:53:41 Saved as file ~undo.max
+Wed Mar 04 09:53:43 Saved as file ~undo.max
+Wed Mar 04 09:53:54 Saved as file ~undo.max
+Wed Mar 04 09:54:03 Saved as file ~undo.max
+Wed Mar 04 09:54:08 Saved as file ~undo.max
+Wed Mar 04 09:54:10 Saved as file ~undo.max
+Wed Mar 04 09:54:53 Saved as file ~undo.max
+Wed Mar 04 09:54:57 Saved as file ~undo.max
+Wed Mar 04 09:55:00 Saved as file ~undo.max
+Wed Mar 04 09:55:15 Saved as file ~undo.max
+Wed Mar 04 09:55:17 Saved as file ~undo.max
+Wed Mar 04 09:59:37 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:04:23 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:07:13 Saved as file ~undo.max
+Wed Mar 04 10:08:04 Saved as file ~undo.max
+Wed Mar 04 10:08:05 Saved as file ~undo.max
+Wed Mar 04 10:08:05 Saved as file ~undo.max
+Wed Mar 04 10:09:10 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:10:07 Saved as file ~undo.max
+Wed Mar 04 10:10:53 Saved as file ~undo.max
+Wed Mar 04 10:11:22 Saved as file ~undo.max
+Wed Mar 04 10:11:34 Saved as file ~undo.max
+Wed Mar 04 10:11:59 Saved as file ~undo.max
+Wed Mar 04 10:12:19 Saved as file ~undo.max
+Wed Mar 04 10:12:19 Saved as file ~undo.max
+Wed Mar 04 10:12:19 Saved as file ~undo.max
+Wed Mar 04 10:12:19 Saved as file ~undo.max
+Wed Mar 04 10:12:47 Saved as file ~undo.max
+Wed Mar 04 10:13:02 Saved as file ~undo.max
+Wed Mar 04 10:13:13 Saved as file ~undo.max
+Wed Mar 04 10:13:14 Saved as file ~undo.max
+Wed Mar 04 10:13:58 Saved as file ~undo.max
+Wed Mar 04 10:14:33 Saved as file ~undo.max
+Wed Mar 04 10:14:36 Saved as file ~undo.max
+Wed Mar 04 10:14:37 Saved as file ~undo.max
+Wed Mar 04 10:14:47 Saved as file ~undo.max
+Wed Mar 04 10:14:59 Saved as file ~undo.max
+Wed Mar 04 10:15:00 Saved as file ~undo.max
+Wed Mar 04 10:15:52 Saved as file ~undo.max
+Wed Mar 04 10:16:49 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:17:34 Saved as file ~undo.max
+Wed Mar 04 10:17:36 Saved as file ~undo.max
+Wed Mar 04 10:17:42 Saved as file ~undo.max
+Wed Mar 04 10:17:47 Saved as file ~undo.max
+Wed Mar 04 10:18:44 Saved as file ~undo.max
+Wed Mar 04 10:18:56 Saved as file ~undo.max
+Wed Mar 04 10:18:57 Saved as file ~undo.max
+Wed Mar 04 10:19:20 Saved as file ~undo.max
+Wed Mar 04 10:19:24 Saved as file ~undo.max
+Wed Mar 04 10:19:56 Saved as file ~undo.max
+Wed Mar 04 10:19:57 Saved as file BACKUP1.MAX
+Wed Mar 04 10:19:59 Saved as file ~undo.max
+Wed Mar 04 10:20:29 Saved as file ~undo.max
+Wed Mar 04 10:20:29 Saved as file ~undo.max
+Wed Mar 04 10:20:33 Saved as file ~undo.max
+Wed Mar 04 10:20:35 Saved as file ~undo.max
+Wed Mar 04 10:20:38 Saved as file ~undo.max
+Wed Mar 04 10:20:55 Saved as file ~undo.max
+Wed Mar 04 10:21:26 Saved as file ~undo.max
+Wed Mar 04 10:21:33 Saved as file ~undo.max
+Wed Mar 04 10:21:38 Saved as file ~undo.max
+Wed Mar 04 10:21:42 Saved as file ~undo.max
+Wed Mar 04 10:21:46 Saved as file ~undo.max
+Wed Mar 04 10:21:52 Saved as file ~undo.max
+Wed Mar 04 10:22:19 Saved as file ~undo.max
+Wed Mar 04 10:22:36 Saved as file ~undo.max
+Wed Mar 04 10:23:15 Saved as file ~undo.max
+Wed Mar 04 10:23:17 Saved as file ~undo.max
+Wed Mar 04 10:27:06 Saved as file ~undo.max
+Wed Mar 04 10:27:13 Saved as file ~undo.max
+Wed Mar 04 10:27:46 Saved as file ~undo.max
+Wed Mar 04 10:27:59 Saved as file ~undo.max
+Wed Mar 04 10:28:29 Saved as file ~undo.max
+Wed Mar 04 10:28:43 Saved as file ~undo.max
+Wed Mar 04 10:28:44 Saved as file ~undo.max
+Wed Mar 04 10:28:57 Saved as file ~undo.max
+Wed Mar 04 10:29:02 Saved as file ~undo.max
+Wed Mar 04 10:29:11 Saved as file ~undo.max
+Wed Mar 04 10:29:22 Saved as file ~undo.max
+Wed Mar 04 10:29:34 Saved as file ~undo.max
+Wed Mar 04 10:29:35 Saved as file ~undo.max
+Wed Mar 04 10:29:36 Saved as file ~undo.max
+Wed Mar 04 10:29:50 Saved as file ~undo.max
+Wed Mar 04 10:29:51 Saved as file ~undo.max
+Wed Mar 04 10:29:52 Saved as file ~undo.max
+Wed Mar 04 10:29:53 Saved as file ~undo.max
+Wed Mar 04 10:29:54 Saved as file ~undo.max
+Wed Mar 04 10:30:26 Saved as file BACKUP1.MAX
+Wed Mar 04 10:30:30 Saved as file ~undo.max
+Wed Mar 04 10:30:36 Saved as file ~undo.max
+Wed Mar 04 10:30:52 Saved as file ~undo.max
+Wed Mar 04 10:31:19 Saved as file ~undo.max
+Wed Mar 04 10:31:34 Saved as file ~undo.max
+Wed Mar 04 10:31:35 Saved as file ~undo.max
+Wed Mar 04 10:32:48 Saved as file ~undo.max
+Wed Mar 04 10:32:49 Saved as file ~undo.max
+Wed Mar 04 10:33:02 Saved as file ~undo.max
+Wed Mar 04 10:33:40 Saved as file ~undo.max
+Wed Mar 04 10:33:46 Saved as file ~undo.max
+Wed Mar 04 10:33:47 Saved as file ~undo.max
+Wed Mar 04 10:33:48 Saved as file ~undo.max
+Wed Mar 04 10:34:15 Saved as file ~undo.max
+Wed Mar 04 10:34:32 Saved as file ~undo.max
+Wed Mar 04 10:34:55 Saved as file ~undo.max
+Wed Mar 04 10:35:13 Saved as file ~undo.max
+Wed Mar 04 10:35:40 Saved as file ~undo.max
+Wed Mar 04 10:36:17 Saved as file ~undo.max
+Wed Mar 04 10:36:22 Saved as file ~undo.max
+Wed Mar 04 10:36:26 Saved as file ~undo.max
+Wed Mar 04 10:36:29 Saved as file ~undo.max
+Wed Mar 04 10:37:16 Saved as file ~undo.max
+Wed Mar 04 10:37:17 Saved as file ~undo.max
+Wed Mar 04 10:37:18 Saved as file ~undo.max
+Wed Mar 04 10:37:18 Saved as file ~undo.max
+Wed Mar 04 10:37:30 Saved as file ~undo.max
+Wed Mar 04 10:37:30 Saved as file ~undo.max
+Wed Mar 04 10:38:09 Saved as file ~undo.max
+Wed Mar 04 10:38:11 Saved as file ~undo.max
+Wed Mar 04 10:38:22 Saved as file ~undo.max
+Wed Mar 04 10:38:36 Saved as file ~undo.max
+Wed Mar 04 10:38:47 Saved as file ~undo.max
+Wed Mar 04 10:39:13 Saved as file ~undo.max
+Wed Mar 04 10:39:29 Saved as file ~undo.max
+Wed Mar 04 10:39:33 Saved as file ~undo.max
+Wed Mar 04 10:39:34 Saved as file ~undo.max
+Wed Mar 04 10:39:35 Saved as file ~undo.max
+Wed Mar 04 10:39:36 Saved as file ~undo.max
+Wed Mar 04 10:39:37 Saved as file ~undo.max
+Wed Mar 04 10:39:46 Saved as file ~undo.max
+Wed Mar 04 10:39:50 Saved as file ~undo.max
+Wed Mar 04 10:39:53 Saved as file ~undo.max
+Wed Mar 04 10:40:20 Saved as file ~undo.max
+Wed Mar 04 10:40:27 Saved as file BACKUP1.MAX
+Wed Mar 04 10:40:31 Saved as file ~undo.max
+Wed Mar 04 10:40:37 Saved as file ~undo.max
+Wed Mar 04 10:40:38 Saved as file ~undo.max
+Wed Mar 04 10:42:37 Saved as file ~undo.max
+Wed Mar 04 10:42:39 Saved as file ~undo.max
+Wed Mar 04 10:42:52 Saved as file ~undo.max
+Wed Mar 04 10:43:24 Saved as file ~undo.max
+Wed Mar 04 10:43:46 Saved as file ~undo.max
+Wed Mar 04 10:44:06 Saved as file ~undo.max
+Wed Mar 04 10:44:09 Saved as file ~undo.max
+Wed Mar 04 10:49:22 Saved as file ~undo.max
+Wed Mar 04 10:49:23 Saved as file ~undo.max
+Wed Mar 04 10:49:26 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:21 Saved as file BACKUP1.MAX
+Wed Mar 04 10:50:21 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:21 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 10:50:21 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:21 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 10:50:21 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 10:50:21 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 10:50:22 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 10:50:23 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 10:50:23 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:23 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:48 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 10:50:55 Saved as file ~undo.max
+Wed Mar 04 10:50:57 Saved as file BACKUP1.MAX
+Wed Mar 04 10:51:00 Saved as file ~undo.max
+Wed Mar 04 10:51:04 Saved as file ~undo.max
+Wed Mar 04 10:51:10 Saved as file ~undo.max
+Wed Mar 04 10:51:13 Saved as file ~undo.max
+Wed Mar 04 10:51:28 Saved as file ~undo.max
+Wed Mar 04 10:51:35 Saved as file ~undo.max
+Wed Mar 04 10:52:20 Saved as file ~undo.max
+Wed Mar 04 10:52:21 Saved as file ~undo.max
+Wed Mar 04 10:52:21 Saved as file ~undo.max
+Wed Mar 04 10:52:29 Saved as file ~undo.max
+Wed Mar 04 10:53:25 Saved as file ~undo.max
+Wed Mar 04 10:53:40 Saved as file ~undo.max
+Wed Mar 04 10:53:57 Saved as file ~undo.max
+Wed Mar 04 10:54:14 Saved as file ~undo.max
+Wed Mar 04 10:54:22 Saved as file ~undo.max
+Wed Mar 04 10:54:27 Saved as file ~undo.max
+Wed Mar 04 10:54:48 Saved as file ~undo.max
+Wed Mar 04 10:56:04 Saved as file ~undo.max
+Wed Mar 04 10:56:13 Saved as file ~undo.max
+Wed Mar 04 10:56:20 Saved as file ~undo.max
+Wed Mar 04 10:56:24 Saved as file ~undo.max
+Wed Mar 04 10:56:29 Saved as file ~undo.max
+Wed Mar 04 10:56:55 Saved as file ~undo.max
+Wed Mar 04 10:57:06 Saved as file ~undo.max
+Wed Mar 04 10:57:22 Saved as file ~undo.max
+Wed Mar 04 10:57:41 Saved as file ~undo.max
+Wed Mar 04 10:58:00 Saved as file ~undo.max
+Wed Mar 04 10:58:13 Saved as file ~undo.max
+Wed Mar 04 10:58:17 Saved as file ~undo.max
+Wed Mar 04 10:58:27 Saved as file ~undo.max
+Wed Mar 04 10:58:44 Saved as file ~undo.max
+Wed Mar 04 10:58:45 Saved as file ~undo.max
+Wed Mar 04 10:59:14 Saved as file ~undo.max
+Wed Mar 04 10:59:26 Saved as file ~undo.max
+Wed Mar 04 11:00:06 Saved as file ~undo.max
+Wed Mar 04 11:00:16 Saved as file ~undo.max
+Wed Mar 04 11:00:31 Saved as file ~undo.max
+Wed Mar 04 11:00:39 Saved as file ~undo.max
+Wed Mar 04 11:00:43 Saved as file ~undo.max
+Wed Mar 04 11:00:51 Saved as file ~undo.max
+Wed Mar 04 11:00:52 Saved as file ~undo.max
+Wed Mar 04 11:00:57 Saved as file BACKUP1.MAX
+Wed Mar 04 11:04:59 Saved as file ~undo.max
+Wed Mar 04 11:05:02 Saved as file ~undo.max
+Wed Mar 04 11:05:06 Saved as file ~undo.max
+Wed Mar 04 11:05:06 Saved as file ~undo.max
+Wed Mar 04 11:05:06 Saved as file ~undo.max
+Wed Mar 04 11:05:06 Saved as file ~undo.max
+Wed Mar 04 11:05:06 Saved as file ~undo.max
+Wed Mar 04 11:05:07 Saved as file ~undo.max
+Wed Mar 04 11:05:08 Saved as file ~undo.max
+Wed Mar 04 11:05:09 Saved as file ~undo.max
+Wed Mar 04 11:05:35 Saved as file BACKUP1.MAX
+Wed Mar 04 11:05:35 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:05:35 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 11:05:35 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:05:35 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 11:05:35 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 11:05:36 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 11:05:37 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 11:05:38 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 11:05:38 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:05:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:06:50 Saved as file ~undo.max
+Wed Mar 04 11:06:50 Saved as file ~undo.max
+Wed Mar 04 11:09:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:09:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:09:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:09:21 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:09:23 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:09:25 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:00 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:00 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:03 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:10:04 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:05 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:31 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:31 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:31 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:31 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:32 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:10:39 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:53 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:53 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:53 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:53 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:10:55 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:10:56 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:11:35 Saved as file ~undo.max
+Wed Mar 04 11:11:36 Saved as file ~undo.max
+Wed Mar 04 11:11:37 Saved as file ~undo.max
+Wed Mar 04 11:12:08 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:12:08 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:12:08 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:12:08 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:12:11 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:12:13 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 11:12:18 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:12:23 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:12:28 Saved as file BACKUP1.MAX
+Wed Mar 04 11:13:07 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:13:07 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:13:07 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:13:07 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:13:08 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:13:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:13:11 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 11:16:07 Saved as file ~undo.max
+Wed Mar 04 11:16:29 Saved as file ~undo.max
+Wed Mar 04 11:18:10 Saved as file ~undo.max
+Wed Mar 04 11:19:02 Saved as file ~undo.max
+Wed Mar 04 11:19:11 Saved as file ~undo.max
+Wed Mar 04 11:19:17 Saved as file ~undo.max
+Wed Mar 04 11:19:21 Saved as file ~undo.max
+Wed Mar 04 11:19:35 Saved as file ~undo.max
+Wed Mar 04 11:19:47 Saved as file ~undo.max
+Wed Mar 04 11:20:20 Saved as file ~undo.max
+Wed Mar 04 11:20:25 Saved as file ~undo.max
+Wed Mar 04 11:20:26 Saved as file ~undo.max
+Wed Mar 04 11:20:54 Saved as file ~undo.max
+Wed Mar 04 11:20:54 Saved as file ~undo.max
+Wed Mar 04 11:20:54 Saved as file ~undo.max
+Wed Mar 04 11:20:54 Saved as file ~undo.max
+Wed Mar 04 11:20:55 Saved as file ~undo.max
+Wed Mar 04 11:21:03 Saved as file ~undo.max
+Wed Mar 04 11:22:28 Saved as file BACKUP1.MAX
+Wed Mar 04 11:22:38 Saved as file ~undo.max
+Wed Mar 04 11:22:48 Saved as file ~undo.max
+Wed Mar 04 11:22:49 Saved as file ~undo.max
+Wed Mar 04 11:23:25 Saved as file ~undo.max
+Wed Mar 04 11:23:35 Saved as file ~undo.max
+Wed Mar 04 11:23:55 Saved as file ~undo.max
+Wed Mar 04 11:23:56 Saved as file ~undo.max
+Wed Mar 04 11:24:00 Saved as file ~undo.max
+Wed Mar 04 11:24:03 Saved as file ~undo.max
+Wed Mar 04 11:25:00 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:25:43 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:26:41 Saved as file BACKUP1.MAX
+Wed Mar 04 11:26:41 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:26:41 UserDiv from Layout.INI for AutoECO: 60
+Wed Mar 04 11:26:41 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:26:41 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 11:26:41 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Wed Mar 04 11:26:41 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Wed Mar 04 11:26:42 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Wed Mar 04 11:26:44 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Wed Mar 04 11:26:44 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:26:44 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:27:13 Saved as file ~undo.max
+Wed Mar 04 11:27:31 Saved as file ~undo.max
+Wed Mar 04 11:27:31 Saved as file ~undo.max
+Wed Mar 04 11:28:29 Saved as file ~undo.max
+Wed Mar 04 11:29:28 Saved as file ~undo.max
+Wed Mar 04 11:29:54 Saved as file ~undo.max
+Wed Mar 04 11:32:24 Saved as file ~undo.max
+Wed Mar 04 11:32:58 Saved as file BACKUP1.MAX
+Wed Mar 04 11:33:13 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:36:37 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 11:36:51 Error code 5200.306
+Wed Mar 04 11:36:51 Saved as file Backup0.max
+Wed Mar 04 11:36:51 Windows which were open at time of error:
+Wed Mar 04 11:36:51 	ActiveWindow: Library Manager
+Wed Mar 04 11:36:51 End-of-list
+Wed Mar 04 11:36:52 Loaded file BACKUP0.MAX
+Wed Mar 04 13:03:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:12 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:13 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 13:03:14 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:21 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:03:22 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:03:28 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:18 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:04:19 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 13:04:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 13:04:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:04:39 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:57 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:57 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:58 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:58 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:04:58 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Wed Mar 04 13:04:59 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Wed Mar 04 13:04:59 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:05:00 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:00 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:01 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:12 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:05:29 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:05:51 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:51 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:51 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:51 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:05:54 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:05:55 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:06:42 Saved as file ~undo.max
+Wed Mar 04 13:07:13 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:07:13 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:07:13 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:07:13 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:07:15 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:07:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:07 Saved as file ~undo.max
+Wed Mar 04 13:08:29 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:29 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:29 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:30 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:30 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:08:35 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:08:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:46 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:46 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:47 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:47 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:08:49 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Wed Mar 04 13:08:52 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Wed Mar 04 13:09:02 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:09:18 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:10:11 Saved as file ~undo.max
+Wed Mar 04 13:10:30 Saved as file ~undo.max
+Wed Mar 04 13:10:38 Saved as file ~undo.max
+Wed Mar 04 13:11:06 Saved as file ~undo.max
+Wed Mar 04 13:11:30 Saved as file ~undo.max
+Wed Mar 04 13:12:10 Saved as file ~undo.max
+Wed Mar 04 13:12:15 Saved as file ~undo.max
+Wed Mar 04 13:12:17 Saved as file ~undo.max
+Wed Mar 04 13:12:18 Saved as file ~undo.max
+Wed Mar 04 13:12:26 Saved as file ~undo.max
+Wed Mar 04 13:12:50 Saved as file ~undo.max
+Wed Mar 04 13:12:55 Saved as file ~undo.max
+Wed Mar 04 13:13:02 Saved as file ~undo.max
+Wed Mar 04 13:13:03 Saved as file ~undo.max
+Wed Mar 04 13:13:05 Saved as file ~undo.max
+Wed Mar 04 13:13:06 Saved as file ~undo.max
+Wed Mar 04 13:14:33 Saved as file ~undo.max
+Wed Mar 04 13:15:01 Saved as file ~undo.max
+Wed Mar 04 13:15:26 Saved as file ~undo.max
+Wed Mar 04 13:15:43 Saved as file ~undo.max
+Wed Mar 04 13:15:48 Saved as file ~undo.max
+Wed Mar 04 13:15:55 Saved as file ~undo.max
+Wed Mar 04 13:16:07 Saved as file BACKUP1.MAX
+Wed Mar 04 13:16:11 Saved as file ~undo.max
+Wed Mar 04 13:16:49 Saved as file ~undo.max
+Wed Mar 04 13:16:53 Saved as file ~undo.max
+Wed Mar 04 13:16:57 Saved as file ~undo.max
+Wed Mar 04 13:17:03 Saved as file ~undo.max
+Wed Mar 04 13:17:10 Saved as file ~undo.max
+Wed Mar 04 13:17:21 Saved as file ~undo.max
+Wed Mar 04 13:19:57 Saved as file ~undo.max
+Wed Mar 04 13:20:07 Saved as file ~undo.max
+Wed Mar 04 13:21:11 Saved as file ~undo.max
+Wed Mar 04 13:21:29 Saved as file ~undo.max
+Wed Mar 04 13:21:43 Saved as file ~undo.max
+Wed Mar 04 13:22:34 Saved as file ~undo.max
+Wed Mar 04 13:22:41 Saved as file ~undo.max
+Wed Mar 04 13:24:45 Saved as file ~undo.max
+Wed Mar 04 13:24:48 Saved as file ~undo.max
+Wed Mar 04 13:24:57 Saved as file ~undo.max
+Wed Mar 04 13:25:01 Saved as file ~undo.max
+Wed Mar 04 13:25:08 Saved as file ~undo.max
+Wed Mar 04 13:25:24 Saved as file ~undo.max
+Wed Mar 04 13:25:28 Saved as file ~undo.max
+Wed Mar 04 13:25:39 Saved as file ~undo.max
+Wed Mar 04 13:25:41 Saved as file ~undo.max
+Wed Mar 04 13:25:42 Saved as file ~undo.max
+Wed Mar 04 13:26:07 Saved as file BACKUP1.MAX
+Wed Mar 04 13:27:27 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:27:34 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 13:57:43 Saved as file ~undo.max
+Wed Mar 04 13:57:48 Saved as file ~undo.max
+Wed Mar 04 13:57:48 Saved as file ~undo.max
+Wed Mar 04 13:57:48 Saved as file ~undo.max
+Wed Mar 04 13:57:49 Saved as file ~undo.max
+Wed Mar 04 13:58:36 Saved as file ~undo.max
+Wed Mar 04 13:59:27 Saved as file ~undo.max
+Wed Mar 04 14:01:44 Saved as file ~undo.max
+Wed Mar 04 14:02:18 Saved as file ~undo.max
+Wed Mar 04 14:02:25 Saved as file ~undo.max
+Wed Mar 04 14:02:59 Saved as file ~undo.max
+Wed Mar 04 14:03:13 Saved as file ~undo.max
+Wed Mar 04 14:03:40 Saved as file BACKUP1.MAX
+Wed Mar 04 14:03:43 Saved as file ~undo.max
+Wed Mar 04 14:04:04 Saved as file ~undo.max
+Wed Mar 04 14:04:08 Saved as file ~undo.max
+Wed Mar 04 14:04:18 Saved as file ~undo.max
+Wed Mar 04 14:04:19 Saved as file ~undo.max
+Wed Mar 04 14:04:21 Saved as file ~undo.max
+Wed Mar 04 14:04:45 Saved as file ~undo.max
+Wed Mar 04 14:04:54 Saved as file ~undo.max
+Wed Mar 04 14:05:44 Saved as file ~undo.max
+Wed Mar 04 14:06:48 Saved as file ~undo.max
+Wed Mar 04 14:06:49 Saved as file ~undo.max
+Wed Mar 04 14:07:47 Saved as file ~undo.max
+Wed Mar 04 14:07:55 Saved as file ~undo.max
+Wed Mar 04 14:08:29 Saved as file ~undo.max
+Wed Mar 04 14:08:59 Saved as file ~undo.max
+Wed Mar 04 14:09:00 Saved as file ~undo.max
+Wed Mar 04 14:09:02 Saved as file ~undo.max
+Wed Mar 04 14:09:02 Saved as file ~undo.max
+Wed Mar 04 14:09:03 Saved as file ~undo.max
+Wed Mar 04 14:09:15 Saved as file ~undo.max
+Wed Mar 04 14:09:18 Saved as file ~undo.max
+Wed Mar 04 14:09:47 Saved as file ~undo.max
+Wed Mar 04 14:10:03 Saved as file ~undo.max
+Wed Mar 04 14:10:05 Saved as file ~undo.max
+Wed Mar 04 14:10:06 Saved as file ~undo.max
+Wed Mar 04 14:10:30 Saved as file ~undo.max
+Wed Mar 04 14:10:49 Saved as file ~undo.max
+Wed Mar 04 14:11:04 Saved as file ~undo.max
+Wed Mar 04 14:11:05 Saved as file ~undo.max
+Wed Mar 04 14:11:51 Saved as file ~undo.max
+Wed Mar 04 14:12:50 Saved as file ~undo.max
+Wed Mar 04 14:12:59 Saved as file ~undo.max
+Wed Mar 04 14:13:06 Saved as file ~undo.max
+Wed Mar 04 14:13:15 Saved as file ~undo.max
+Wed Mar 04 14:13:30 Saved as file ~undo.max
+Wed Mar 04 14:13:40 Saved as file BACKUP1.MAX
+Wed Mar 04 14:14:15 Saved as file ~undo.max
+Wed Mar 04 14:14:48 Saved as file ~undo.max
+Wed Mar 04 14:14:52 Saved as file ~undo.max
+Wed Mar 04 14:14:55 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 14:16:27 Saved as file ~undo.max
+Wed Mar 04 14:16:41 Saved as file ~undo.max
+Wed Mar 04 14:16:51 Saved as file ~undo.max
+Wed Mar 04 14:17:40 Saved as file ~undo.max
+Wed Mar 04 14:18:14 Saved as file ~undo.max
+Wed Mar 04 14:18:15 Saved as file ~undo.max
+Wed Mar 04 14:19:12 Saved as file ~undo.max
+Wed Mar 04 14:19:45 Saved as file ~undo.max
+Wed Mar 04 14:20:04 Saved as file ~undo.max
+Wed Mar 04 14:20:08 Saved as file ~undo.max
+Wed Mar 04 14:20:29 Saved as file ~undo.max
+Wed Mar 04 14:20:50 Saved as file ~undo.max
+Wed Mar 04 14:21:20 Saved as file ~undo.max
+Wed Mar 04 14:22:20 Saved as file ~undo.max
+Wed Mar 04 14:22:29 Saved as file ~undo.max
+Wed Mar 04 14:22:38 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 14:23:06 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Wed Mar 04 15:00:03 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051\LAYOUT GLCD 8051 KHA 1.MAX
+Fri Mar 27 08:22:21 Saved as file BACKUP1.MAX
+Fri Mar 27 08:32:21 Saved as file BACKUP1.MAX
+Fri Mar 27 09:20:26 Saved as file BACKUP1.MAX
+Fri Mar 27 09:30:27 Saved as file BACKUP1.MAX
+Fri Mar 27 09:40:27 Saved as file BACKUP1.MAX
+Fri Mar 27 09:50:27 Saved as file BACKUP1.MAX
+Fri Mar 27 10:00:29 Saved as file BACKUP1.MAX
+Fri Mar 27 10:10:29 Saved as file BACKUP1.MAX
+Fri Mar 27 10:20:29 Saved as file BACKUP1.MAX
+Fri Mar 27 10:30:29 Saved as file BACKUP1.MAX
+Fri Mar 27 10:40:30 Saved as file BACKUP1.MAX
+Fri Mar 27 10:50:31 Saved as file BACKUP1.MAX
+Fri Mar 27 11:00:30 Saved as file BACKUP1.MAX
+Fri Mar 27 11:10:31 Saved as file BACKUP1.MAX
+Fri Mar 27 11:20:31 Saved as file BACKUP1.MAX
+Fri Apr 03 09:31:51 Saved as file BACKUP1.MAX
+Fri Apr 03 09:41:51 Saved as file BACKUP1.MAX
+Fri Apr 03 09:48:47 Saved as file BACKUP1.MAX
+Fri Apr 03 09:48:47 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 KHA 1.MAX
+Fri Apr 03 09:48:48 UserDiv from Layout.INI for AutoECO: 60
+Fri Apr 03 09:48:48 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 KHA 1.MAX
+Fri Apr 03 09:48:48 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Fri Apr 03 09:48:48 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:48:48 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:48:48 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Fri Apr 03 09:48:48 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Fri Apr 03 09:48:48 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Fri Apr 03 09:48:49 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Fri Apr 03 09:48:50 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Fri Apr 03 09:48:50 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Fri Apr 03 09:48:50 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Fri Apr 03 09:48:50 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:48:51 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 KHA 1.MAX
+Fri Apr 03 09:48:51 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 KHA 1.MAX
+Fri Apr 03 09:49:43 Saved as file ~undo.max
+Fri Apr 03 09:49:44 Saved as file ~undo.max
+Fri Apr 03 09:49:45 Saved as file ~undo.max
+Fri Apr 03 09:49:54 Error code 5200.306
+Fri Apr 03 09:49:55 Saved as file Backup0.max
+Fri Apr 03 09:49:55 Windows which were open at time of error:
+Fri Apr 03 09:49:55 	ActiveWindow: Library Manager
+Fri Apr 03 09:49:55 	Child: Pads&tacks
+Fri Apr 03 09:49:55 End-of-list
+Fri Apr 03 09:49:55 Loaded file BACKUP0.MAX
+Fri Apr 03 09:50:12 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:51:08 Saved as file ~undo.max
+Fri Apr 03 09:51:09 Saved as file ~undo.max
+Fri Apr 03 09:51:10 Saved as file ~undo.max
+Fri Apr 03 09:54:02 Saved as file BACKUP1.MAX
+Fri Apr 03 09:54:02 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:54:02 UserDiv from Layout.INI for AutoECO: 60
+Fri Apr 03 09:54:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:54:03 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Fri Apr 03 09:54:03 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:54:03 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Fri Apr 03 09:54:04 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Fri Apr 03 09:54:04 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:54:04 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:49 Saved as file BACKUP1.MAX
+Fri Apr 03 09:56:49 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:49 UserDiv from Layout.INI for AutoECO: 60
+Fri Apr 03 09:56:49 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:49 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Fri Apr 03 09:56:49 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:56:50 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Fri Apr 03 09:56:50 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Fri Apr 03 09:56:51 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Fri Apr 03 09:56:52 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Fri Apr 03 09:56:54 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:54 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:54 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:56:54 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:57:33 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:57:33 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:57:33 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:57:33 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:57:36 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:57:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:57:38 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:57:39 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:57:42 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:00 Saved as file BACKUP1.MAX
+Fri Apr 03 09:58:00 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:01 UserDiv from Layout.INI for AutoECO: 60
+Fri Apr 03 09:58:01 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:01 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Fri Apr 03 09:58:01 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 09:58:01 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Fri Apr 03 09:58:01 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Fri Apr 03 09:58:02 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Fri Apr 03 09:58:02 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 09:58:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:20 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 09:58:30 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Apr 03 09:58:49 Saved as file ~undo.max
+Fri Apr 03 09:58:59 Saved as file ~undo.max
+Fri Apr 03 09:59:00 Saved as file ~undo.max
+Fri Apr 03 09:59:31 Saved as file ~undo.max
+Fri Apr 03 09:59:32 Saved as file ~undo.max
+Fri Apr 03 09:59:57 Saved as file ~undo.max
+Fri Apr 03 10:00:05 Saved as file ~undo.max
+Fri Apr 03 10:00:06 Saved as file ~undo.max
+Fri Apr 03 10:00:26 Saved as file ~undo.max
+Fri Apr 03 10:01:55 Saved as file ~undo.max
+Fri Apr 03 10:02:56 Saved as file BACKUP1.MAX
+Fri Apr 03 10:02:56 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:02:57 UserDiv from Layout.INI for AutoECO: 60
+Fri Apr 03 10:02:57 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:02:57 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Fri Apr 03 10:02:57 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Apr 03 10:02:57 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Fri Apr 03 10:02:57 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Fri Apr 03 10:02:58 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Fri Apr 03 10:02:58 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:02:58 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:02:58 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:02:58 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:03:34 Saved as file BACKUP1.MAX
+Fri Apr 03 10:06:37 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:13:34 Saved as file BACKUP1.MAX
+Fri Apr 03 10:16:06 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Fri Apr 03 10:16:10 Error code 5200.306
+Fri Apr 03 10:16:10 Saved as file Backup0.max
+Fri Apr 03 10:16:10 Windows which were open at time of error:
+Fri Apr 03 10:16:10 	ActiveWindow: Library Manager
+Fri Apr 03 10:16:10 End-of-list
+Fri Apr 03 10:16:11 Loaded file BACKUP0.MAX
+Fri Apr 03 10:16:15 Error code 5200.306
+Fri Apr 03 10:16:15 Saved as file Backup0.max
+Fri Apr 03 10:16:15 Windows which were open at time of error:
+Fri Apr 03 10:16:15 	ActiveWindow: Library Manager
+Fri Apr 03 10:16:15 End-of-list
+Fri Apr 03 10:16:16 Loaded file BACKUP0.MAX
+Thu Apr 16 10:44:10 Saved as file BACKUP1.MAX
+Thu Apr 16 10:44:10 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:44:10 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 10:44:10 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:44:10 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 10:44:10 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 10:44:10 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 10:44:11 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 10:44:12 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 10:44:13 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 10:44:14 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 10:44:14 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 10:44:15 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:44:15 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:58:49 Saved as file ~undo.max
+Thu Apr 16 10:58:49 Saved as file ~undo.max
+Thu Apr 16 10:58:51 Saved as file ~undo.max
+Thu Apr 16 10:59:58 Saved as file BACKUP1.MAX
+Thu Apr 16 10:59:58 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:59:59 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 10:59:59 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 10:59:59 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 10:59:59 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 10:59:59 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 10:59:59 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 10:59:59 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 10:59:59 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 11:00:00 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 11:00:01 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 11:00:01 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 11:00:01 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:00:01 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:00:23 Saved as file ~undo.max
+Thu Apr 16 11:01:10 Saved as file ~undo.max
+Thu Apr 16 11:01:29 Saved as file ~undo.max
+Thu Apr 16 11:01:30 Saved as file ~undo.max
+Thu Apr 16 11:01:37 Saved as file ~undo.max
+Thu Apr 16 11:01:48 Saved as file ~undo.max
+Thu Apr 16 11:01:49 Saved as file ~undo.max
+Thu Apr 16 11:02:04 Saved as file ~undo.max
+Thu Apr 16 11:02:40 Saved as file ~undo.max
+Thu Apr 16 11:02:43 Saved as file ~undo.max
+Thu Apr 16 11:03:06 Saved as file ~undo.max
+Thu Apr 16 11:05:51 Saved as file ~undo.max
+Thu Apr 16 11:05:51 Saved as file ~undo.max
+Thu Apr 16 11:05:52 Saved as file ~undo.max
+Thu Apr 16 11:07:20 Saved as file ~undo.max
+Thu Apr 16 11:07:59 Saved as file ~undo.max
+Thu Apr 16 11:09:02 Saved as file BACKUP1.MAX
+Thu Apr 16 11:09:59 Saved as file ~undo.max
+Thu Apr 16 11:12:06 Saved as file ~undo.max
+Thu Apr 16 11:13:02 Saved as file ~undo.max
+Thu Apr 16 11:13:02 Saved as file ~undo.max
+Thu Apr 16 11:14:26 Saved as file ~undo.max
+Thu Apr 16 11:15:15 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:19:02 Saved as file BACKUP1.MAX
+Thu Apr 16 11:21:51 Saved as file ~undo.max
+Thu Apr 16 11:21:51 Saved as file ~undo.max
+Thu Apr 16 11:21:52 Saved as file ~undo.max
+Thu Apr 16 11:22:00 Saved as file BACKUP1.MAX
+Thu Apr 16 11:22:00 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:22:00 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 11:22:00 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:22:00 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 11:22:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 11:22:02 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 11:22:02 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 11:22:03 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 11:22:04 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 11:22:05 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 11:22:05 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:22:05 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:22:05 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:23:12 Saved as file ~undo.max
+Thu Apr 16 11:23:37 Saved as file ~undo.max
+Thu Apr 16 11:24:01 Saved as file ~undo.max
+Thu Apr 16 11:24:46 Saved as file ~undo.max
+Thu Apr 16 11:24:49 Saved as file ~undo.max
+Thu Apr 16 11:25:03 Saved as file ~undo.max
+Thu Apr 16 11:25:16 Saved as file ~undo.max
+Thu Apr 16 11:25:16 Saved as file ~undo.max
+Thu Apr 16 11:25:16 Saved as file ~undo.max
+Thu Apr 16 11:25:16 Saved as file ~undo.max
+Thu Apr 16 11:25:28 Saved as file ~undo.max
+Thu Apr 16 11:25:35 Saved as file ~undo.max
+Thu Apr 16 11:25:49 Saved as file ~undo.max
+Thu Apr 16 11:25:54 Saved as file ~undo.max
+Thu Apr 16 11:25:55 Saved as file ~undo.max
+Thu Apr 16 11:25:57 Saved as file ~undo.max
+Thu Apr 16 11:25:57 Saved as file ~undo.max
+Thu Apr 16 11:25:57 Saved as file ~undo.max
+Thu Apr 16 11:25:58 Saved as file ~undo.max
+Thu Apr 16 11:26:10 Saved as file ~undo.max
+Thu Apr 16 11:26:10 Saved as file ~undo.max
+Thu Apr 16 11:26:10 Saved as file ~undo.max
+Thu Apr 16 11:26:25 Saved as file ~undo.max
+Thu Apr 16 11:26:25 Saved as file ~undo.max
+Thu Apr 16 11:26:25 Saved as file ~undo.max
+Thu Apr 16 11:26:26 Saved as file ~undo.max
+Thu Apr 16 11:26:26 Saved as file ~undo.max
+Thu Apr 16 11:26:26 Saved as file ~undo.max
+Thu Apr 16 11:26:26 Saved as file ~undo.max
+Thu Apr 16 11:26:34 Saved as file ~undo.max
+Thu Apr 16 11:26:35 Saved as file ~undo.max
+Thu Apr 16 11:26:35 Saved as file ~undo.max
+Thu Apr 16 11:26:35 Saved as file ~undo.max
+Thu Apr 16 11:26:36 Saved as file ~undo.max
+Thu Apr 16 11:26:37 Saved as file ~undo.max
+Thu Apr 16 11:26:37 Saved as file ~undo.max
+Thu Apr 16 11:26:38 Saved as file ~undo.max
+Thu Apr 16 11:26:38 Saved as file ~undo.max
+Thu Apr 16 11:26:38 Saved as file ~undo.max
+Thu Apr 16 11:26:38 Saved as file ~undo.max
+Thu Apr 16 11:26:39 Saved as file ~undo.max
+Thu Apr 16 11:26:39 Saved as file ~undo.max
+Thu Apr 16 11:26:39 Saved as file ~undo.max
+Thu Apr 16 11:26:40 Saved as file ~undo.max
+Thu Apr 16 11:26:40 Saved as file ~undo.max
+Thu Apr 16 11:26:40 Saved as file ~undo.max
+Thu Apr 16 11:26:40 Saved as file ~undo.max
+Thu Apr 16 11:26:41 Saved as file ~undo.max
+Thu Apr 16 11:26:41 Saved as file ~undo.max
+Thu Apr 16 11:26:41 Saved as file ~undo.max
+Thu Apr 16 11:26:42 Saved as file ~undo.max
+Thu Apr 16 11:26:42 Saved as file ~undo.max
+Thu Apr 16 11:26:43 Saved as file ~undo.max
+Thu Apr 16 11:26:43 Saved as file ~undo.max
+Thu Apr 16 11:27:41 Saved as file ~undo.max
+Thu Apr 16 11:28:34 Saved as file ~undo.max
+Thu Apr 16 11:29:33 Saved as file BACKUP1.MAX
+Thu Apr 16 11:31:19 Saved as file ~undo.max
+Thu Apr 16 11:35:07 Saved as file ~undo.max
+Thu Apr 16 11:35:35 Saved as file ~undo.max
+Thu Apr 16 11:35:35 Saved as file ~undo.max
+Thu Apr 16 11:35:35 Saved as file ~undo.max
+Thu Apr 16 11:35:44 Saved as file ~undo.max
+Thu Apr 16 11:36:58 Saved as file ~undo.max
+Thu Apr 16 11:37:00 Saved as file ~undo.max
+Thu Apr 16 11:37:02 Saved as file ~undo2.max
+Thu Apr 16 11:37:02 Loaded file ~undo.max
+Thu Apr 16 11:37:02 Saved as file ~undo2.max
+Thu Apr 16 11:37:02 Loaded file ~undo.max
+Thu Apr 16 11:37:08 Saved as file ~undo.max
+Thu Apr 16 11:37:28 Saved as file ~undo.max
+Thu Apr 16 11:37:34 Saved as file ~undo.max
+Thu Apr 16 11:37:51 Saved as file ~undo.max
+Thu Apr 16 11:37:54 Saved as file ~undo.max
+Thu Apr 16 11:37:54 Saved as file ~undo.max
+Thu Apr 16 11:37:55 Saved as file ~undo.max
+Thu Apr 16 11:37:55 Saved as file ~undo.max
+Thu Apr 16 11:37:55 Saved as file ~undo.max
+Thu Apr 16 11:37:55 Saved as file ~undo.max
+Thu Apr 16 11:37:55 Saved as file ~undo.max
+Thu Apr 16 11:38:36 Saved as file ~undo.max
+Thu Apr 16 11:39:07 Saved as file ~undo.max
+Thu Apr 16 11:39:33 Saved as file BACKUP1.MAX
+Thu Apr 16 11:39:39 Saved as file BACKUP1.MAX
+Thu Apr 16 11:39:39 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:39:39 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 11:39:39 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:39:39 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 11:39:39 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 11:39:40 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 11:39:40 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 11:39:41 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:39:41 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:39:41 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:40:20 Saved as file ~undo.max
+Thu Apr 16 11:43:36 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:43:54 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 11:44:03 Error code 0034.912 (266)
+Thu Apr 16 11:44:03 Saved as file Backup0.max
+Thu Apr 16 11:44:03 Windows which were open at time of error:
+Thu Apr 16 11:44:03 	ActiveWindow: &Design
+Thu Apr 16 11:44:03 	Icon: &Components
+Thu Apr 16 11:44:03 	Icon: Post Proces&s
+Thu Apr 16 11:44:03 	Icon: &Nets
+Thu Apr 16 11:44:03 End-of-list
+Thu Apr 16 11:44:04 Error code 0034.912 (266)
+Thu Apr 16 12:56:58 Error code 5200.306
+Thu Apr 16 12:56:58 Saved as file Backup0.max
+Thu Apr 16 12:56:58 Windows which were open at time of error:
+Thu Apr 16 12:56:58 	ActiveWindow: Library Manager
+Thu Apr 16 12:56:58 End-of-list
+Thu Apr 16 12:56:59 Loaded file BACKUP0.MAX
+Thu Apr 16 13:00:00 Saved as file ~undo.max
+Thu Apr 16 13:00:01 Saved as file ~undo.max
+Thu Apr 16 13:00:03 Saved as file ~undo.max
+Thu Apr 16 13:00:04 Saved as file ~undo.max
+Thu Apr 16 13:00:07 Saved as file ~undo.max
+Thu Apr 16 13:00:08 Saved as file ~undo.max
+Thu Apr 16 13:00:15 Saved as file ~undo.max
+Thu Apr 16 13:03:31 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 13:05:43 Saved as file ~undo.max
+Thu Apr 16 13:06:18 Saved as file ~undo.max
+Thu Apr 16 13:06:28 Saved as file ~undo.max
+Thu Apr 16 13:06:46 Saved as file ~undo.max
+Thu Apr 16 13:07:03 Saved as file ~undo.max
+Thu Apr 16 13:07:09 Saved as file ~undo.max
+Thu Apr 16 13:07:35 Saved as file BACKUP1.MAX
+Thu Apr 16 13:08:39 Saved as file ~undo.max
+Thu Apr 16 13:08:44 Saved as file ~undo.max
+Thu Apr 16 13:08:44 Saved as file ~undo.max
+Thu Apr 16 13:09:56 Saved as file ~undo.max
+Thu Apr 16 13:09:59 Saved as file ~undo.max
+Thu Apr 16 13:10:05 Saved as file ~undo.max
+Thu Apr 16 13:10:05 Saved as file ~undo.max
+Thu Apr 16 13:10:11 Saved as file ~undo.max
+Thu Apr 16 13:10:12 Saved as file ~undo.max
+Thu Apr 16 13:10:12 Saved as file ~undo.max
+Thu Apr 16 13:10:13 Saved as file ~undo.max
+Thu Apr 16 13:10:23 Saved as file ~undo.max
+Thu Apr 16 13:10:38 Saved as file ~undo.max
+Thu Apr 16 13:10:39 Saved as file ~undo.max
+Thu Apr 16 13:10:47 Saved as file ~undo.max
+Thu Apr 16 13:10:55 Saved as file ~undo.max
+Thu Apr 16 13:10:55 Saved as file ~undo.max
+Thu Apr 16 13:10:55 Saved as file ~undo.max
+Thu Apr 16 13:10:56 Saved as file ~undo.max
+Thu Apr 16 13:10:56 Saved as file ~undo.max
+Thu Apr 16 13:10:56 Saved as file ~undo.max
+Thu Apr 16 13:10:56 Saved as file ~undo.max
+Thu Apr 16 13:11:07 Saved as file ~undo.max
+Thu Apr 16 13:11:08 Saved as file ~undo.max
+Thu Apr 16 13:11:08 Saved as file ~undo.max
+Thu Apr 16 13:11:08 Saved as file ~undo.max
+Thu Apr 16 13:11:08 Saved as file ~undo.max
+Thu Apr 16 13:11:09 Saved as file ~undo.max
+Thu Apr 16 13:11:09 Saved as file ~undo.max
+Thu Apr 16 13:11:09 Saved as file ~undo.max
+Thu Apr 16 13:11:09 Saved as file ~undo.max
+Thu Apr 16 13:11:51 Saved as file ~undo.max
+Thu Apr 16 13:11:52 Saved as file ~undo.max
+Thu Apr 16 13:12:06 Saved as file ~undo.max
+Thu Apr 16 13:15:02 Saved as file ~undo.max
+Thu Apr 16 13:15:41 Saved as file ~undo.max
+Thu Apr 16 13:15:45 Saved as file ~undo.max
+Thu Apr 16 13:15:47 Saved as file ~undo.max
+Thu Apr 16 13:15:47 Saved as file ~undo.max
+Thu Apr 16 13:15:47 Saved as file ~undo.max
+Thu Apr 16 13:15:54 Saved as file ~undo.max
+Thu Apr 16 13:15:59 Saved as file ~undo.max
+Thu Apr 16 13:16:13 Saved as file ~undo.max
+Thu Apr 16 13:16:13 Saved as file ~undo.max
+Thu Apr 16 13:17:33 Saved as file BACKUP1.MAX
+Thu Apr 16 13:17:33 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 13:17:33 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 13:17:33 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 13:17:34 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 13:17:34 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 13:17:34 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 13:17:34 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 13:17:35 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 13:17:36 Saved as file BACKUP1.MAX
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 13:17:36 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 13:17:36 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 13:17:36 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 13:17:46 Saved as file ~undo.max
+Thu Apr 16 13:17:55 Saved as file ~undo.max
+Thu Apr 16 13:17:55 Saved as file ~undo.max
+Thu Apr 16 13:17:55 Saved as file ~undo.max
+Thu Apr 16 13:17:56 Saved as file ~undo.max
+Thu Apr 16 13:18:16 Saved as file ~undo.max
+Thu Apr 16 13:18:20 Saved as file ~undo.max
+Thu Apr 16 13:18:30 Saved as file ~undo.max
+Thu Apr 16 13:21:05 Saved as file ~undo.max
+Thu Apr 16 13:21:18 Saved as file ~undo.max
+Thu Apr 16 13:21:19 Saved as file ~undo.max
+Thu Apr 16 13:21:44 Saved as file ~undo.max
+Thu Apr 16 13:22:05 Saved as file ~undo.max
+Thu Apr 16 13:22:32 Saved as file ~undo.max
+Thu Apr 16 13:22:33 Saved as file ~undo.max
+Thu Apr 16 13:22:46 Saved as file ~undo.max
+Thu Apr 16 13:22:57 Saved as file ~undo.max
+Thu Apr 16 13:25:43 Saved as file ~undo.max
+Thu Apr 16 13:25:43 Saved as file ~undo.max
+Thu Apr 16 13:25:50 Saved as file ~undo.max
+Thu Apr 16 13:25:51 Saved as file ~undo.max
+Thu Apr 16 13:25:51 Saved as file ~undo.max
+Thu Apr 16 13:25:52 Saved as file ~undo.max
+Thu Apr 16 13:25:52 Saved as file ~undo.max
+Thu Apr 16 13:26:22 Saved as file ~undo.max
+Thu Apr 16 13:26:22 Saved as file ~undo.max
+Thu Apr 16 13:26:22 Saved as file ~undo.max
+Thu Apr 16 13:26:23 Saved as file ~undo.max
+Thu Apr 16 13:26:23 Saved as file ~undo.max
+Thu Apr 16 13:26:23 Saved as file ~undo.max
+Thu Apr 16 13:26:23 Saved as file ~undo.max
+Thu Apr 16 13:26:23 Saved as file ~undo.max
+Thu Apr 16 13:26:32 Saved as file ~undo.max
+Thu Apr 16 13:26:33 Saved as file ~undo.max
+Thu Apr 16 13:26:42 Saved as file ~undo.max
+Thu Apr 16 13:26:44 Saved as file ~undo.max
+Thu Apr 16 13:26:45 Saved as file ~undo.max
+Thu Apr 16 13:26:45 Saved as file ~undo.max
+Thu Apr 16 13:26:46 Saved as file ~undo.max
+Thu Apr 16 13:26:46 Saved as file ~undo.max
+Thu Apr 16 13:26:46 Saved as file ~undo.max
+Thu Apr 16 13:26:46 Saved as file ~undo.max
+Thu Apr 16 13:26:46 Saved as file ~undo.max
+Thu Apr 16 13:26:47 Saved as file ~undo.max
+Thu Apr 16 13:26:47 Saved as file ~undo.max
+Thu Apr 16 13:26:47 Saved as file ~undo.max
+Thu Apr 16 13:26:47 Saved as file ~undo.max
+Thu Apr 16 13:26:47 Saved as file ~undo.max
+Thu Apr 16 13:26:48 Saved as file ~undo.max
+Thu Apr 16 13:26:48 Saved as file ~undo.max
+Thu Apr 16 13:26:48 Saved as file ~undo.max
+Thu Apr 16 13:26:48 Saved as file ~undo.max
+Thu Apr 16 13:26:48 Saved as file ~undo.max
+Thu Apr 16 13:26:49 Saved as file ~undo.max
+Thu Apr 16 13:26:49 Saved as file ~undo.max
+Thu Apr 16 13:26:49 Saved as file ~undo.max
+Thu Apr 16 13:26:49 Saved as file ~undo.max
+Thu Apr 16 13:26:54 Saved as file ~undo.max
+Thu Apr 16 13:26:55 Saved as file ~undo.max
+Thu Apr 16 13:26:55 Saved as file ~undo.max
+Thu Apr 16 13:26:55 Saved as file ~undo.max
+Thu Apr 16 13:26:56 Saved as file ~undo.max
+Thu Apr 16 13:26:56 Saved as file ~undo.max
+Thu Apr 16 13:27:37 Saved as file ~undo.max
+Thu Apr 16 13:27:38 Saved as file ~undo.max
+Thu Apr 16 13:27:39 Saved as file ~undo.max
+Thu Apr 16 13:27:39 Saved as file ~undo.max
+Thu Apr 16 13:27:40 Saved as file ~undo.max
+Thu Apr 16 13:27:40 Saved as file ~undo.max
+Thu Apr 16 13:27:40 Saved as file ~undo.max
+Thu Apr 16 13:28:06 Saved as file BACKUP1.MAX
+Thu Apr 16 13:38:07 Saved as file BACKUP1.MAX
+Thu Apr 16 13:41:13 Saved as file ~undo.max
+Thu Apr 16 13:41:14 Saved as file ~undo.max
+Thu Apr 16 13:41:16 Saved as file ~undo.max
+Thu Apr 16 13:41:18 Saved as file ~undo.max
+Thu Apr 16 13:42:03 Saved as file ~undo.max
+Thu Apr 16 13:42:05 Saved as file ~undo.max
+Thu Apr 16 13:42:49 Saved as file ~undo.max
+Thu Apr 16 13:42:51 Saved as file ~undo.max
+Thu Apr 16 13:44:04 Saved as file ~undo.max
+Thu Apr 16 13:44:05 Saved as file ~undo.max
+Thu Apr 16 13:44:05 Saved as file ~undo.max
+Thu Apr 16 13:44:07 Saved as file ~undo.max
+Thu Apr 16 13:44:08 Saved as file ~undo.max
+Thu Apr 16 13:44:33 Saved as file ~undo.max
+Thu Apr 16 13:44:34 Saved as file ~undo.max
+Thu Apr 16 13:44:34 Saved as file ~undo.max
+Thu Apr 16 13:44:35 Saved as file ~undo.max
+Thu Apr 16 13:44:36 Saved as file ~undo.max
+Thu Apr 16 13:44:36 Saved as file ~undo.max
+Thu Apr 16 13:44:36 Saved as file ~undo.max
+Thu Apr 16 13:48:07 Saved as file BACKUP1.MAX
+Thu Apr 16 13:58:07 Saved as file BACKUP1.MAX
+Thu Apr 16 14:08:07 Saved as file BACKUP1.MAX
+Thu Apr 16 14:18:08 Saved as file BACKUP1.MAX
+Thu Apr 16 14:28:08 Saved as file BACKUP1.MAX
+Thu Apr 16 14:38:08 Saved as file BACKUP1.MAX
+Thu Apr 16 14:44:53 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:45:05 Saved as file ~undo.max
+Thu Apr 16 14:45:49 Saved as file BACKUP1.MAX
+Thu Apr 16 14:45:49 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:45:50 UserDiv from Layout.INI for AutoECO: 60
+Thu Apr 16 14:45:50 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:45:50 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 14:45:50 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Apr 16 14:45:50 Loaded file C:\USERS\KHVO\DESKTOP\(K) PROJECTS\(K) THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Apr 16 14:45:50 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Apr 16 14:45:50 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Apr 16 14:45:50 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Apr 16 14:45:51 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Apr 16 14:45:52 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Apr 16 14:45:53 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Apr 16 14:45:53 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:45:53 Loaded file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:46:27 Saved as file ~undo.max
+Thu Apr 16 14:46:38 Saved as file ~undo.max
+Thu Apr 16 14:46:49 Saved as file ~undo.max
+Thu Apr 16 14:46:49 Saved as file ~undo.max
+Thu Apr 16 14:47:13 Saved as file ~undo.max
+Thu Apr 16 14:47:13 Saved as file ~undo.max
+Thu Apr 16 14:48:13 Saved as file ~undo.max
+Thu Apr 16 14:48:25 Saved as file ~undo.max
+Thu Apr 16 14:48:39 Saved as file BACKUP1.MAX
+Thu Apr 16 14:48:40 Saved as file ~undo.max
+Thu Apr 16 14:49:12 Saved as file ~undo.max
+Thu Apr 16 14:49:13 Saved as file ~undo.max
+Thu Apr 16 14:50:12 Saved as file ~undo.max
+Thu Apr 16 14:50:30 Saved as file ~undo.max
+Thu Apr 16 14:51:06 Saved as file ~undo.max
+Thu Apr 16 14:52:23 Saved as file ~undo.max
+Thu Apr 16 14:52:24 Saved as file ~undo.max
+Thu Apr 16 14:52:29 Saved as file ~undo.max
+Thu Apr 16 14:52:35 Saved as file ~undo.max
+Thu Apr 16 14:52:43 Saved as file ~undo.max
+Thu Apr 16 14:52:43 Saved as file ~undo.max
+Thu Apr 16 14:52:53 Saved as file ~undo.max
+Thu Apr 16 14:52:53 Saved as file ~undo.max
+Thu Apr 16 14:52:54 Saved as file ~undo.max
+Thu Apr 16 14:53:35 Saved as file ~undo.max
+Thu Apr 16 14:53:47 Saved as file ~undo.max
+Thu Apr 16 14:53:51 Saved as file ~undo.max
+Thu Apr 16 14:54:09 Saved as file ~undo.max
+Thu Apr 16 14:54:20 Saved as file ~undo.max
+Thu Apr 16 14:54:20 Saved as file ~undo.max
+Thu Apr 16 14:54:20 Saved as file ~undo.max
+Thu Apr 16 14:54:20 Saved as file ~undo.max
+Thu Apr 16 14:54:21 Saved as file ~undo.max
+Thu Apr 16 14:54:21 Saved as file ~undo.max
+Thu Apr 16 14:54:21 Saved as file ~undo.max
+Thu Apr 16 14:55:00 Saved as file ~undo.max
+Thu Apr 16 14:55:22 Saved as file ~undo.max
+Thu Apr 16 14:56:23 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 14:57:55 Saved as file ~undo.max
+Thu Apr 16 14:58:39 Saved as file BACKUP1.MAX
+Thu Apr 16 15:00:45 Saved as file ~undo.max
+Thu Apr 16 15:04:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:04:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:04:18 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 15:04:23 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:05:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:05:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:05:48 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:02 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:04 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 15:06:07 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:12 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:36 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:38 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 15:06:40 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:06:41 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:03 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:03 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:24 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:24 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:29 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:29 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:42 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 15:07:49 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:49 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:07:53 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:05 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:05 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:06 Loaded file C:\USERS\KHVO\DESKTOP\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Apr 16 15:08:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:26 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:26 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:30 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:38 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:38 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:40 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Thu Apr 16 15:08:52 Saved as file ~undo.max
+Thu Apr 16 15:09:42 Saved as file ~undo.max
+Thu Apr 16 15:12:09 Saved as file BACKUP1.MAX
+Thu Apr 16 15:12:20 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 15:12:39 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Thu Apr 16 15:14:51 Saved as file C:\USERS\KHVO\DESKTOP\(K) GLCD12864 8051 REV B\LAYOUT GLCD 8051 REB KHA.MAX
+Wed Apr 22 11:26:11 Saved as file BACKUP1.MAX
+Wed Apr 22 11:36:11 Saved as file BACKUP1.MAX
+Wed Apr 22 11:46:11 Saved as file BACKUP1.MAX
+Wed Apr 22 11:56:12 Saved as file BACKUP1.MAX
+Wed Apr 22 12:06:12 Saved as file BACKUP1.MAX
+Wed Apr 22 12:16:12 Saved as file BACKUP1.MAX
+Wed Apr 22 12:26:13 Saved as file BACKUP1.MAX
+Wed Apr 22 12:36:14 Saved as file BACKUP1.MAX
+Wed Apr 22 12:46:13 Saved as file BACKUP1.MAX
+Wed Apr 22 12:56:14 Saved as file BACKUP1.MAX
+Wed Apr 22 13:06:14 Saved as file BACKUP1.MAX
+Wed Apr 22 13:16:14 Saved as file BACKUP1.MAX
+Wed Apr 22 13:26:14 Saved as file BACKUP1.MAX
+Wed Apr 22 13:36:15 Saved as file BACKUP1.MAX
+Wed Apr 22 13:46:15 Saved as file BACKUP1.MAX
+Wed Apr 22 13:56:15 Saved as file BACKUP1.MAX
+Wed Apr 22 14:06:16 Saved as file BACKUP1.MAX
+Wed Apr 22 14:16:16 Saved as file BACKUP1.MAX
+Wed Apr 22 14:26:16 Saved as file BACKUP1.MAX
+Wed Apr 22 14:36:17 Saved as file BACKUP1.MAX
+Wed Apr 22 14:46:17 Saved as file BACKUP1.MAX
+Wed Apr 22 14:56:17 Saved as file BACKUP1.MAX
+Wed Apr 22 15:06:17 Saved as file BACKUP1.MAX
+Wed Apr 22 15:16:18 Saved as file BACKUP1.MAX
+Wed Apr 22 15:26:18 Saved as file BACKUP1.MAX
+Wed Apr 22 15:36:18 Saved as file BACKUP1.MAX
+Wed Apr 22 15:46:19 Saved as file BACKUP1.MAX
+Wed Apr 22 15:56:19 Saved as file BACKUP1.MAX
+Wed Apr 22 16:06:19 Saved as file BACKUP1.MAX
+Wed Apr 22 16:16:21 Saved as file BACKUP1.MAX
+Wed Apr 22 16:26:20 Saved as file BACKUP1.MAX
+Wed Apr 22 16:36:20 Saved as file BACKUP1.MAX
+Wed Apr 22 16:46:21 Saved as file BACKUP1.MAX
+Wed Apr 22 16:56:21 Saved as file BACKUP1.MAX
+Mon May 04 14:28:23 Saved as file BACKUP1.MAX
+Mon May 04 14:38:22 Saved as file BACKUP1.MAX
