@@ -1,0 +1,1358 @@
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN 7SEG.OBJ
+ASSEMBLER INVOKED BY: E:\Software\Keil v5\C51\BIN\A51.EXE 7SEG.a SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     ;****************************************************************************
+                       4     
+                       5     ;                     8051 KHA DEVELOPMENT BOARD ASSEMBLY 
+                       6     
+                       7     ; These routines allow an 80C51 based microcontroller to drive the I2C bus 
+                       8     ; as a single master. The main program at the end demonstrates writing and 
+                       9     ; reading several types of devices: 
+                      10     
+                      11     ;    PCF8570 256 byte static RAM.
+                      12     ;    PCF8574 8-bit I/O expander.
+                      13     ;    SAA1064 4 digit LED display driver.
+                      14     
+                      15     
+                      16     ;             Written by G.Goodhue, Philips Components-Signetics
+                      17     
+                      18     ;****************************************************************************
+                      19     
+                      20     
+                      21     $title (I2C Routines for 80C51)
+                      22     $date (081490)
+                      23     $mod51 
+                      24     $debug 
+                      25     
+                      26     
+                      27     ;****************************************************************************
+                      28     ;                               Definitions
+                      29     ;****************************************************************************
+                      30     
+                      31     
+                      32     ; Addresses of several I2C devices as connected on the Signetics I2C 
+                      33     ; Evaluation Board.
+                      34     
+  00D0                35     DS1307_add     EQU     0D0h           ;Slave address for DS1307.
+                      36                                                                               ;Internal registe
+                             rs of DS1307
+  0000                37     Second             EQU      00h  ; Need to clear MSB bit of 00h to 0 to enable oscilator. F
+                             rom 00 to 59.
+  0001                38     Minute             EQU          01h      ; from 00 to 59
+  0002                39     Hour               EQU          02h      ; bit7:0, bit6:12h(1)/24h(0), bit5: AM/PM or secon
+                             d ten of hrs, bit4: 1st ten of hrs, bit3-bit0: hours
+  0003                40     Day                        EQU          03h      ; from 1 to 7
+  0004                41     Date               EQU          04h  ; from 01 to 28/29 or 30 or 31 depending on Month
+  0005                42     Month              EQU          05h  ; from 01 to 12
+  0006                43     Year               EQU          06h      ; from 00 to 99
+  0007                44     RTC_Ctrl           EQU          07h  ; Control register for SQW/OUT pin. Refer to datasheet
+                              for more info
+                      45     
+  00A0                46     LCD_addrs      EQU              0A0h;   LCD peripheral output address
+  0020                47     SEG1               EQU          20H ;   7-segment LED 1 peripheral output address
+  0040                48     SEG2               EQU      40H ;       7-segment LED 2 peripheral output address
+                      49     
+                      50     ; Data storage locations
+                      51     
+  0008                52     BitCnt     DATA    8h             ;Bit counter for I2C routines.
+  0009                53     ByteCnt    DATA    9h             ;Byte counter for I2C routines.
+  000A                54     SlvAdr     DATA    0Ah            ;Slave address for I2C routines.
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     2
+
+                      55     
+  0010                56     XmtDat     DATA    10h            ;I2C transmit buffer, 8 bytes max.
+  0018                57     RcvDat     DATA    18h            ;I2C receive buffer, 8 bytes max.
+  0020                58     XmtAlt     DATA    20h            ;Alternate I2C transmit buffer, 8 bytes max.
+                      59     
+  0028                60     Flags      DATA    28h            ;Location for bit flags
+  0040                61     NoAck      BIT     Flags.0        ;I2C no acknowledge flag.
+  0041                62     BusFault   BIT     Flags.1        ;I2C bus fault flag.
+  0042                63     I2CBusy    BIT     Flags.2        ;I2C busy flag.
+  0043                64     NewMin     BIT     Flags.3        ;New Minute flag
+  0044                65     NewHr      BIT     Flags.4        ;New Hour flag
+  0045                66     NewDay     BIT     Flags.5        ;New Day flag
+  0046                67     NewMth     BIT     Flags.6        ;New Mth flag
+                      68     
+  0029                69     Temp       DATA         29h                       ;Location for temporary use
+                      70     
+  002A                71     CharCnt    DATA     2Ah                   ;Character counter for LCD routines
+  002B                72     ACC_LCD    DATA         2Bh                       ;Accumulator registor for LCD routines
+  002C                73     ACC2_LCD   DATA         2Ch                       ;2nd Accumulator registor for LCD routine
+                             s
+  002D                74     Str_LCD    DATA         2Dh                       ;Temporary register to store String. For 
+                             ex: MOV Str_LCD, #Str1
+                      75     
+                      76     
+                      77     ; I2C connections.
+                      78     
+  00B0                79     LCD_RS     BIT     P3.0                   ;LCD_RS pin
+  00B1                80     LCD_EN     BIT     P3.1                   ;LCD_EN pin
+  00B4                81     SCLPin     BIT     P3.4           ;I2C serial clock line.
+  00B5                82     SDAPin     BIT     P3.5           ;I2C serial data line.
+  00A0                83     INC_But    BIT     P2.0           ;Increase Button for DS1307 tuning
+  00A1                84     DEC_But    BIT     P2.1                   ;Decrease Button for DS1307 tuning
+  00A2                85     Mode_But   BIT     P2.2           ;Mode Button for DS1307 tuning
+  00A3                86     Buz_But    BIT     P2.3                   ;Buzz Button for DS1307 tuning
+                      87     
+                      88     ;****************************************************************************
+                      89     ;                       Reset and Interrupt Vectors
+                      90     ;****************************************************************************
+                      91     
+                      92     
+0000                  93                ORG     0
+0000 61E1             94                AJMP    Reset
+                      95             
+0003                  96                        ORG 03h                              ; External Interrupt 0 execution
+                      97     ;                  AJMP Interrupt0
+                      98                        
+                      99                     
+                     100                        
+                     101     
+0030                 102                        ORG 30h
+                     103     ;****************************************************************************
+                     104     ;                             Interrupt Subroutines
+                     105     ;****************************************************************************              
+                     106     ;Interrupt0:    
+                     107     ;                       CLR p2.0
+                     108     ;                       JB MOD_But, $; wait for Mode Button pressed
+                     109     ;                       JNB MOD_But, $; wait for Mode Button released
+                     110     ;                       RETI              
+                     111     ;*****************************END OF Interrupt Subroutines*******************      
+                     112                        
+                     113                        
+                     114                        
+                     115                        
+                     116     ;****************************************************************************
+                     117     ;                             I2C Subroutines
+                     118     ;****************************************************************************
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     3
+
+                     119     
+                     120     ; BitDly - insures minimum high and low clock times on I2C bus.
+                     121     ; This routine must be tuned for the actual oscilator frequency used, shown 
+                     122     ; here tuned for a 12MHz clock. Note that the CALL instruction that invokes 
+                     123     ; BitDly already uses 2 machine cycles.
+                     124     
+0030 00              125     BitDly:    NOP                    ;NOPs to delay 5 microseconds (minus 4
+                     126                                       ; machine cycles for CALL and RET).
+0031 22              127                RET
+                     128     
+                     129     
+                     130     ; SCLHigh - sends SCL pin high and waits for any clock stretching peripherals.
+                     131     
+0032 D2B4            132     SCLHigh:   SETB    SCLPin         ;Set SCL from our end.
+0034 30B4FD          133                JNB     SCLPin,$       ;Wait for pin to actually go high.
+0037 22              134                RET
+                     135     
+                     136     
+                     137     ; SendStop - sends an I2C stop, releasing the bus.
+                     138     
+0038 C2B5            139     SendStop:  CLR     SDAPin         ;Get SDA ready for stop.
+003A 1132            140                ACALL   SCLHigh        ;Set clock for stop.
+003C 1130            141                ACALL   BitDly
+003E D2B5            142                SETB    SDAPin         ;Send I2C stop.
+0040 1130            143                ACALL   BitDly
+0042 C242            144                CLR     I2CBusy        ;Clear I2C busy status.
+0044 22              145                RET                    ;Bus should now be released.
+                     146     
+                     147     
+                     148     ; SendByte - sends one byte of data to an I2C slave device.
+                     149     ; Enter with:
+                     150     ;   ACC = data byte to be sent.
+                     151     
+0045 750808          152     SendByte:  MOV     BitCnt,#8      ;Set bit count.
+0048 C3              153     SBLoop:    CLR     C           
+0049 33              154                RLC     A              ;Send one data bit.
+004A 92B5            155                MOV     SDAPin,C       ;Put data bit on pin.
+004C 1132            156                ACALL   SCLHigh        ;Send clock.
+004E 1130            157                ACALL   BitDly
+0050 C2B4            158                CLR     SCLPin
+0052 1130            159                ACALL   BitDly
+0054 D508F1          160                DJNZ    BitCnt,SBloop  ;Repeat until all bits sent.
+                     161     
+0057 D2B5            162                SETB    SDAPin         ;Release data line for acknowledge.
+0059 1132            163                ACALL   SCLHigh        ;Send clock for acknowledge.
+005B 1130            164                ACALL   BitDly
+005D 30B502          165                JNB     SDAPin,SBEX    ;Check for valid acknowledge bit.
+0060 D240            166                SETB    NoAck          ;Set status for no acknowledge.
+0062 C2B4            167     SBEX:      CLR     SCLPin         ;Finish acknowledge bit.
+0064 1130            168                ACALL   BitDly
+0066 22              169                RET
+                     170     
+                     171     
+                     172     ; GoMaster - sends an I2C start and slave address.
+                     173     ; Enter with:
+                     174     ;   SlvAdr = slave address.
+                     175     
+0067 D242            176     GoMaster:  SETB    I2CBusy        ;Indicate that I2C frame is in progress.
+0069 C240            177                CLR     NoAck          ;Clear error status flags.
+006B C241            178                CLR     BusFault
+006D 30B410          179                JNB     SCLPin,Fault   ;Check for bus clear.
+0070 30B50D          180                JNB     SDAPin,Fault
+0073 C2B5            181                CLR     SDAPin         ;Begin I2C start.
+0075 1130            182                ACALL   BitDly
+0077 C2B4            183                CLR     SCLPin
+0079 1130            184                ACALL   BitDly         ;Complete I2C start.
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     4
+
+007B E50A            185                MOV     A,SlvAdr       ;Get slave address.
+007D 1145            186                ACALL   SendByte       ;Send slave address.
+007F 22              187                RET
+                     188     
+0080 D241            189     Fault:     SETB    BusFault       ;Set fault status
+0082 22              190                RET                    ;  and exit.
+                     191     
+                     192     
+                     193     ; SendData - sends one or more bytes of data to an I2C slave device.
+                     194     ; Enter with:
+                     195     ;   ByteCnt = count of bytes to be sent.
+                     196     ;   SlvAdr  = slave address.
+                     197     ;   @R1     = data to be sent (the first data byte will be the 
+                     198     ;             subaddress, if the I2C device expects one).
+                     199     
+0083 1167            200     SendData:  ACALL   GoMaster       ;Acquire bus and send slave address.
+0085 20400A          201                JB      NoAck,SDEX     ;Check for slave not responding.
+                     202     
+0088 E7              203     SDLoop:    MOV     A,@R1          ;Get data byte from buffer.
+0089 1145            204                ACALL   SendByte       ;Send next data byte.
+008B 09              205                INC     R1             ;Advance buffer pointer.
+008C 204003          206                JB      NoAck,SDEX     ;Check for slave not responding.
+008F D509F6          207                DJNZ    ByteCnt,SDLoop ;All bytes sent?
+                     208     
+0092 1138            209     SDEX:      ACALL   SendStop       ;Done, send an I2C stop.
+0094 22              210                RET
+                     211     
+                     212     
+                     213     ;RcvByte - receives one byte of data from an I2C slave device.
+                     214     ; Returns:
+                     215     ;   ACC = data byte received.
+                     216     
+0095 750808          217     RcvByte:   MOV     BitCnt,#8      ;Set bit count.
+0098 E4              218                CLR     A
+0099 1132            219     RBLoop:    ACALL   SCLHigh        ;Read one data bit.
+009B 1130            220                ACALL   BitDly
+009D A2B5            221                MOV     C,SDAPin       ;Get data bit from pin.
+009F 33              222                RLC     A              ;Rotate bit into result byte.
+00A0 C2B4            223                CLR     SCLPin
+00A2 1130            224                ACALL   BitDly
+00A4 D508F2          225                DJNZ    BitCnt,RBLoop  ;Repeat until all bits received.
+                     226     
+00A7 C0E0            227                PUSH    ACC            ;Save accumulator to temporarily use ACC in the CJNE belo
+                             w
+00A9 E509            228                MOV     A,ByteCnt
+00AB B40104          229                CJNE    A,#1,RBAck     ;Check for last byte of frame.
+00AE D2B5            230                SETB    SDAPin         ;Send no acknowledge on last byte.
+00B0 8002            231                SJMP    RBAClk
+                     232     
+00B2 C2B5            233     RBAck:     CLR     SDAPin         ;Send acknowledge bit.
+00B4 1132            234     RBAClk:    ACALL   SCLHigh        ;Send acknowledge clock.
+00B6 D0E0            235                POP     ACC            ;Restore accumulator
+00B8 1130            236                ACALL   BitDly
+00BA C2B4            237                CLR     SCLPin
+00BC D2B5            238                SETB    SDAPin         ;Clear acknowledge bit.
+00BE 1130            239                ACALL   BitDly
+00C0 22              240                RET
+                     241     
+                     242     
+                     243     ;RcvData - receives one or more bytes of data from an I2C slave device.
+                     244     ; Enter with:
+                     245     ;   ByteCnt = count of bytes to be received
+                     246     ;   SlvAdr  = slave address.
+                     247     ; Returns:
+                     248     ;   @R1     = data received.
+                     249     
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     5
+
+                     250     ; Note: to receive with a subaddress, use SendData to set the subaddress
+                     251     ;   first (no provision for repeated start).
+                     252     
+00C1 050A            253     RcvData:   INC     SlvAdr         ;Set for READ of slave.
+00C3 1167            254                ACALL   GoMaster       ;Acquire bus and send slave address.
+00C5 204007          255                JB      NoAck,RDEX     ;Check for slave not responding.
+                     256     
+00C8 1195            257     RDLoop:    ACALL   RcvByte        ;Receive next data byte.
+00CA F7              258                MOV     @R1,A          ;Save data byte in buffer.
+00CB 09              259                INC     R1             ;Advance buffer pointer.
+00CC D509F9          260                DJNZ    ByteCnt,RDLoop ;Repeat untill all bytes received.
+                     261     
+00CF 1138            262     RDEX:      ACALL   SendStop       ;Done, send an I2C stop.
+00D1 22              263                RET
+                     264     
+                     265     ;*****************************END OF I2C Subroutines*************************
+                     266     
+                     267     
+                     268     
+                     269     ;****************************************************************************
+                     270     ;                                                               LCD Subroutines
+                     271     ;****************************************************************************
+                     272     
+                     273     ;;; LCD_Init - LCD Initiation and Configuration
+00D2                 274     LCD_Init:
+00D2 78A0            275                             MOV R0, #LCD_addrs
+00D4 752B00          276                             MOV ACC_LCD,#0
+00D7 743C            277                             MOV A, #3CH     ;FUNCTION SET: use 2 lines, 8-bit mode
+00D9 310C            278                             CALL LCDConfig
+00DB 740C            279                             MOV A, #0CH             ;Display ON & Cursor not present, cursor no
+                             t blinking
+00DD 310C            280                             CALL LCDConfig
+00DF 7406            281                             MOV A, #06H             ;Char entry mode: next char put right to th
+                             e previous char, no shift
+00E1 310C            282                             CALL LCDConfig
+00E3 7401            283                             MOV A, #01H             ;Clear display (also clear DDRAM content)
+00E5 310C            284                             CALL LCDConfig
+00E7 22              285                             RET
+                     286     ;;; LCD_Clear - Clear all LCD Display           
+00E8 78A0            287     LCD_Clear:  MOV R0, #LCD_addrs
+00EA 7401            288                             MOV A, #01H
+00EC 310C            289                             CALL LCDConfig
+00EE 22              290                             RET
+                     291                             
+                     292     ;;; LCD_Pattern: Create user-defined patterns on the LCD register named "CGRAM"
+                     293     ;
+00EF                 294     LCD_Pattern:
+00EF 7440            295                             MOV A, #40h                     ;       Counter for CGRAM Address f
+                             or each of 8 patterns, begins at 40H
+00F1 310C            296                             CALL LCDConfig          ;       Prepare to write the pattern at the
+                              pointed CGRAM address
+00F3 752A40          297                             MOV CharCnt, #64        ;       8 rows of each pattern, 8 patterns 
+                             total
+00F6 900163          298                             MOV DPTR, #Patt1
+00F9 11FC            299                             CALL LCD_PutStr
+00FB 22              300                             RET
+                     301                             
+                     302                             
+                     303     ;;; LCD_PutStr
+                     304     ;Input: DPTR (string) and CharCnt (string length)                       
+00FC                 305     LCD_PutStr:
+00FC E52B            306                             MOV A, ACC_LCD          ;               Counter for string, begin a
+                             t 0, stop at stringlength
+00FE 93              307                             MOVC A, @A+DPTR         ;               Move character to ACC
+00FF 3116            308                             CALL LCD_Write          ;               Write character stored in A
+                             CC to LCD
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     6
+
+0101 052B            309                             INC ACC_LCD                     ;               Increase string cou
+                             nter
+0103 E52B            310                             MOV A, ACC_LCD          ;               Move string counter to ACC 
+                             to compare if it is the last character
+0105 B52AF4          311                             CJNE A, CharCnt, LCD_PutStr;Loop until all characters are written
+0108 752B00          312                             MOV ACC_LCD, #0         ;               reset LCD Accumulator for n
+                             ext use
+010B 22              313                             RET
+                     314                     
+                     315     ;;; LCDConfig - Send a config command to LCD
+                     316     ;       Input: A (Config byte)
+010C                 317     LCDConfig:      
+010C D2B1            318                             SETB LCD_EN
+010E C2B0            319                             CLR LCD_RS
+0110 F2              320                             MOVX @R0, A
+0111 C2B1            321                             CLR LCD_EN
+0113 3122            322                             CALL LCD_Dly
+0115 22              323                             RET
+                     324     
+                     325     ;;; LCD_Write - Send a write command to LCD
+                     326     ;       Input: ACC (Character need to be written)
+0116                 327     LCD_Write: 
+0116 78A0            328                             MOV R0,#LCD_addrs
+0118 D2B0            329                             SETB LCD_RS
+011A D2B1            330                             SETB LCD_EN
+011C F2              331                             MOVX @R0, A
+011D C2B1            332                             CLR LCD_EN
+011F 3122            333                             CALL LCD_Dly
+0121 22              334                             RET
+                     335                             
+                     336     ;;; LCD_Dly - Delay for LCD to complete a command 
+                     337     ; use if the R/W pin of LCD connected to GND
+0122                 338     LCD_Dly:
+0122 758901          339                             MOV TMOD, #01H
+0125 758CF4          340                             MOV TH0,#HIGH(-3000)
+0128 758A48          341                             MOV TL0,#LOW(-3000)
+012B D28C            342                             SETB TR0
+012D 308DFD          343                             JNB TF0, $
+0130 C28C            344                             CLR TR0
+0132 C28D            345                             CLR TF0
+0134 22              346                             RET
+                     347     
+0135 7A0A            348     DELAY01S:       MOV R2, #10
+0137 758901          349                             MOV TMOD, #01H
+013A 758CD8          350     BACK:           MOV TH0,#HIGH(-10000)
+013D 758AF0          351                             MOV TL0,#LOW(-10000)
+0140 D28C            352                             SETB TR0
+0142 308DFD          353                             JNB TF0, $
+0145 C28C            354                             CLR TR0
+0147 C28D            355                             CLR TF0
+0149 DAEF            356                             DJNZ R2, BACK
+014B 22              357                             RET
+                     358     
+                     359     
+                     360     ;;; DELAY 0.2 sec
+014C 7A0A            361     DELAY05S:       MOV R2, #10
+014E 758901          362                             MOV TMOD, #01H
+0151 758C3C          363     BACK05:         MOV TH0,#HIGH(-50000)
+0154 758AB0          364                             MOV TL0,#LOW(-50000)
+0157 D28C            365                             SETB TR0
+0159 308DFD          366                             JNB TF0, $
+015C C28C            367                             CLR TR0
+015E C28D            368                             CLR TF0
+0160 DAEF            369                             DJNZ R2, BACK05
+0162 22              370                             RET
+                     371     
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     7
+
+                     372     ;;; User-defined LCD Patterns - Each pattern contains 8 rows (5 columns)
+                     373     ; 
+0163 02040113        374                             Patt1: DB 2, 4, 1, 19, 18, 18, 12, 0    ; letter "u*'" in "Thu*' ha
+                             i, thu*' ba... (addr: 00h)
+0167 12120C00                
+016B 00000113        375                             Patt2: DB 0, 0, 1, 19, 18, 18, 12, 0    ; letter "u*" in "Thu tu*" 
+                             (addr: 01h)
+016F 12120C00                
+0173 0A0E000E        376                             Patt3: DB 10, 14, 0, 14,17, 19, 13,0    ; letter "a(" in "Thu na(m"
+                              (addr: 02h)
+0177 11130D00                
+017B 0204000E        377                             Patt4: DB 2, 4, 0, 14,17, 19, 13,0              ; letter "a'" in "t
+                             hu sa'u" (addr: 03h)
+017F 11130D00                
+0183 0602040E        378                             Patt5: DB 6, 2, 4, 14,17, 19, 13,0              ; letter "a?" in "t
+                             hu ba?y" (addr: 04h)
+0187 11130D00                
+018B 040A000E        379                             Patt6: DB 4, 10, 0, 14,17, 19, 13,4             ; letter "a^." in "
+                             Chu nha^.t" (addr: 05h)
+018F 11130D04                
+0193 050A000E        380                             Patt7: DB 5, 10, 0, 14, 17, 17, 14, 0   ; letter "o^'" in "To^'i" (
+                             addr: 06h)
+0197 11110E00                
+019B 04040404        381                             Patt8: DB 4,4,4,4,4,4,4,4
+019F 04040404                
+                     382     
+                     383     
+                     384     
+                     385     ;;; Strings for display - Add, edit or delete freely.
+                     386     ; Note: Need to update exact string length for LCD_PutStr routine
+01A3 2F20202F        387                             Str_1   : DB 2Fh, '  ', 2Fh     ; First line LCD (character / in da
+                             te display)
+01A7 3A20203A        388                             Str_2   : DB 3Ah, '  ', 3Ah     ; Second line LCD (character : in h
+                             our display)
+01AB 43682E4E        389                             Str_CN:   DB 'Ch.Nh', 05h, 't'
+01AF 680574                  
+01B2 54680020        390                             Str_Thu2: DB 'Th', 00h, ' Hai'          ;Str1 length: 7
+01B6 486169                  
+01B9 54680020        391                             Str_Thu3: DB 'Th', 00h, ' Ba '          
+01BD 426120                  
+01C0 54680020        392                             Str_Thu4: DB 'Th', 00h, ' T', 01h, ' '
+01C4 540120                  
+01C7 54680020        393                             Str_Thu5: DB 'Th', 00h, ' N', 02h, 'm'                  
+01CB 4E026D                  
+01CE 54680020        394                             Str_Thu6: DB 'Th', 00h, ' S', 03h, 'u'                          
+01D2 530375                  
+01D5 54680020        395                             Str_Thu7: DB 'Th', 00h, ' B', 04h, 'y'  
+01D9 420479                  
+01DC 414D            396                             Str_AM: DB 'AM'; Length: 2
+01DE 504D            397                             Str_PM:  DB 'PM'                ; Length: 2
+                     398                                                                             
+                     399                                                              
+                     400     
+                     401     ;*****************************END OF LCD Subroutines*************************
+                     402     
+                     403     
+                     404     
+                     405     ;****************************************************************************
+                     406     ;                               DS1307 Subroutines
+                     407     ;****************************************************************************
+                     408     
+                     409     ;;; Read_Sec. Output: Mov new data of Seconds to RcvDat. If it is 00, call Read_Min
+01E0 750AD0          410     Read_Sec:       MOV     SlvAdr,#DS1307_add 
+01E3 7910            411                             MOV     R1,#XmtDat        ; Write the register of DS1307 first befo
+                             re reading from DS1307
+01E5 750901          412                             MOV        ByteCnt,#1     ;
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     8
+
+01E8 1183            413                             ACALL   SendData
+01EA 2040F3          414                             JB NoAck, Read_Sec
+01ED 7918            415                             MOV        R1,#RcvDat     ; Actually read the Seconds Register of D
+                             S1307
+01EF 750901          416                             MOV        ByteCnt,#1     ; Number of bytes read and store to RcvDa
+                             t
+01F2 11C1            417                             ACALL   RcvData
+01F4 2040E9          418                             JB NoAck, Read_Sec                              
+01F7 E518            419     Check_Sec:      MOV A, RcvDat                   ; Get first byte (contain Seconds) of RcvDa
+                             t to A       
+01F9 B52902          420                             CJNE A, Temp, Chk_Sec1  ; If there is no new data, skip and read ag
+                             ain
+01FC 80E2            421                             SJMP Read_Sec
+01FE C0E0            422     Chk_Sec1:       PUSH ACC
+0200 B40004          423                             CJNE A, #00h, Chk_Sec2  ; If seconds = 00, read minutes
+0203 D243            424                             SETB NewMin
+0205 510C            425                             ACALL Read_Min
+0207 D0E0            426     Chk_Sec2:   POP ACC                             ; Push and Pop ACC which contains Secs beca
+                             use Read_min, Read_Hrs... change the ACC.
+0209 F529            427                             MOV Temp, A
+020B 22              428                             RET
+                     429                             
+                     430                             
+                     431     ;;; Read_Min. Output: Mov new data of Minutes to RcvDat+1. If it is 00, call Read_Hrs
+020C 750AD0          432     Read_Min:       MOV     SlvAdr,#DS1307_add 
+020F 7911            433                             MOV     R1,#XmtDat+1  ; Write the Minute register of DS1307 first b
+                             efore reading from DS1307
+0211 750901          434                             MOV             ByteCnt,#1        ;
+0214 1183            435                             ACALL   SendData
+0216 2040F3          436                             JB NoAck, Read_Min
+0219 7919            437                             MOV        R1,#RcvDat+1   ; Actually read the Minutes Register of D
+                             S1307
+021B 750901          438                             MOV        ByteCnt,#1     ; Number of bytes read and store to RcvDa
+                             t
+021E 11C1            439                             ACALL   RcvData
+0220 2040E9          440                             JB NoAck, Read_Min                              
+0223 E519            441                             MOV A, RcvDat+1                 ; Get Minutes of RcvDat to A       
+                                                          
+0225 B40004          442                             CJNE A, #00h, Chk_Min1  ; If minutes = 00, read hours
+0228 D244            443                             SETB NewHr
+022A 512D            444                             ACALL Read_Hrs
+022C 22              445     Chk_Min1:       RET
+                     446     
+                     447     
+                     448     ;;; Read_Hrs. Output: Mov new data of Hours to RcvDat+2. If it is 00, call Read_Day
+022D 750AD0          449     Read_Hrs:       MOV     SlvAdr,#DS1307_add 
+0230 7912            450                             MOV     R1,#XmtDat+2  ; Write the Hours register of DS1307 first be
+                             fore reading from DS1307
+0232 750901          451                             MOV        ByteCnt,#1     ;
+0235 1183            452                             ACALL   SendData
+0237 2040F3          453                             JB NoAck, Read_Hrs
+023A 791A            454                             MOV        R1,#RcvDat+2   ; Actually read Hours Register of DS1307
+023C 750905          455                             MOV        ByteCnt,#5     ; Number of bytes read and store to RcvDa
+                             t
+023F 11C1            456                             ACALL   RcvData
+0241 2040E9          457                             JB NoAck, Read_Hrs                                      
+0244 22              458                             RET
+                     459     
+                     460                             
+                     461     ;;; Cursor_Sec
+0245 74C7            462     Cursor_Sec: MOV A, #0C7h
+0247 310C            463                             CALL LCDConfig
+0249 22              464                             RET
+                     465                             
+                     466     ;;; Cursor_Min
+024A 74C4            467     Cursor_Min: MOV A, #0C4h
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE     9
+
+024C 310C            468                             CALL LCDConfig
+024E 22              469                             RET             
+                     470     
+                     471     ;;; Cursor_Hr
+024F 74C1            472     Cursor_Hr: MOV A, #0C1h
+0251 310C            473                             CALL LCDConfig
+0253 22              474                             RET
+                     475     
+                     476     ;;; Cursor_AMPM
+0254 74CA            477     Cursor_AMPM: MOV A, #0CAh
+0256 310C            478                             CALL LCDConfig
+0258 22              479                             RET     
+                     480                             
+                     481     ;;; Cursor_Day
+0259 7480            482     Cursor_Day: MOV A, #080h
+025B 310C            483                        CALL LCDConfig
+025D 22              484                        RET  
+                     485                        
+                     486     ;;; Cursor_Date
+025E 7488            487     Cursor_Date: MOV A, #088h
+0260 310C            488                        CALL LCDConfig
+0262 22              489                        RET  
+                     490                             
+                     491     ;;; Cursor_Mth
+0263 748B            492     Cursor_Mth: MOV A, #08Bh
+0265 310C            493                        CALL LCDConfig
+0267 22              494                        RET                          
+                     495     
+                     496     ;;; Cursor_Yr
+0268 748E            497     Cursor_Yr: MOV A, #08Eh
+026A 310C            498                        CALL LCDConfig
+026C 22              499                        RET
+                     500     
+                     501     
+                     502     ;;; LCD_Sec: Display seconds onto LCD
+                     503     ; Input:
+026D 5145            504     LCD_Sec:        CALL Cursor_Sec
+026F E518            505                             MOV A, RcvDat;
+0271 C4              506                             SWAP A
+0272 5407            507                             ANL A, #00000111B               ; get the tens of Seconds
+0274 2430            508                             ADD A, #30H                             ; Convert number to ASCII
+0276 3116            509                             CALL LCD_Write
+0278 E518            510                             MOV A, RcvDat ; 
+027A 540F            511                             ANL A, #00001111B               ; get the ones of Seconds
+027C 2430            512                             ADD A, #30H                             ; Convert number to ASCII
+027E 3116            513                             CALL LCD_Write
+                     514                             ;JB NewMin, LCD_Sec1            ; If NewMin, move cursor to Minute 
+                             position
+                     515                             ;SJMP LCD_Sec2
+                     516                             ;CALL Cursor_Min
+                     517                             ;CALL LCD_Min ;
+0280 22              518                             RET
+                     519     
+                     520                             
+                     521     ;;; LCD_Min: Display minutes onto LCD
+                     522     ; Input:
+0281 514A            523     LCD_Min:        CALL Cursor_Min
+0283 E519            524                             MOV A, RcvDat+1;
+0285 C4              525                             SWAP A
+0286 5407            526                             ANL A, #00000111B               ; get the tens of Minutes
+0288 2430            527                             ADD A, #30H                             ; Convert number to ASCII
+028A 3116            528                             CALL LCD_Write
+028C E519            529                             MOV A, RcvDat+1 ; 
+028E 540F            530                             ANL A, #00001111B               ; get the ones of Minutes
+0290 2430            531                             ADD A, #30H                             ; Convert number to ASCII
+0292 3116            532                             CALL LCD_Write
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    10
+
+                     533                             ;JB NewHr, LCD_Min1             ; If new hour, move cursor to Hour 
+                             position
+                     534                             ;SJMP LCD_Min2
+                     535                             ;       CALL LCD_Hr
+0294 C243            536                             CLR NewMin
+0296 22              537                             RET
+                     538                             
+                     539                             
+                     540     ;;; LCD_Hr: Display Hours onto LCD
+                     541     ; Input:
+0297 514F            542     LCD_Hr:         CALL Cursor_Hr
+0299 E51A            543                             MOV A, RcvDat+2;
+029B C4              544                             SWAP A
+029C 5401            545                             ANL A, #01h                             ; get the tens of Hour
+029E 2430            546                             ADD A, #30H                             ; Convert number to ASCII
+02A0 3116            547                             CALL LCD_Write
+                     548                             
+02A2 E51A            549                             MOV A, RcvDat+2             ; 
+02A4 540F            550                             ANL A, #00001111B               ; get the ones of Hour
+02A6 2430            551                             ADD A, #30H                             ; Convert number to ASCII
+02A8 3116            552                             CALL LCD_Write
+02AA 22              553                             RET
+                     554                             
+                     555     ;;; LCD_AMPM: Display AM/PM onto LCD
+                     556     ; Input:                        
+02AB 5154            557     LCD_AMPM:       CALL Cursor_AMPM
+02AD E51A            558                             MOV A, RcvDat+2;
+02AF C4              559                             SWAP A
+02B0 5402            560                             ANL A, #02h                             ; get the AM/PM of Hour (A=
+                             02h: PM, A=0: AM)
+02B2 B40005          561                             CJNE A, #0, LCD_AMPM1
+02B5 9001DC          562                             MOV DPTR, #Str_AM
+02B8 8003            563                             SJMP LCD_AMPM2
+02BA 9001DE          564     LCD_AMPM1:      MOV DPTR, #Str_PM
+02BD 752A02          565     LCD_AMPM2:      MOV CharCnt, #2
+02C0 11FC            566                             CALL LCD_PutStr                 ; Display Sang or Toi (AM or PM) on
+                             to LCD       
+02C2 22              567                             RET
+                     568                             
+                     569                             
+                     570     ;;; LCD_Day: Display Day onto LCD
+                     571     ; Input:
+02C3 5159            572     LCD_Day:        CALL Cursor_Day
+02C5 E51B            573                             MOV A, RcvDat+3;
+02C7 5407            574                             ANL A, #00000111B
+02C9 B40105          575                             CJNE A, #1, LCD_Day2
+02CC 9001AB          576                             MOV DPTR, #Str_CN
+02CF 802B            577                             SJMP LCD_Day8
+02D1 B40205          578     LCD_Day2:       CJNE A, #2, LCD_Day3
+02D4 9001B2          579                             MOV DPTR, #Str_Thu2
+02D7 8023            580                             SJMP LCD_Day8
+02D9 B40305          581     LCD_Day3:       CJNE A, #3, LCD_Day4
+02DC 9001B9          582                             MOV DPTR, #Str_Thu3
+02DF 801B            583                             SJMP LCD_Day8
+02E1 B40405          584     LCD_Day4:       CJNE A, #4, LCD_Day5
+02E4 9001C0          585                             MOV DPTR, #Str_Thu4
+02E7 8013            586                             SJMP LCD_Day8
+02E9 B40505          587     LCD_Day5:       CJNE A, #5, LCD_Day6
+02EC 9001C7          588                             MOV DPTR, #Str_Thu5
+02EF 800B            589                             SJMP LCD_Day8
+02F1 B40605          590     LCD_Day6:       CJNE A, #6, LCD_Day7
+02F4 9001CE          591                             MOV DPTR, #Str_Thu6
+02F7 8003            592                             SJMP LCD_Day8
+02F9 9001D5          593     LCD_Day7:       MOV DPTR, #Str_Thu7
+02FC 752A07          594     LCD_Day8:       MOV CharCnt, #7
+02FF 11FC            595                             CALL LCD_PutStr                 ; Write Day to LCD
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    11
+
+0301 22              596                             RET
+                     597                             
+                     598                             
+                     599     ;;; LCD_Date: Display Date onto LCD
+                     600     ; Input:        
+0302 515E            601     LCD_Date:       CALL Cursor_Date
+0304 E51C            602                             MOV A, RcvDat+4                 ; Date register
+0306 C4              603                             SWAP A
+0307 5403            604                             ANL A, #00000011B               ; get the tens of Date
+0309 2430            605                             ADD A, #30H                             ; Convert number to ASCII
+030B 3116            606                             CALL LCD_Write
+030D E51C            607                             MOV A, RcvDat+4                 ; Date register
+030F 540F            608                             ANL A, #00001111B               ; get the ones of Date
+0311 2430            609                             ADD A, #30H                             ; Convert number to ASCII
+0313 3116            610                             CALL LCD_Write
+0315 22              611                             RET             
+                     612                             
+                     613                     
+                     614     ;;; LCD_Mth: Display Month onto LCD
+                     615     ; Input:
+0316 5163            616     LCD_Mth:        CALL Cursor_Mth
+0318 E51D            617                             MOV A, RcvDat+5;
+031A C4              618                             SWAP A
+031B 5401            619                             ANL A, #1                               ; get the tens of Month
+031D 2430            620                             ADD A, #30H                             ; Convert number to ASCII
+031F 3116            621                             CALL LCD_Write
+0321 E51D            622                             MOV A, RcvDat+5 ; 
+0323 540F            623                             ANL A, #00001111B               ; get the ones of Month
+0325 2430            624                             ADD A, #30H                             ; Convert number to ASCII
+0327 3116            625                             CALL LCD_Write
+0329 22              626                             RET
+                     627                             
+                     628     ;;; LCD_Yr: Display Year onto LCD
+                     629     ; Input:                
+032A 5168            630     LCD_Yr:         CALL Cursor_Yr          
+032C E51E            631                             MOV A, RcvDat+6;
+032E C4              632                             SWAP A
+032F 5403            633                             ANL A, #3                               ; get the tens of Year
+0331 2430            634                             ADD A, #30H                             ; Convert number to ASCII
+0333 3116            635                             CALL LCD_Write
+0335 E51E            636                             MOV A, RcvDat+6 ; 
+0337 540F            637                             ANL A, #00001111B               ; get the ones of Year
+0339 2430            638                             ADD A, #30H                             ; Convert number to ASCII
+033B 3116            639                             CALL LCD_Write
+033D 22              640                             RET
+                     641     
+                     642     
+033E 750AD0          643     Time_Setup:MOV     SlvAdr,#DS1307_add  ;Write data from XmtDat to DS1307.
+0341 7920            644                MOV     R1,#XmtAlt     ; Start of data.
+0343 750908          645                        MOV     ByteCnt,#8     ; Send 8 bytes of data, 1 beginning internal regi
+                             ster to write and next 7 databytes
+0346 1183            646                ACALL   SendData
+0348 22              647                        RET
+                     648                        
+                     649                        
+                     650     ;;; Reset_Disp: Display time after resetting               
+0349                 651     Reset_Disp: 
+0349 748A            652                             MOV A, #8AH
+034B 310C            653                             CALL LCDConfig ; 1st line, 11th character
+034D 752A04          654                             MOV CharCnt, #4
+0350 9001A3          655                             MOV DPTR, #Str_1  ; put  string here
+0353 11FC            656                             ACALL LCD_PutStr
+                     657                             
+0355 74C3            658                             MOV A, #0C3H
+0357 310C            659                             CALL LCDConfig ; 2nd line, 4th character
+0359 752A04          660                             MOV CharCnt, #4
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    12
+
+035C 9001A7          661                             MOV DPTR, #Str_2  ; put  string here
+035F 11FC            662                             ACALL LCD_PutStr
+0361 D243            663                             SETB NewMin
+0363 D244            664                             SETB NewHr
+0365 510C            665                             ACALL Read_Min
+0367 512D            666                             ACALL Read_Hrs
+0369 5181            667                             ACALL LCD_Min                           ; these commands show the t
+                             ime when reset
+036B 5197            668                             ACALL LCD_Hr
+036D 51AB            669                             ACALL LCD_AMPM
+036F 51C3            670                             ACALL LCD_Day
+0371 7102            671                             ACALL LCD_Date
+0373 7116            672                             ACALL LCD_Mth
+0375 712A            673                             ACALL LCD_Yr
+0377 22              674                             RET
+                     675                             
+                     676     ;*****************************END OF DS1307 Subroutines**************************
+                     677     
+                     678     
+                     679     ;****************************************************************************
+                     680     ;                               Button Check Subroutines
+                     681     ;****************************************************************************
+                     682     
+                     683     ;;;Mod_3s: Check Mode Button if it is pressed and held for 3 seconds
+                     684     ; Return: C = 1 if it is pressed and held for 3 secs, else C = 0
+0378                 685     Mod_3s: 
+0378 20A217          686                             JB Mode_But, Mod_3s1
+037B 314C            687                             ACALL Delay05s
+037D 20A212          688                             JB Mode_But, Mod_3s1
+0380 314C            689                             ACALL Delay05s
+0382 20A20D          690                             JB Mode_But, Mod_3s1
+0385 314C            691                             ACALL Delay05s
+0387 20A208          692                             JB Mode_But, Mod_3s1
+038A 314C            693                             ACALL Delay05s
+038C 20A203          694                             JB Mode_But, Mod_3s1            ; Check button after 3 seconds
+038F D3              695                             SETB C
+0390 8001            696                             SJMP Mod_3s2
+0392 C3              697     Mod_3s1:        CLR C
+0393 22              698     Mod_3s2:        RET
+                     699     
+                     700     
+                     701     ;;;Mod_01s: Check Mode Button if it is pressed and held for 0.1 seconds
+                     702     ; Return: C = 1 if it is pressed and held for 0.1 secs, else C = 0
+0394 20A208          703     Mod_01s:        JB Mode_But, Mod_01s1
+0397 3135            704                             ACALL Delay01s
+0399 20A203          705                             JB Mode_But, Mod_01s1           ; Check button after 3 seconds
+039C D3              706                             SETB C
+039D 8001            707                             SJMP Mod_01s2
+039F C3              708     Mod_01s1:       CLR C
+03A0 22              709     Mod_01s2:       RET
+                     710     
+                     711     
+                     712     ;;;Inc_01s: Check Increase Button if it is pressed and held for 0.1 seconds
+                     713     ; Return: C = 1 if it is pressed and held for 0.1 secs, else C = 0
+03A1 20A008          714     Inc_01s:        JB Inc_But, Inc_01s1
+03A4 3135            715                             ACALL Delay01s
+03A6 20A003          716                             JB Inc_But, Inc_01s1            ; Check button after 3 seconds
+03A9 D3              717                             SETB C
+03AA 8001            718                             SJMP Inc_01s2
+03AC C3              719     Inc_01s1:       CLR C
+03AD 22              720     Inc_01s2:       RET
+                     721     
+                     722     
+                     723     ;;;Inc_01s: Check Decrease Button if it is pressed and held for 0.1 seconds
+                     724     ; Return: C = 1 if it is pressed and held for 0.1 secs, else C = 0
+03AE 20A108          725     Dec_01s:        JB Dec_But, Dec_01s1
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    13
+
+03B1 3135            726                             ACALL Delay01s
+03B3 20A103          727                             JB Dec_But, Dec_01s1            ; Check button after 3 seconds
+03B6 D3              728                             SETB C
+03B7 8001            729                             SJMP Dec_01s2
+03B9 C3              730     Dec_01s1:       CLR C
+03BA 22              731     Dec_01s2:       RET
+                     732     
+                     733     
+                     734     ;;;Buz_3s: Check Buzz Button if it is pressed and held for 3 seconds
+                     735     ; Return: C = 1 if it is pressed and held for 3 secs, else C = 0
+03BB 20A321          736     Buz_3s:         JB Buz_But, Buz_3s1
+03BE 314C            737                             ACALL Delay05s
+03C0 20A31C          738                             JB Buz_But, Buz_3s1
+03C3 314C            739                             ACALL Delay05s
+03C5 20A317          740                             JB Buz_But, Buz_3s1
+03C8 314C            741                             ACALL Delay05s
+03CA 20A312          742                             JB Buz_But, Buz_3s1
+03CD 314C            743                             ACALL Delay05s
+03CF 20A30D          744                             JB Buz_But, Buz_3s1
+03D2 314C            745                             ACALL Delay05s
+03D4 20A308          746                             JB Buz_But, Buz_3s1
+03D7 314C            747                             ACALL Delay05s
+03D9 20A303          748                             JB Buz_But, Buz_3s1     ; Check button after 3 seconds
+03DC D3              749                             SETB C
+03DD 8001            750                             SJMP Buz_3s2
+03DF C3              751     Buz_3s1:        CLR C
+03E0 22              752     Buz_3s2:        RET
+                     753     
+                     754     ;*****************************END OF Button Check Subroutines**************************
+                     755     
+                     756     
+                     757     
+                     758     
+                     759     ;****************************************************************************
+                     760     ;                               Main Program
+                     761     ;****************************************************************************
+                     762     
+                     763     
+                     764      
+03E1 75812F          765     Reset:      MOV SP,#2Fh         ;Set stack to start at 30h. Stack from 00h to 2Fh is used f
+                             or definitions.
+03E4 D2A8            766                             SETB EX0                        ;Enable external interrupt 0.
+03E6 D2AF            767                             SETB EA                         ;Enable global interrupt/timers.
+03E8 11D2            768                             ACALL LCD_Init          ;LCD Initiation.
+03EA 11EF            769                             ACALL LCD_Pattern       ;LCD Pattern creation
+                     770                             
+                     771     
+                     772                                     
+                     773                             
+                     774     ;--------------------------Write to DS1307----------------------------------------
+                     775     
+03EC 752000          776                        MOV     XmtAlt,      #Second         ; 
+03EF 752155          777                        MOV     XmtAlt+1,#055h               ; starting seconds
+03F2 752259          778                MOV     XmtAlt+2,#59h            ; starting minute
+03F5 752371          779                MOV     XmtAlt+3,#01110001b   ; starting hour: 12hour mode, 11h PM
+03F8 752402          780                MOV     XmtAlt+4,#2h         ; starting day: Monday (2)
+03FB 752531          781                MOV     XmtAlt+5,#31h                ; starting date: 31
+03FE 752612          782                MOV     XmtAlt+6,#12h                ; starting month: 12
+0401 752714          783                MOV     XmtAlt+7,#14h                ; starting year: 2014
+                     784     
+0404 751000          785                        MOV     XmtDat,      #Second         ; these add the time register of DS
+                             1307 into XmtDat of 8051
+0407 751101          786                        MOV     XmtDat+1,#Minute     ; 
+040A 751202          787                MOV     XmtDat+2,#Hour           ;
+040D 751303          788                MOV     XmtDat+3,#Day            ; 
+0410 751404          789                MOV     XmtDat+4,#Date           ; 
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    14
+
+0413 751505          790                MOV     XmtDat+5,#Month      ; 
+0416 751606          791                MOV     XmtDat+6,#Year       ;
+0419 751791          792                MOV     XmtDat+7,#91h                ;          
+                     793     
+041C 713E            794                             ACALL Time_Setup
+041E 7149            795                             ACALL Reset_Disp
+                     796                             
+0420 31E0            797     Test1:          ACALL Read_Sec
+0422 516D            798                             ACALL LCD_Sec
+0424 7178            799                             ACALL Mod_3s                    ;       Check Mode button if it is 
+                             pressed and held for 3s
+0426 401A            800                             JC Edit_Time
+0428 204302          801                             JB NewMin, Milestone1   ;       Check for new minute
+042B 80F3            802                             SJMP Test1
+042D 5181            803     Milestone1:     ACALL LCD_Min
+042F 204402          804                             JB NewHr, Milestone2    ;       Check for new hour. Note: also re-r
+                             ead Day, Date... when Hour changes.
+0432 80EC            805                             SJMP Test1
+0434 5197            806     Milestone2: ACALL LCD_Hr
+0436 51AB            807                             ACALL LCD_AMPM
+0438 51C3            808                             ACALL LCD_Day
+043A 7102            809                             ACALL LCD_Date
+043C 7116            810                             ACALL LCD_Mth
+043E 712A            811                             ACALL LCD_Yr
+0440 80DE            812                             SJMP Test1
+                     813                     
+                     814                     
+0442 C3              815     Edit_Time:  CLR C
+0443 11E8            816                             ACALL LCD_Clear
+0445 30A2FD          817                             JNB Mode_But, $                 ; Wait for Mode Button to be releas
+                             ed
+0448 5197            818     Edit_Hr:        ACALL LCD_Hr
+044A 71A1            819     Edit_Hr1:       ACALL Inc_01s                   ;       Check the Increase Button
+044C 4006            820                             JC Inc_Hr                               ;       If Carry=1, INC But
+                              pressed detected
+044E 7194            821                             ACALL Mod_01s                   ;       Check the Mode Button
+0450 401E            822                             JC Edit_AMPM
+0452 80F6            823                             SJMP Edit_Hr1
+0454 E51A            824     Inc_Hr:         MOV A, RcvDat+2
+0456 541F            825                             ANL A, #00011111B               ;       Get only 5 low bits of the 
+                             Hour (BCD format)
+0458 B41204          826                             CJNE A, #00010010b, Inc_Hr1     ; If hour = 12, change it to 1
+045B 7401            827                             MOV A, #01H                             ;       
+045D 8008            828                             SJMP Inc_Hr2
+045F B40904          829     Inc_Hr1:        CJNE A, #09h, Inc_Hr3   ;       If hour = 9, change it to 10 in BCD format
+0462 7410            830                             MOV A, #10h
+0464 8001            831                             SJMP Inc_Hr2
+0466 04              832     Inc_Hr3:        INC A                   ; Increase Hour by 1
+0467 C3              833     Inc_Hr2:        CLR C
+0468 4440            834                             ORL A, #01000000B               ;       Set bit 6 to change to 12h 
+                             mode
+046A F51A            835                             MOV RcvDat+2, A                 ;       Move new Hour to RcvDat for
+                              display
+046C F523            836                             MOV XmtAlt+3, A                 ;       Move new Hour to XmtAlt for
+                              reset time
+046E 80D8            837                             SJMP Edit_Hr                    ;       Display new Hour and check 
+                             buttons again
+                     838     
+                     839     ;--------------
+                     840     
+0470 C3              841     Edit_AMPM:      CLR C
+0471 30A2FD          842                             JNB Mode_But, $ 
+0474 11E8            843                             ACALL LCD_Clear
+0476 51AB            844     Disp_AMPM:      ACALL LCD_AMPM
+                     845                             
+0478 71A1            846     Edit_AMPM1:     ACALL Inc_01s                   ;       Check the Increase Button
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    15
+
+047A 4006            847                             JC Inc_AMPM                             ;       If Carry=1, INC But
+                              pressed detected
+047C 7194            848                             ACALL Mod_01s                   ;       Check the Mode Button
+047E 4017            849                             JC Edit_Min
+0480 80F6            850                             SJMP Edit_AMPM1
+                     851                             
+0482 E51A            852     Inc_AMPM:       MOV A, RcvDat+2
+0484 A2E5            853                             MOV C, ACC.5            ;       Get only bit 5 (Am/pm bit)
+0486 4003            854                             JC Inc_AMPM1            ; If AM change to PM and vice-versa
+0488 D3              855                             SETB C                          ;
+0489 8001            856                             SJMP Inc_AMPM2
+048B C3              857     Inc_AMPM1:  CLR C
+048C                 858     Inc_AMPM2:      
+048C E51A            859                             MOV A, RcvDat+2
+048E 92E5            860                             MOV ACC.5, C                            ;       Add the AM/PM bit t
+                             o available Hour
+0490 F51A            861                             MOV RcvDat+2, A                 ;       Move new Hour to RcvDat for
+                              display
+0492 F523            862                             MOV XmtAlt+3, A                 ;       Move new Hour to XmtAlt for
+                              reset time
+0494 C3              863                             CLR C
+0495 80DF            864                             SJMP Disp_AMPM                  ;       Display new Hour and check 
+                             buttons again
+                     865                             
+                     866                     
+                     867     ;------------------
+                     868                     
+0497 C3              869     Edit_Min:       CLR C
+0498 30A2FD          870                             JNB Mode_But, $ 
+049B 11E8            871                             ACALL LCD_Clear
+049D 5181            872     Disp_Min:       ACALL LCD_Min
+049F 71A1            873     Edit_Min1:      ACALL Inc_01s                   ;       Check the Increase Button
+04A1 4006            874                             JC Inc_Min                              ;       If Carry=1, INC But
+                              pressed detected
+04A3 7194            875                             ACALL Mod_01s                   ;       Check the Mode Button
+04A5 4024            876                             JC Edit_Day
+04A7 80F6            877                             SJMP Edit_Min1
+                     878                             
+04A9 E519            879     Inc_Min:        MOV A, RcvDat+1
+04AB 540F            880                             ANL A, #0Fh                             ;       Get the ones of Min
+                             ute
+04AD B4090B          881                             CJNE A, #09h, Inc_Min1  ;       Check if Minute = x9 
+04B0 E519            882                             MOV A, RcvDat+1
+04B2 54F0            883                             ANL A, #0F0h                    ;       Get the tens of Minute
+04B4 B45009          884                             CJNE A, #50h, Inc_Min2  ;
+04B7 7400            885                             MOV A, #0       
+04B9 8009            886                             SJMP Inc_Min3
+04BB E519            887     Inc_Min1:       MOV A, RcvDat+1
+04BD 04              888                             INC A
+04BE 8004            889                             SJMP Inc_Min3
+04C0 2410            890     Inc_Min2:       ADD A, #10h                             ;       If Minute = x9 (x <> 5), in
+                             crease to (x+1)0
+04C2 8000            891                             SJMP Inc_Min3
+04C4 F519            892     Inc_Min3:       MOV RcvDat+1, A
+04C6 F522            893                             MOV XmtAlt+2, A
+04C8 C3              894                             CLR C
+04C9 80D2            895                             SJMP Disp_Min
+                     896     
+                     897                             
+04CB C3              898     Edit_Day:       CLR C
+04CC 30A2FD          899                             JNB Mode_But, $ 
+04CF 11E8            900                             ACALL LCD_Clear
+04D1 51C3            901     Disp_Day:       ACALL LCD_Day
+04D3 71A1            902     Edit_Day1:      ACALL Inc_01s                   ;       Check the Increase Button
+04D5 4006            903                             JC Inc_Day                              ;       If Carry=1, INC But
+                              pressed detected
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    16
+
+04D7 7194            904                             ACALL Mod_01s                   ;       Check the Mode Button
+04D9 4013            905                             JC Edit_Date
+04DB 80F6            906                             SJMP Edit_Day1
+04DD E51B            907     Inc_Day:        MOV A, RcvDat+3
+04DF B40704          908                             CJNE A, #07h, Inc_Day1  ;       Check if Day = 7 (Saturday)
+04E2 7401            909                             MOV A, #1
+04E4 8001            910                             SJMP Inc_Day2
+04E6 04              911     Inc_Day1:       INC A
+04E7 F51B            912     Inc_Day2:       MOV RcvDat+3, A
+04E9 F524            913                             Mov XmtAlt+4, A
+04EB C3              914                             CLR C
+04EC 80E3            915                             SJMP Disp_Day
+                     916     ;-------------------
+                     917     
+04EE C3              918     Edit_Date:      CLR C
+04EF 30A2FD          919                             JNB Mode_But, $ 
+04F2 11E8            920                             ACALL LCD_Clear
+04F4 7102            921     Disp_Date:      ACALL LCD_Date
+04F6 71A1            922     Edit_Date1:     ACALL Inc_01s                   ;       Check the Increase Button
+04F8 4006            923                             JC Inc_Date                             ;       If Carry=1, INC But
+                              pressed detected
+04FA 7194            924                             ACALL Mod_01s                   ;       Check the Mode Button
+04FC 4022            925                             JC Edit_Mth
+04FE 80F6            926                             SJMP Edit_Date1
+                     927                             
+0500 E51C            928     Inc_Date:       MOV A, RcvDat+4
+0502 B43104          929                             CJNE A, #31h, Inc_Date1 ;       Check if Date = 31 
+0505 7401            930                             MOV A, #1
+0507 8010            931                             SJMP Inc_Date3
+                     932     
+0509 540F            933     Inc_Date1:      ANL A, #0Fh                             ; get the ones of Date
+050B B40908          934                             CJNE A, #09h, Inc_Date2 ;
+050E E51C            935                             MOV A, RcvDat+4
+0510 2410            936                             ADD A, #10h
+0512 54F0            937                             ANL A, #0F0h                            ;       increase 29h to 30h
+                             , 19h to 20h...
+0514 8003            938                             SJMP Inc_Date3
+0516 E51C            939     Inc_Date2:      MOV A, RcvDat+4
+0518 04              940                             INC A
+0519 F51C            941     Inc_Date3:      MOV RcvDat+4, A
+051B F525            942                             MOV XmtAlt+5, A
+051D C3              943                             CLR C
+051E 80D4            944                             SJMP Disp_Date
+                     945     ;--------------------------
+                     946     
+0520 C3              947     Edit_Mth:       CLR C
+0521 30A2FD          948                             JNB Mode_But, $ 
+0524 11E8            949                             ACALL LCD_Clear
+0526 7116            950     Disp_Mth:       ACALL LCD_Mth
+0528 71A1            951     Edit_Mth1:      ACALL Inc_01s                   ;       Check the Increase Button
+052A 4006            952                             JC Inc_Mth                              ;       If Carry=1, INC But
+                              pressed detected
+052C 7194            953                             ACALL Mod_01s                   ;       Check the Mode Button
+052E 4022            954                             JC Edit_Yr
+0530 80F6            955                             SJMP Edit_Mth1
+                     956                             
+0532 E51D            957     Inc_Mth:        MOV A, RcvDat+5
+0534 B41204          958                             CJNE A, #12h, Inc_Mth1  ;       Check if Month = 12
+0537 7401            959                             MOV A, #1
+0539 8010            960                             SJMP Inc_Mth3
+                     961     
+053B 540F            962     Inc_Mth1:       ANL A, #0Fh                             ; get the ones of Month
+053D B40908          963                             CJNE A, #09h, Inc_Mth2  ;
+0540 E51D            964                             MOV A, RcvDat+5
+0542 2410            965                             ADD A, #10h
+0544 54F0            966                             ANL A, #0F0h                            ;       increase 29h to 30h
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    17
+
+                             , 19h to 20h...
+0546 8003            967                             SJMP Inc_Mth3
+0548 E51D            968     Inc_Mth2:       MOV A, RcvDat+5
+054A 04              969                             INC A
+054B F51D            970     Inc_Mth3:       MOV RcvDat+5, A
+054D F526            971                             MOV XmtAlt+6, A
+054F C3              972                             CLR C
+0550 80D4            973                             SJMP Disp_Mth
+                     974     ;--------------------------
+                     975     
+                     976     
+0552 C3              977     Edit_Yr:        CLR C
+0553 30A2FD          978                             JNB Mode_But, $ 
+0556 11E8            979                             ACALL LCD_Clear
+0558 712A            980     Disp_Yr:        ACALL LCD_Yr
+055A 71A1            981     Edit_Yr1:       ACALL Inc_01s                   ;       Check the Increase Button
+055C 4006            982                             JC Inc_Yr                               ;       If Carry=1, INC But
+                              pressed detected
+055E 7194            983                             ACALL Mod_01s                   ;       Check the Mode Button
+0560 4022            984                             JC Finish
+0562 80F6            985                             SJMP Edit_Yr1
+                     986                             
+0564 E51E            987     Inc_Yr  :       MOV A, RcvDat+6
+0566 B49904          988                             CJNE A, #99h, Inc_Yr1   ;       Check if Year = 99 
+0569 7400            989                             MOV A, #0
+056B 8010            990                             SJMP Inc_Yr3
+                     991     
+056D 540F            992     Inc_Yr1:        ANL A, #0Fh                             ; get the ones of Year
+056F B40908          993                             CJNE A, #09h, Inc_Yr2   ;
+0572 E51E            994                             MOV A, RcvDat+6
+0574 2410            995                             ADD A, #10h
+0576 54F0            996                             ANL A, #0F0h                            ;       increase 29h to 30h
+                             , 19h to 20h...
+0578 8003            997                             SJMP Inc_Yr3
+057A E51E            998     Inc_Yr2:        MOV A, RcvDat+6
+057C 04              999                             INC A
+057D F51E           1000     Inc_Yr3:        MOV RcvDat+6, A
+057F F527           1001                             MOV XmtAlt+7, A
+0581 C3             1002                             CLR C
+0582 80D4           1003                             SJMP Disp_Yr
+                    1004     ;--------------------------
+                    1005     
+                    1006     
+                    1007     
+0584 713E           1008     Finish:         ACALL Time_Setup
+0586 7149           1009                             ACALL Reset_Disp
+0588 8120           1010                             AJMP Test1
+                    1011     
+                    1012     END
+                              
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    18
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+ACC2_LCD . . . . .  D ADDR   002CH   A   
+ACC_LCD. . . . . .  D ADDR   002BH   A   
+BACK . . . . . . .  C ADDR   013AH   A   
+BACK05 . . . . . .  C ADDR   0151H   A   
+BITCNT . . . . . .  D ADDR   0008H   A   
+BITDLY . . . . . .  C ADDR   0030H   A   
+BUSFAULT . . . . .  B ADDR   0028H.1 A   
+BUZ_3S . . . . . .  C ADDR   03BBH   A   
+BUZ_3S1. . . . . .  C ADDR   03DFH   A   
+BUZ_3S2. . . . . .  C ADDR   03E0H   A   
+BUZ_BUT. . . . . .  B ADDR   00A0H.3 A   
+BYTECNT. . . . . .  D ADDR   0009H   A   
+CHARCNT. . . . . .  D ADDR   002AH   A   
+CHECK_SEC. . . . .  C ADDR   01F7H   A   
+CHK_MIN1 . . . . .  C ADDR   022CH   A   
+CHK_SEC1 . . . . .  C ADDR   01FEH   A   
+CHK_SEC2 . . . . .  C ADDR   0207H   A   
+CURSOR_AMPM. . . .  C ADDR   0254H   A   
+CURSOR_DATE. . . .  C ADDR   025EH   A   
+CURSOR_DAY . . . .  C ADDR   0259H   A   
+CURSOR_HR. . . . .  C ADDR   024FH   A   
+CURSOR_MIN . . . .  C ADDR   024AH   A   
+CURSOR_MTH . . . .  C ADDR   0263H   A   
+CURSOR_SEC . . . .  C ADDR   0245H   A   
+CURSOR_YR. . . . .  C ADDR   0268H   A   
+DATE . . . . . . .  N NUMB   0004H   A   
+DAY. . . . . . . .  N NUMB   0003H   A   
+DEC_01S. . . . . .  C ADDR   03AEH   A   
+DEC_01S1 . . . . .  C ADDR   03B9H   A   
+DEC_01S2 . . . . .  C ADDR   03BAH   A   
+DEC_BUT. . . . . .  B ADDR   00A0H.1 A   
+DELAY01S . . . . .  C ADDR   0135H   A   
+DELAY05S . . . . .  C ADDR   014CH   A   
+DISP_AMPM. . . . .  C ADDR   0476H   A   
+DISP_DATE. . . . .  C ADDR   04F4H   A   
+DISP_DAY . . . . .  C ADDR   04D1H   A   
+DISP_MIN . . . . .  C ADDR   049DH   A   
+DISP_MTH . . . . .  C ADDR   0526H   A   
+DISP_YR. . . . . .  C ADDR   0558H   A   
+DS1307_ADD . . . .  N NUMB   00D0H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+EDIT_AMPM. . . . .  C ADDR   0470H   A   
+EDIT_AMPM1 . . . .  C ADDR   0478H   A   
+EDIT_DATE. . . . .  C ADDR   04EEH   A   
+EDIT_DATE1 . . . .  C ADDR   04F6H   A   
+EDIT_DAY . . . . .  C ADDR   04CBH   A   
+EDIT_DAY1. . . . .  C ADDR   04D3H   A   
+EDIT_HR. . . . . .  C ADDR   0448H   A   
+EDIT_HR1 . . . . .  C ADDR   044AH   A   
+EDIT_MIN . . . . .  C ADDR   0497H   A   
+EDIT_MIN1. . . . .  C ADDR   049FH   A   
+EDIT_MTH . . . . .  C ADDR   0520H   A   
+EDIT_MTH1. . . . .  C ADDR   0528H   A   
+EDIT_TIME. . . . .  C ADDR   0442H   A   
+EDIT_YR. . . . . .  C ADDR   0552H   A   
+EDIT_YR1 . . . . .  C ADDR   055AH   A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+FAULT. . . . . . .  C ADDR   0080H   A   
+FINISH . . . . . .  C ADDR   0584H   A   
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    19
+
+FLAGS. . . . . . .  D ADDR   0028H   A   
+GOMASTER . . . . .  C ADDR   0067H   A   
+HOUR . . . . . . .  N NUMB   0002H   A   
+I2CBUSY. . . . . .  B ADDR   0028H.2 A   
+INC_01S. . . . . .  C ADDR   03A1H   A   
+INC_01S1 . . . . .  C ADDR   03ACH   A   
+INC_01S2 . . . . .  C ADDR   03ADH   A   
+INC_AMPM . . . . .  C ADDR   0482H   A   
+INC_AMPM1. . . . .  C ADDR   048BH   A   
+INC_AMPM2. . . . .  C ADDR   048CH   A   
+INC_BUT. . . . . .  B ADDR   00A0H.0 A   
+INC_DATE . . . . .  C ADDR   0500H   A   
+INC_DATE1. . . . .  C ADDR   0509H   A   
+INC_DATE2. . . . .  C ADDR   0516H   A   
+INC_DATE3. . . . .  C ADDR   0519H   A   
+INC_DAY. . . . . .  C ADDR   04DDH   A   
+INC_DAY1 . . . . .  C ADDR   04E6H   A   
+INC_DAY2 . . . . .  C ADDR   04E7H   A   
+INC_HR . . . . . .  C ADDR   0454H   A   
+INC_HR1. . . . . .  C ADDR   045FH   A   
+INC_HR2. . . . . .  C ADDR   0467H   A   
+INC_HR3. . . . . .  C ADDR   0466H   A   
+INC_MIN. . . . . .  C ADDR   04A9H   A   
+INC_MIN1 . . . . .  C ADDR   04BBH   A   
+INC_MIN2 . . . . .  C ADDR   04C0H   A   
+INC_MIN3 . . . . .  C ADDR   04C4H   A   
+INC_MTH. . . . . .  C ADDR   0532H   A   
+INC_MTH1 . . . . .  C ADDR   053BH   A   
+INC_MTH2 . . . . .  C ADDR   0548H   A   
+INC_MTH3 . . . . .  C ADDR   054BH   A   
+INC_YR . . . . . .  C ADDR   0564H   A   
+INC_YR1. . . . . .  C ADDR   056DH   A   
+INC_YR2. . . . . .  C ADDR   057AH   A   
+INC_YR3. . . . . .  C ADDR   057DH   A   
+LCDCONFIG. . . . .  C ADDR   010CH   A   
+LCD_ADDRS. . . . .  N NUMB   00A0H   A   
+LCD_AMPM . . . . .  C ADDR   02ABH   A   
+LCD_AMPM1. . . . .  C ADDR   02BAH   A   
+LCD_AMPM2. . . . .  C ADDR   02BDH   A   
+LCD_CLEAR. . . . .  C ADDR   00E8H   A   
+LCD_DATE . . . . .  C ADDR   0302H   A   
+LCD_DAY. . . . . .  C ADDR   02C3H   A   
+LCD_DAY2 . . . . .  C ADDR   02D1H   A   
+LCD_DAY3 . . . . .  C ADDR   02D9H   A   
+LCD_DAY4 . . . . .  C ADDR   02E1H   A   
+LCD_DAY5 . . . . .  C ADDR   02E9H   A   
+LCD_DAY6 . . . . .  C ADDR   02F1H   A   
+LCD_DAY7 . . . . .  C ADDR   02F9H   A   
+LCD_DAY8 . . . . .  C ADDR   02FCH   A   
+LCD_DLY. . . . . .  C ADDR   0122H   A   
+LCD_EN . . . . . .  B ADDR   00B0H.1 A   
+LCD_HR . . . . . .  C ADDR   0297H   A   
+LCD_INIT . . . . .  C ADDR   00D2H   A   
+LCD_MIN. . . . . .  C ADDR   0281H   A   
+LCD_MTH. . . . . .  C ADDR   0316H   A   
+LCD_PATTERN. . . .  C ADDR   00EFH   A   
+LCD_PUTSTR . . . .  C ADDR   00FCH   A   
+LCD_RS . . . . . .  B ADDR   00B0H.0 A   
+LCD_SEC. . . . . .  C ADDR   026DH   A   
+LCD_WRITE. . . . .  C ADDR   0116H   A   
+LCD_YR . . . . . .  C ADDR   032AH   A   
+MILESTONE1 . . . .  C ADDR   042DH   A   
+MILESTONE2 . . . .  C ADDR   0434H   A   
+MINUTE . . . . . .  N NUMB   0001H   A   
+MODE_BUT . . . . .  B ADDR   00A0H.2 A   
+MOD_01S. . . . . .  C ADDR   0394H   A   
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    20
+
+MOD_01S1 . . . . .  C ADDR   039FH   A   
+MOD_01S2 . . . . .  C ADDR   03A0H   A   
+MOD_3S . . . . . .  C ADDR   0378H   A   
+MOD_3S1. . . . . .  C ADDR   0392H   A   
+MOD_3S2. . . . . .  C ADDR   0393H   A   
+MONTH. . . . . . .  N NUMB   0005H   A   
+NEWDAY . . . . . .  B ADDR   0028H.5 A   
+NEWHR. . . . . . .  B ADDR   0028H.4 A   
+NEWMIN . . . . . .  B ADDR   0028H.3 A   
+NEWMTH . . . . . .  B ADDR   0028H.6 A   
+NOACK. . . . . . .  B ADDR   0028H.0 A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PATT1. . . . . . .  C ADDR   0163H   A   
+PATT2. . . . . . .  C ADDR   016BH   A   
+PATT3. . . . . . .  C ADDR   0173H   A   
+PATT4. . . . . . .  C ADDR   017BH   A   
+PATT5. . . . . . .  C ADDR   0183H   A   
+PATT6. . . . . . .  C ADDR   018BH   A   
+PATT7. . . . . . .  C ADDR   0193H   A   
+PATT8. . . . . . .  C ADDR   019BH   A   
+RBACK. . . . . . .  C ADDR   00B2H   A   
+RBACLK . . . . . .  C ADDR   00B4H   A   
+RBLOOP . . . . . .  C ADDR   0099H   A   
+RCVBYTE. . . . . .  C ADDR   0095H   A   
+RCVDAT . . . . . .  D ADDR   0018H   A   
+RCVDATA. . . . . .  C ADDR   00C1H   A   
+RDEX . . . . . . .  C ADDR   00CFH   A   
+RDLOOP . . . . . .  C ADDR   00C8H   A   
+READ_HRS . . . . .  C ADDR   022DH   A   
+READ_MIN . . . . .  C ADDR   020CH   A   
+READ_SEC . . . . .  C ADDR   01E0H   A   
+RESET. . . . . . .  C ADDR   03E1H   A   
+RESET_DISP . . . .  C ADDR   0349H   A   
+RTC_CTRL . . . . .  N NUMB   0007H   A   
+SBEX . . . . . . .  C ADDR   0062H   A   
+SBLOOP . . . . . .  C ADDR   0048H   A   
+SCLHIGH. . . . . .  C ADDR   0032H   A   
+SCLPIN . . . . . .  B ADDR   00B0H.4 A   
+SDAPIN . . . . . .  B ADDR   00B0H.5 A   
+SDEX . . . . . . .  C ADDR   0092H   A   
+SDLOOP . . . . . .  C ADDR   0088H   A   
+SECOND . . . . . .  N NUMB   0000H   A   
+SEG1 . . . . . . .  N NUMB   0020H   A   
+SEG2 . . . . . . .  N NUMB   0040H   A   
+SENDBYTE . . . . .  C ADDR   0045H   A   
+SENDDATA . . . . .  C ADDR   0083H   A   
+SENDSTOP . . . . .  C ADDR   0038H   A   
+SLVADR . . . . . .  D ADDR   000AH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+STR_1. . . . . . .  C ADDR   01A3H   A   
+STR_2. . . . . . .  C ADDR   01A7H   A   
+STR_AM . . . . . .  C ADDR   01DCH   A   
+STR_CN . . . . . .  C ADDR   01ABH   A   
+STR_LCD. . . . . .  D ADDR   002DH   A   
+STR_PM . . . . . .  C ADDR   01DEH   A   
+STR_THU2 . . . . .  C ADDR   01B2H   A   
+STR_THU3 . . . . .  C ADDR   01B9H   A   
+STR_THU4 . . . . .  C ADDR   01C0H   A   
+STR_THU5 . . . . .  C ADDR   01C7H   A   
+STR_THU6 . . . . .  C ADDR   01CEH   A   
+STR_THU7 . . . . .  C ADDR   01D5H   A   
+TEMP . . . . . . .  D ADDR   0029H   A   
+TEST1. . . . . . .  C ADDR   0420H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+A51 MACRO ASSEMBLER  I2C ROUTINES FOR 80C51                                               12/16/2014 14:22:05 PAGE    21
+
+TIME_SETUP . . . .  C ADDR   033EH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+XMTALT . . . . . .  D ADDR   0020H   A   
+XMTDAT . . . . . .  D ADDR   0010H   A   
+YEAR . . . . . . .  N NUMB   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,1007 @@
+
+
+;****************************************************************************
+
+;                     2051 KHA DEVELOPMENT BOARD ASSEMBLY 
+
+; These routines allow an 80C51 based microcontroller to drive the I2C bus 
+; as a single master. The main program at the end demonstrates writing and 
+; reading several types of devices: 
+
+;    PCF8570 256 byte static RAM.
+;    PCF8574 8-bit I/O expander.
+;    SAA1064 4 digit LED display driver.
+
+
+;             Written by G.Goodhue, Philips Components-Signetics
+
+;****************************************************************************
+
+
+$Title(I2C Routines for 80C51)
+$Date(08/14/90)
+$MOD51
+$DEBUG
+
+
+;****************************************************************************
+;                               Definitions
+;****************************************************************************
+
+
+; Addresses of several I2C devices as connected on the Signetics I2C 
+; Evaluation Board.
+
+DS1307_add     EQU     0D0h           ;Slave address for DS1307.
+									  ;Internal registers of DS1307
+Second	 	   EQU 	    00h  ; Need to clear MSB bit of 00h to 0 to enable oscilator. From 00 to 59.
+Minute		   EQU		01h	 ; from 00 to 59
+Hour		   EQU		02h	 ; bit7:0, bit6:12h(1)/24h(0), bit5: AM/PM or second ten of hrs, bit4: 1st ten of hrs, bit3-bit0: hours
+Day			   EQU		03h	 ; from 1 to 7
+Date		   EQU		04h  ; from 01 to 28/29 or 30 or 31 depending on Month
+Month		   EQU		05h  ; from 01 to 12
+Year		   EQU		06h	 ; from 00 to 99
+RTC_Ctrl	   EQU		07h  ; Control register for SQW/OUT pin. Refer to datasheet for more info
+
+LCD_addrs      EQU		0A0h;   LCD peripheral output address
+SEG1 		   EQU		20H ;	7-segment LED 1 peripheral output address
+SEG2 		   EQU	    40H ;	7-segment LED 2 peripheral output address
+
+; Data storage locations
+
+BitCnt     DATA    8h             ;Bit counter for I2C routines.
+ByteCnt    DATA    9h             ;Byte counter for I2C routines.
+SlvAdr     DATA    0Ah            ;Slave address for I2C routines.
+
+XmtDat     DATA    10h            ;I2C transmit buffer, 8 bytes max.
+RcvDat     DATA    18h            ;I2C receive buffer, 8 bytes max.
+XmtAlt     DATA    20h            ;Alternate I2C transmit buffer, 8 bytes max.
+
+Flags      DATA    28h            ;Location for bit flags
+NoAck      BIT     Flags.0        ;I2C no acknowledge flag.
+BusFault   BIT     Flags.1        ;I2C bus fault flag.
+I2CBusy    BIT     Flags.2        ;I2C busy flag.
+NewMin     BIT     Flags.3        ;New Minute flag
+NewHr      BIT     Flags.4        ;New Hour flag
+NewDay 	   BIT     Flags.5        ;New Day flag
+NewMth     BIT     Flags.6        ;New Mth flag
+
+Temp	   DATA		29h			  ;Location for temporary use
+
+CharCnt    DATA     2Ah			  ;Character counter for LCD routines
+ACC_LCD	   DATA		2Bh			  ;Accumulator registor for LCD routines
+ACC2_LCD   DATA		2Ch			  ;2nd Accumulator registor for LCD routines
+Str_LCD	   DATA		2Dh			  ;Temporary register to store String. For ex: MOV Str_LCD, #Str1
+
+
+; I2C connections.
+
+LCD_RS	   BIT	   P3.5			  ;LCD_RS pin
+LCD_EN	   BIT	   P3.7			  ;LCD_EN pin
+SCLPin     BIT     P3.3           ;I2C serial clock line.
+SDAPin     BIT     P3.4           ;I2C serial data line.
+INC_But    BIT     P3.1           ;Increase Button for DS1307 tuning
+
+Mode_But   BIT     P3.0           ;Mode Button for DS1307 tuning
+Buz_But    BIT	   P3.2			  ;Buzz Button for DS1307 tuning
+
+;****************************************************************************
+;                       Reset and Interrupt Vectors
+;****************************************************************************
+
+
+           ORG     0
+           AJMP    Reset
+	
+		   ORG 03h 				; External Interrupt 0 execution
+;		   AJMP	Interrupt0
+		   
+		
+		   
+
+		   ORG 30h
+;****************************************************************************
+;                             Interrupt Subroutines
+;****************************************************************************		   
+;Interrupt0:	
+;			CLR p2.0
+;			JB MOD_But, $; wait for Mode Button pressed
+;			JNB MOD_But, $; wait for Mode Button released
+;			RETI		  
+;*****************************END OF Interrupt Subroutines*******************	   
+		   
+		   
+		   
+		   
+;****************************************************************************
+;                             I2C Subroutines
+;****************************************************************************
+
+; BitDly - insures minimum high and low clock times on I2C bus.
+; This routine must be tuned for the actual oscilator frequency used, shown 
+; here tuned for a 12MHz clock. Note that the CALL instruction that invokes 
+; BitDly already uses 2 machine cycles.
+
+BitDly:    NOP                    ;NOPs to delay 5 microseconds (minus 4
+                                  ; machine cycles for CALL and RET).
+           RET
+
+
+; SCLHigh - sends SCL pin high and waits for any clock stretching peripherals.
+
+SCLHigh:   SETB    SCLPin         ;Set SCL from our end.
+           JNB     SCLPin,$       ;Wait for pin to actually go high.
+           RET
+
+
+; SendStop - sends an I2C stop, releasing the bus.
+
+SendStop:  CLR     SDAPin         ;Get SDA ready for stop.
+           ACALL   SCLHigh        ;Set clock for stop.
+           ACALL   BitDly
+           SETB    SDAPin         ;Send I2C stop.
+           ACALL   BitDly
+           CLR     I2CBusy        ;Clear I2C busy status.
+           RET                    ;Bus should now be released.
+
+
+; SendByte - sends one byte of data to an I2C slave device.
+; Enter with:
+;   ACC = data byte to be sent.
+
+SendByte:  MOV     BitCnt,#8      ;Set bit count.
+SBLoop:    CLR     C           
+           RLC     A              ;Send one data bit.
+           MOV     SDAPin,C       ;Put data bit on pin.
+           ACALL   SCLHigh        ;Send clock.
+           ACALL   BitDly
+           CLR     SCLPin
+           ACALL   BitDly
+           DJNZ    BitCnt,SBloop  ;Repeat until all bits sent.
+
+           SETB    SDAPin         ;Release data line for acknowledge.
+           ACALL   SCLHigh        ;Send clock for acknowledge.
+           ACALL   BitDly
+           JNB     SDAPin,SBEX    ;Check for valid acknowledge bit.
+           SETB    NoAck          ;Set status for no acknowledge.
+SBEX:      CLR     SCLPin         ;Finish acknowledge bit.
+           ACALL   BitDly
+           RET
+
+
+; GoMaster - sends an I2C start and slave address.
+; Enter with:
+;   SlvAdr = slave address.
+
+GoMaster:  SETB    I2CBusy        ;Indicate that I2C frame is in progress.
+           CLR     NoAck          ;Clear error status flags.
+           CLR     BusFault
+           JNB     SCLPin,Fault   ;Check for bus clear.
+           JNB     SDAPin,Fault
+           CLR     SDAPin         ;Begin I2C start.
+           ACALL   BitDly
+           CLR     SCLPin
+           ACALL   BitDly         ;Complete I2C start.
+           MOV     A,SlvAdr       ;Get slave address.
+           ACALL   SendByte       ;Send slave address.
+           RET
+
+Fault:     SETB    BusFault       ;Set fault status
+           RET                    ;  and exit.
+
+
+; SendData - sends one or more bytes of data to an I2C slave device.
+; Enter with:
+;   ByteCnt = count of bytes to be sent.
+;   SlvAdr  = slave address.
+;   @R1     = data to be sent (the first data byte will be the 
+;             subaddress, if the I2C device expects one).
+
+SendData:  ACALL   GoMaster       ;Acquire bus and send slave address.
+           JB      NoAck,SDEX     ;Check for slave not responding.
+
+SDLoop:    MOV     A,@R1          ;Get data byte from buffer.
+           ACALL   SendByte       ;Send next data byte.
+           INC     R1             ;Advance buffer pointer.
+           JB      NoAck,SDEX     ;Check for slave not responding.
+           DJNZ    ByteCnt,SDLoop ;All bytes sent?
+
+SDEX:      ACALL   SendStop       ;Done, send an I2C stop.
+           RET
+
+
+;RcvByte - receives one byte of data from an I2C slave device.
+; Returns:
+;   ACC = data byte received.
+
+RcvByte:   MOV     BitCnt,#8      ;Set bit count.
+           CLR     A
+RBLoop:    ACALL   SCLHigh        ;Read one data bit.
+           ACALL   BitDly
+           MOV     C,SDAPin       ;Get data bit from pin.
+           RLC     A              ;Rotate bit into result byte.
+           CLR     SCLPin
+           ACALL   BitDly
+           DJNZ    BitCnt,RBLoop  ;Repeat until all bits received.
+
+           PUSH    ACC            ;Save accumulator to temporarily use ACC in the CJNE below
+           MOV     A,ByteCnt
+           CJNE    A,#1,RBAck     ;Check for last byte of frame.
+           SETB    SDAPin         ;Send no acknowledge on last byte.
+           SJMP    RBAClk
+
+RBAck:     CLR     SDAPin         ;Send acknowledge bit.
+RBAClk:    ACALL   SCLHigh        ;Send acknowledge clock.
+           POP     ACC            ;Restore accumulator
+           ACALL   BitDly
+           CLR     SCLPin
+           SETB    SDAPin         ;Clear acknowledge bit.
+           ACALL   BitDly
+           RET
+
+
+;RcvData - receives one or more bytes of data from an I2C slave device.
+; Enter with:
+;   ByteCnt = count of bytes to be received
+;   SlvAdr  = slave address.
+; Returns:
+;   @R1     = data received.
+
+; Note: to receive with a subaddress, use SendData to set the subaddress
+;   first (no provision for repeated start).
+
+RcvData:   INC     SlvAdr         ;Set for READ of slave.
+           ACALL   GoMaster       ;Acquire bus and send slave address.
+           JB      NoAck,RDEX     ;Check for slave not responding.
+
+RDLoop:    ACALL   RcvByte        ;Receive next data byte.
+           MOV     @R1,A          ;Save data byte in buffer.
+           INC     R1             ;Advance buffer pointer.
+           DJNZ    ByteCnt,RDLoop ;Repeat untill all bytes received.
+
+RDEX:      ACALL   SendStop       ;Done, send an I2C stop.
+           RET
+
+;*****************************END OF I2C Subroutines*************************
+
+
+
+;****************************************************************************
+;	 							LCD Subroutines
+;****************************************************************************
+
+;;; LCD_Init - LCD Initiation and Configuration
+LCD_Init:
+			MOV R0, #LCD_addrs
+			MOV ACC_LCD,#0
+			MOV A, #3CH 	;FUNCTION SET: use 2 lines, 8-bit mode
+			CALL LCDConfig
+			MOV A, #0CH		;Display ON & Cursor not present, cursor not blinking
+			CALL LCDConfig
+			MOV A, #06H		;Char entry mode: next char put right to the previous char, no shift
+			CALL LCDConfig
+			MOV A, #01H		;Clear display (also clear DDRAM content)
+			CALL LCDConfig
+			RET
+;;; LCD_Clear - Clear all LCD Display		
+LCD_Clear:  MOV R0, #LCD_addrs
+			MOV A, #01H
+			CALL LCDConfig
+			RET
+			
+;;; LCD_Pattern: Create user-defined patterns on the LCD register named "CGRAM"
+;
+LCD_Pattern:
+			MOV A, #40h			;	Counter for CGRAM Address for each of 8 patterns, begins at 40H
+			CALL LCDConfig		;	Prepare to write the pattern at the pointed CGRAM address
+			MOV CharCnt, #64	;	8 rows of each pattern, 8 patterns total
+			MOV DPTR, #Patt1
+			CALL LCD_PutStr
+			RET
+			
+			
+;;; LCD_PutStr
+;Input: DPTR (string) and CharCnt (string length)			
+LCD_PutStr:
+			MOV A, ACC_LCD		;		Counter for string, begin at 0, stop at stringlength
+			MOVC A, @A+DPTR		;		Move character to ACC
+			CALL LCD_Write		;		Write character stored in ACC to LCD
+			INC ACC_LCD			;		Increase string counter
+			MOV A, ACC_LCD		;		Move string counter to ACC to compare if it is the last character
+			CJNE A, CharCnt, LCD_PutStr;Loop until all characters are written
+			MOV ACC_LCD, #0		;		reset LCD Accumulator for next use
+			RET
+		
+;;; LCDConfig - Send a config command to LCD
+;	Input: A (Config byte)
+LCDConfig: 	
+			SETB LCD_EN
+			CLR LCD_RS
+			MOV P1, A
+			CLR LCD_EN
+			CALL LCD_Dly
+			RET
+
+;;; LCD_Write - Send a write command to LCD
+; 	Input: ACC (Character need to be written)
+LCD_Write: 
+			MOV R0,#LCD_addrs
+			SETB LCD_RS
+			SETB LCD_EN
+			MOV P1, A
+			CLR LCD_EN
+			CALL LCD_Dly
+			RET
+			
+;;; LCD_Dly - Delay for LCD to complete a command 
+; use if the R/W pin of LCD connected to GND
+LCD_Dly:
+			MOV TMOD, #01H
+			MOV TH0,#HIGH(-3000)
+			MOV TL0,#LOW(-3000)
+			SETB TR0
+			JNB TF0, $
+			CLR TR0
+			CLR TF0
+			RET
+
+DELAY01S:	MOV R2, #10
+			MOV TMOD, #01H
+BACK:		MOV TH0,#HIGH(-10000)
+			MOV TL0,#LOW(-10000)
+			SETB TR0
+			JNB TF0, $
+			CLR TR0
+			CLR TF0
+			DJNZ R2, BACK
+			RET
+
+
+;;; DELAY 0.2 sec
+DELAY05S:	MOV R2, #10
+			MOV TMOD, #01H
+BACK05:		MOV TH0,#HIGH(-50000)
+			MOV TL0,#LOW(-50000)
+			SETB TR0
+			JNB TF0, $
+			CLR TR0
+			CLR TF0
+			DJNZ R2, BACK05
+			RET
+
+;;; User-defined LCD Patterns - Each pattern contains 8 rows (5 columns)
+; 
+			Patt1: DB 2, 4, 1, 19, 18, 18, 12, 0	; letter "u*'" in "Thu*' hai, thu*' ba... (addr: 00h)
+			Patt2: DB 0, 0, 1, 19, 18, 18, 12, 0	; letter "u*" in "Thu tu*" (addr: 01h)
+			Patt3: DB 10, 14, 0, 14,17, 19, 13,0	; letter "a(" in "Thu na(m" (addr: 02h)
+			Patt4: DB 2, 4, 0, 14,17, 19, 13,0		; letter "a'" in "thu sa'u" (addr: 03h)
+			Patt5: DB 6, 2, 4, 14,17, 19, 13,0		; letter "a?" in "thu ba?y" (addr: 04h)
+			Patt6: DB 4, 10, 0, 14,17, 19, 13,4		; letter "a^." in "Chu nha^.t" (addr: 05h)
+			Patt7: DB 5, 10, 0, 14, 17, 17, 14, 0	; letter "o^'" in "To^'i" (addr: 06h)
+			Patt8: DB 4,4,4,4,4,4,4,4
+
+
+
+;;; Strings for display - Add, edit or delete freely.
+; Note: Need to update exact string length for LCD_PutStr routine
+			Str_1	: DB 2Fh, '  ', 2Fh 	; First line LCD (character / in date display)
+			Str_2	: DB 3Ah, '  ', 3Ah 	; Second line LCD (character : in hour display)
+			Str_CN:   DB 'Ch.Nh', 05h, 't'
+			Str_Thu2: DB 'Th', 00h, ' Hai'		;Str1 length: 7
+			Str_Thu3: DB 'Th', 00h, ' Ba '		
+			Str_Thu4: DB 'Th', 00h, ' T', 01h, ' '
+			Str_Thu5: DB 'Th', 00h, ' N', 02h, 'm'			
+			Str_Thu6: DB 'Th', 00h, ' S', 03h, 'u'				
+			Str_Thu7: DB 'Th', 00h, ' B', 04h, 'y'	
+			Str_AM: DB 'AM'; Length: 2
+			Str_PM:  DB 'PM'		; Length: 2
+									
+							 
+
+;*****************************END OF LCD Subroutines*************************
+
+
+
+;****************************************************************************
+;                               DS1307 Subroutines
+;****************************************************************************
+
+;;; Read_Sec. Output: Mov new data of Seconds to RcvDat. If it is 00, call Read_Min
+Read_Sec: 	MOV     SlvAdr,#DS1307_add 
+			MOV     R1,#XmtDat	  ; Write the register of DS1307 first before reading from DS1307
+			MOV	   ByteCnt,#1	  ;
+			ACALL   SendData
+			JB NoAck, Read_Sec
+			MOV	   R1,#RcvDat	  ; Actually read the Seconds Register of DS1307
+			MOV	   ByteCnt,#1	  ; Number of bytes read and store to RcvDat
+			ACALL   RcvData
+			JB NoAck, Read_Sec		   		
+Check_Sec:	MOV A, RcvDat 			; Get first byte (contain Seconds) of RcvDat to A	
+			CJNE A, Temp, Chk_Sec1 	; If there is no new data, skip and read again
+			SJMP Read_Sec
+Chk_Sec1:	PUSH ACC
+			CJNE A, #00h, Chk_Sec2 	; If seconds = 00, read minutes
+			SETB NewMin
+			ACALL Read_Min
+Chk_Sec2:   POP ACC				; Push and Pop ACC which contains Secs because Read_min, Read_Hrs... change the ACC.
+	 		MOV Temp, A
+			RET
+			
+			
+;;; Read_Min. Output: Mov new data of Minutes to RcvDat+1. If it is 00, call Read_Hrs
+Read_Min: 	MOV     SlvAdr,#DS1307_add 
+			MOV     R1,#XmtDat+1  ; Write the Minute register of DS1307 first before reading from DS1307
+			MOV	   	ByteCnt,#1	  ;
+			ACALL   SendData
+			JB NoAck, Read_Min
+			MOV	   R1,#RcvDat+1	  ; Actually read the Minutes Register of DS1307
+			MOV	   ByteCnt,#1	  ; Number of bytes read and store to RcvDat
+			ACALL   RcvData
+			JB NoAck, Read_Min		   		
+			MOV A, RcvDat+1			; Get Minutes of RcvDat to A					
+			CJNE A, #00h, Chk_Min1 	; If minutes = 00, read hours
+			SETB NewHr
+			ACALL Read_Hrs
+Chk_Min1:	RET
+
+
+;;; Read_Hrs. Output: Mov new data of Hours to RcvDat+2. If it is 00, call Read_Day
+Read_Hrs: 	MOV     SlvAdr,#DS1307_add 
+			MOV     R1,#XmtDat+2  ; Write the Hours register of DS1307 first before reading from DS1307
+			MOV	   ByteCnt,#1	  ;
+			ACALL   SendData
+			JB NoAck, Read_Hrs
+			MOV	   R1,#RcvDat+2	  ; Actually read Hours Register of DS1307
+			MOV	   ByteCnt,#5	  ; Number of bytes read and store to RcvDat
+			ACALL   RcvData
+			JB NoAck, Read_Hrs		   			
+			RET
+
+			
+;;; Cursor_Sec
+Cursor_Sec: MOV A, #0C7h
+			CALL LCDConfig
+			RET
+			
+;;; Cursor_Min
+Cursor_Min: MOV A, #0C4h
+			CALL LCDConfig
+			RET		
+
+;;; Cursor_Hr
+Cursor_Hr: MOV A, #0C1h
+			CALL LCDConfig
+			RET
+
+;;; Cursor_AMPM
+Cursor_AMPM: MOV A, #0CAh
+			CALL LCDConfig
+			RET	
+			
+;;; Cursor_Day
+Cursor_Day: MOV A, #080h
+		   CALL LCDConfig
+		   RET	
+		   
+;;; Cursor_Date
+Cursor_Date: MOV A, #088h
+		   CALL LCDConfig
+		   RET	
+			
+;;; Cursor_Mth
+Cursor_Mth: MOV A, #08Bh
+		   CALL LCDConfig
+		   RET				
+
+;;; Cursor_Yr
+Cursor_Yr: MOV A, #08Eh
+		   CALL LCDConfig
+		   RET
+
+
+;;; LCD_Sec: Display seconds onto LCD
+; Input:
+LCD_Sec:	CALL Cursor_Sec
+			MOV A, RcvDat;
+			SWAP A
+			ANL A, #00000111B		; get the tens of Seconds
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			MOV A, RcvDat ; 
+			ANL A, #00001111B		; get the ones of Seconds
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			;JB NewMin, LCD_Sec1		; If NewMin, move cursor to Minute position
+			;SJMP LCD_Sec2
+			;CALL Cursor_Min
+			;CALL LCD_Min ;
+			RET
+
+			
+;;; LCD_Min: Display minutes onto LCD
+; Input:
+LCD_Min:	CALL Cursor_Min
+			MOV A, RcvDat+1;
+			SWAP A
+			ANL A, #00000111B		; get the tens of Minutes
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			MOV A, RcvDat+1 ; 
+			ANL A, #00001111B		; get the ones of Minutes
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			;JB NewHr, LCD_Min1		; If new hour, move cursor to Hour position
+			;SJMP LCD_Min2
+			;	CALL LCD_Hr
+			CLR NewMin
+			RET
+			
+			
+;;; LCD_Hr: Display Hours onto LCD
+; Input:
+LCD_Hr:		CALL Cursor_Hr
+			MOV A, RcvDat+2;
+			SWAP A
+			ANL A, #01h				; get the tens of Hour
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			
+			MOV A, RcvDat+2		    ; 
+			ANL A, #00001111B		; get the ones of Hour
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			RET
+			
+;;; LCD_AMPM: Display AM/PM onto LCD
+; Input:			
+LCD_AMPM:	CALL Cursor_AMPM
+			MOV A, RcvDat+2;
+			SWAP A
+			ANL A, #02h				; get the AM/PM of Hour (A=02h: PM, A=0: AM)
+			CJNE A, #0, LCD_AMPM1
+			MOV DPTR, #Str_AM
+			SJMP LCD_AMPM2
+LCD_AMPM1:	MOV DPTR, #Str_PM
+LCD_AMPM2:	MOV CharCnt, #2
+			CALL LCD_PutStr			; Display Sang or Toi (AM or PM) onto LCD	
+			RET
+			
+			
+;;; LCD_Day: Display Day onto LCD
+; Input:
+LCD_Day:	CALL Cursor_Day
+			MOV A, RcvDat+3;
+			ANL A, #00000111B
+			CJNE A, #1, LCD_Day2
+			MOV DPTR, #Str_CN
+			SJMP LCD_Day8
+LCD_Day2:	CJNE A, #2, LCD_Day3
+			MOV DPTR, #Str_Thu2
+			SJMP LCD_Day8
+LCD_Day3:	CJNE A, #3, LCD_Day4
+			MOV DPTR, #Str_Thu3
+			SJMP LCD_Day8
+LCD_Day4:	CJNE A, #4, LCD_Day5
+			MOV DPTR, #Str_Thu4
+			SJMP LCD_Day8
+LCD_Day5:	CJNE A, #5, LCD_Day6
+			MOV DPTR, #Str_Thu5
+			SJMP LCD_Day8
+LCD_Day6:	CJNE A, #6, LCD_Day7
+			MOV DPTR, #Str_Thu6
+			SJMP LCD_Day8
+LCD_Day7:	MOV DPTR, #Str_Thu7
+LCD_Day8:	MOV CharCnt, #7
+			CALL LCD_PutStr			; Write Day to LCD
+			RET
+			
+			
+;;; LCD_Date: Display Date onto LCD
+; Input:	
+LCD_Date:	CALL Cursor_Date
+			MOV A, RcvDat+4			; Date register
+			SWAP A
+			ANL A, #00000011B		; get the tens of Date
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			MOV A, RcvDat+4			; Date register
+			ANL A, #00001111B		; get the ones of Date
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			RET		
+			
+		
+;;; LCD_Mth: Display Month onto LCD
+; Input:
+LCD_Mth:	CALL Cursor_Mth
+			MOV A, RcvDat+5;
+			SWAP A
+			ANL A, #1				; get the tens of Month
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			MOV A, RcvDat+5 ; 
+			ANL A, #00001111B		; get the ones of Month
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			RET
+			
+;;; LCD_Yr: Display Year onto LCD
+; Input:		
+LCD_Yr:		CALL Cursor_Yr		
+			MOV A, RcvDat+6;
+			SWAP A
+			ANL A, #3				; get the tens of Year
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			MOV A, RcvDat+6 ; 
+			ANL A, #00001111B		; get the ones of Year
+			ADD A, #30H				; Convert number to ASCII
+			CALL LCD_Write
+			RET
+
+
+Time_Setup:MOV     SlvAdr,#DS1307_add  ;Write data from XmtDat to DS1307.
+           MOV     R1,#XmtAlt     ; Start of data.
+		   MOV     ByteCnt,#8     ; Send 8 bytes of data, 1 beginning internal register to write and next 7 databytes
+           ACALL   SendData
+		   RET
+		   
+		   
+;;; Reset_Disp: Display time after resetting		   
+Reset_Disp: 
+			MOV A, #8AH
+			CALL LCDConfig ; 1st line, 11th character
+			MOV CharCnt, #4
+			MOV DPTR, #Str_1  ; put  string here
+			ACALL LCD_PutStr
+			
+			MOV A, #0C3H
+			CALL LCDConfig ; 2nd line, 4th character
+			MOV CharCnt, #4
+			MOV DPTR, #Str_2  ; put  string here
+			ACALL LCD_PutStr
+			SETB NewMin
+			SETB NewHr
+			ACALL Read_Min
+			ACALL Read_Hrs
+			ACALL LCD_Min				; these commands show the time when reset
+			ACALL LCD_Hr
+			ACALL LCD_AMPM
+			ACALL LCD_Day
+			ACALL LCD_Date
+			ACALL LCD_Mth
+			ACALL LCD_Yr
+			RET
+			
+;*****************************END OF DS1307 Subroutines**************************
+
+
+;****************************************************************************
+;                               Button Check Subroutines
+;****************************************************************************
+
+;;;Mod_3s: Check Mode Button if it is pressed and held for 3 seconds
+; Return: C = 1 if it is pressed and held for 3 secs, else C = 0
+Mod_3s: 
+			JB Mode_But, Mod_3s1
+			ACALL Delay05s
+			JB Mode_But, Mod_3s1
+			ACALL Delay05s
+			JB Mode_But, Mod_3s1
+			ACALL Delay05s
+			JB Mode_But, Mod_3s1
+			ACALL Delay05s
+			JB Mode_But, Mod_3s1		; Check button after 3 seconds
+			SETB C
+			SJMP Mod_3s2
+Mod_3s1:	CLR C
+Mod_3s2:	RET
+
+
+;;;Mod_01s: Check Mode Button if it is pressed and held for 0.1 seconds
+; Return: C = 1 if it is pressed and held for 0.1 secs, else C = 0
+Mod_01s:	JB Mode_But, Mod_01s1
+			ACALL Delay01s
+			JB Mode_But, Mod_01s1		; Check button after 3 seconds
+			SETB C
+			SJMP Mod_01s2
+Mod_01s1:	CLR C
+Mod_01s2:	RET
+
+
+;;;Inc_01s: Check Increase Button if it is pressed and held for 0.1 seconds
+; Return: C = 1 if it is pressed and held for 0.1 secs, else C = 0
+Inc_01s:	JB Inc_But, Inc_01s1
+			ACALL Delay01s
+			JB Inc_But, Inc_01s1		; Check button after 3 seconds
+			SETB C
+			SJMP Inc_01s2
+Inc_01s1:	CLR C
+Inc_01s2:	RET
+
+
+
+
+
+;;;Buz_3s: Check Buzz Button if it is pressed and held for 3 seconds
+; Return: C = 1 if it is pressed and held for 3 secs, else C = 0
+Buz_3s: 	JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1
+			ACALL Delay05s
+			JB Buz_But, Buz_3s1	; Check button after 3 seconds
+			SETB C
+			SJMP Buz_3s2
+Buz_3s1:	CLR C
+Buz_3s2:	RET
+
+;*****************************END OF Button Check Subroutines**************************
+
+
+
+
+;****************************************************************************
+;                               Main Program
+;****************************************************************************
+
+
+ 
+Reset:      MOV SP,#2Fh         ;Set stack to start at 30h. Stack from 00h to 2Fh is used for definitions.
+			SETB EX0			;Enable external interrupt 0.
+			SETB EA				;Enable global interrupt/timers.
+			ACALL LCD_Init		;LCD Initiation.
+			ACALL LCD_Pattern	;LCD Pattern creation
+			
+
+				
+			
+;--------------------------Write to DS1307----------------------------------------
+
+		   MOV     XmtAlt,	#Second 	; 
+		   MOV     XmtAlt+1,#55h	  	; starting seconds
+           MOV     XmtAlt+2,#59h	    ; starting minute
+           MOV     XmtAlt+3,#01110001b ; starting hour: 12hour mode, 11h PM
+           MOV     XmtAlt+4,#2h	    ; starting day: Monday (2)
+           MOV     XmtAlt+5,#31h	   	; starting date: 31
+           MOV     XmtAlt+6,#12h	 	; starting month: 12
+           MOV     XmtAlt+7,#14h   	; starting year: 2014
+
+		   MOV     XmtDat,	#Second 	; these add the time register of DS1307 into XmtDat of 8051
+		   MOV     XmtDat+1,#Minute   	; 
+           MOV     XmtDat+2,#Hour	    ;
+           MOV     XmtDat+3,#Day	    ; 
+           MOV     XmtDat+4,#Date	    ; 
+           MOV     XmtDat+5,#Month   	; 
+           MOV     XmtDat+6,#Year   	;
+           MOV     XmtDat+7,#91h   		;   	   
+
+			ACALL Time_Setup
+			ACALL Reset_Disp
+			
+Test1:		ACALL Read_Sec
+			ACALL LCD_Sec
+
+			ACALL Mod_3s			;	Check Mode button if it is pressed and held for 3s
+			JC Edit_Time
+			JB NewMin, Milestone1	;	Check for new minute
+			SJMP Test1
+Milestone1:	ACALL LCD_Min
+			JB NewHr, Milestone2	;	Check for new hour. Note: also re-read Day, Date... when Hour changes.
+			SJMP Test1
+Milestone2: ACALL LCD_Hr
+			ACALL LCD_AMPM
+			ACALL LCD_Day
+			ACALL LCD_Date
+			ACALL LCD_Mth
+			ACALL LCD_Yr
+			SJMP Test1
+		
+		
+Edit_Time:  CLR C
+			ACALL LCD_Clear
+			JNB Mode_But, $			; Wait for Mode Button to be released
+Edit_Hr:	ACALL LCD_Hr
+Edit_Hr1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Hr				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_AMPM
+			SJMP Edit_Hr1
+Inc_Hr:		MOV A, RcvDat+2
+			ANL A, #00011111B		;	Get only 5 low bits of the Hour (BCD format)
+			CJNE A, #00010010b, Inc_Hr1	; If hour = 12, change it to 1
+			MOV A, #01H				;	
+			SJMP Inc_Hr2
+Inc_Hr1:	CJNE A, #09h, Inc_Hr3	; 	If hour = 9, change it to 10 in BCD format
+			MOV A, #10h
+			SJMP Inc_Hr2
+Inc_Hr3:	INC A			; Increase Hour by 1
+Inc_Hr2:	CLR C
+			ORL A, #01000000B		;	Set bit 6 to change to 12h mode
+			MOV RcvDat+2, A			;	Move new Hour to RcvDat for display
+			MOV XmtAlt+3, A			; 	Move new Hour to XmtAlt for reset time
+			SJMP Edit_Hr			;	Display new Hour and check buttons again
+
+;--------------
+
+Edit_AMPM:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_AMPM:	ACALL LCD_AMPM
+			
+Edit_AMPM1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_AMPM				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_Min
+			SJMP Edit_AMPM1
+			
+Inc_AMPM:	MOV A, RcvDat+2
+			MOV C, ACC.5		;	Get only bit 5 (Am/pm bit)
+			JC Inc_AMPM1		; If AM change to PM and vice-versa
+			SETB C				;
+			SJMP Inc_AMPM2
+Inc_AMPM1:  CLR C
+Inc_AMPM2:	
+			MOV A, RcvDat+2
+			MOV ACC.5, C				;	Add the AM/PM bit to available Hour
+			MOV RcvDat+2, A			;	Move new Hour to RcvDat for display
+			MOV XmtAlt+3, A			; 	Move new Hour to XmtAlt for reset time
+			CLR C
+			SJMP Disp_AMPM			;	Display new Hour and check buttons again
+			
+		
+;------------------
+		
+Edit_Min:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_Min:	ACALL LCD_Min
+Edit_Min1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Min				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_Day
+			SJMP Edit_Min1
+			
+Inc_Min:	MOV A, RcvDat+1
+			ANL A, #0Fh				;	Get the ones of Minute
+			CJNE A, #09h, Inc_Min1	;	Check if Minute = x9 
+			MOV A, RcvDat+1
+			ANL A, #0F0h			;	Get the tens of Minute
+			CJNE A, #50h, Inc_Min2	;
+			MOV A, #0	
+			SJMP Inc_Min3
+Inc_Min1:	MOV A, RcvDat+1
+			INC A
+			SJMP Inc_Min3
+Inc_Min2:	ADD A, #10h				;	If Minute = x9 (x <> 5), increase to (x+1)0
+			SJMP Inc_Min3
+Inc_Min3:	MOV RcvDat+1, A
+			MOV XmtAlt+2, A
+			MOV XmtAlt+1,#00h	  	; starting seconds
+			CLR C
+			SJMP Disp_Min
+
+			
+Edit_Day:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_Day:	ACALL LCD_Day
+Edit_Day1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Day				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_Date
+			SJMP Edit_Day1
+Inc_Day:	MOV A, RcvDat+3
+			CJNE A, #07h, Inc_Day1	;	Check if Day = 7 (Saturday)
+			MOV A, #1
+			SJMP Inc_Day2
+Inc_Day1:	INC A
+Inc_Day2:	MOV RcvDat+3, A
+			Mov XmtAlt+4, A
+			CLR C
+			SJMP Disp_Day
+;-------------------
+
+Edit_Date:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_Date:	ACALL LCD_Date
+Edit_Date1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Date				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_Mth
+			SJMP Edit_Date1
+			
+Inc_Date:	MOV A, RcvDat+4
+			CJNE A, #31h, Inc_Date1	;	Check if Date = 31 
+			MOV A, #1
+			SJMP Inc_Date3
+
+Inc_Date1:	ANL A, #0Fh				; get the ones of Date
+			CJNE A, #09h, Inc_Date2	;
+			MOV A, RcvDat+4
+			ADD A, #10h
+			ANL A, #0F0h				;	increase 29h to 30h, 19h to 20h...
+			SJMP Inc_Date3
+Inc_Date2:	MOV A, RcvDat+4
+			INC A
+Inc_Date3:	MOV RcvDat+4, A
+			MOV XmtAlt+5, A
+			CLR C
+			SJMP Disp_Date
+;--------------------------
+
+Edit_Mth:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_Mth:	ACALL LCD_Mth
+Edit_Mth1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Mth				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Edit_Yr
+			SJMP Edit_Mth1
+			
+Inc_Mth:	MOV A, RcvDat+5
+			CJNE A, #12h, Inc_Mth1	;	Check if Month = 12
+			MOV A, #1
+			SJMP Inc_Mth3
+
+Inc_Mth1:	ANL A, #0Fh				; get the ones of Month
+			CJNE A, #09h, Inc_Mth2	;
+			MOV A, RcvDat+5
+			ADD A, #10h
+			ANL A, #0F0h				;	increase 29h to 30h, 19h to 20h...
+			SJMP Inc_Mth3
+Inc_Mth2:	MOV A, RcvDat+5
+			INC A
+Inc_Mth3:	MOV RcvDat+5, A
+			MOV XmtAlt+6, A
+			CLR C
+			SJMP Disp_Mth
+;--------------------------
+
+
+Edit_Yr:	CLR C
+			JNB Mode_But, $	
+			ACALL LCD_Clear
+Disp_Yr:	ACALL LCD_Yr
+Edit_Yr1:	ACALL Inc_01s			;	Check the Increase Button
+			JC Inc_Yr				;	If Carry=1, INC But pressed detected
+			ACALL Mod_01s			;	Check the Mode Button
+			JC Finish
+			SJMP Edit_Yr1
+			
+Inc_Yr	:	MOV A, RcvDat+6
+			CJNE A, #99h, Inc_Yr1	;	Check if Year = 99 
+			MOV A, #0
+			SJMP Inc_Yr3
+
+Inc_Yr1:	ANL A, #0Fh				; get the ones of Year
+			CJNE A, #09h, Inc_Yr2	;
+			MOV A, RcvDat+6
+			ADD A, #10h
+			ANL A, #0F0h				;	increase 29h to 30h, 19h to 20h...
+			SJMP Inc_Yr3
+Inc_Yr2:	MOV A, RcvDat+6
+			INC A
+Inc_Yr3:	MOV RcvDat+6, A
+			MOV XmtAlt+7, A
+			CLR C
+			SJMP Disp_Yr
+;--------------------------
+
+
+
+Finish:		ACALL Time_Setup
+			ACALL Reset_Disp
+			AJMP Test1
+
+END
+ 

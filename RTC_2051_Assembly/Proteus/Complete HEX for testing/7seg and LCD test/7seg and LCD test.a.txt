@@ -1,0 +1,142 @@
+ORG 00H
+
+SEG1 EQU 20H ;7-segment LED 1 peripheral output address
+SEG2 EQU 40H ;7-segment LED 2 peripheral output address
+
+LCD_RS	BIT	P3.0
+LCD_RW	BIT	P3.3
+LCD_E	BIT	P3.1
+
+ORG 0000H
+
+MAIN: 
+CALL SEVENSEG_TEST ; test 7-segment LEDs
+
+;send string to LCD
+mov a,#38h
+call lcd_command
+mov a,#06h
+call lcd_command
+mov a,#0ch
+call lcd_command
+mov a,#01h
+call lcd_command
+mov a,#82h
+call lcd_command	//1st line 2th character
+mov a,#'V'
+call lcd_datadisplay
+mov a,#'O'
+call lcd_datadisplay
+mov a,#' '
+call lcd_datadisplay
+mov a,#'A'
+call lcd_datadisplay
+mov a,#'N'
+call lcd_datadisplay
+mov a,#'H'
+call lcd_datadisplay
+mov a,#' '
+call lcd_datadisplay
+mov a,#'K'
+call lcd_datadisplay
+mov a,#'H'
+call lcd_datadisplay
+mov a,#'A'
+call lcd_datadisplay
+mov a,#0c3h
+call lcd_command	//2nd Line 3rd character
+mov a,#'T'
+call lcd_datadisplay
+mov a,#'E'
+call lcd_datadisplay
+mov a,#'C'
+call lcd_datadisplay
+mov a,#'H'
+call lcd_datadisplay
+mov a,#'N'
+call lcd_datadisplay
+mov a,#'O'
+call lcd_datadisplay
+mov a,#'L'
+call lcd_datadisplay
+mov a,#'O'
+call lcd_datadisplay
+mov a,#'G'
+call lcd_datadisplay
+mov a,#'Y'
+call lcd_datadisplay
+
+;toggle port 1 for each 1 second
+WHILE:
+ MOV P1, #0
+ ACALL Delay1sec
+ MOV P1, #11111111B
+ ACALL Delay1sec
+SJMP WHILE
+
+;------7-SEG LED TEST, LED1=3, LED2=5-------------
+SEVENSEG_TEST:
+MOV R0, #SEG1
+MOV A, #3
+MOVX @R0, A
+
+MOV R0, #SEG2
+MOV A, #5
+MOVX @R0, A
+;-------------
+
+;------------- DELAY 1SEC SUBROUTINE------------------------------------
+Delay1sec:  MOV   R3,#8
+      MOV   R2,#8
+      MOV   R1,#236
+Del_1_Sec0:
+      DJNZ  R1,Del_1_Sec0
+      DJNZ  R2,Del_1_Sec0
+      DJNZ  R3,Del_1_Sec0
+ RET   
+;----------
+
+;----------------DELAY 1MS SUBROUTINE---------------------------------------
+Delay1ms:     Mov r1, #0FAh           
+Lp1:     Nop                             ; 1 cycle
+Nop                             ; 1+1=2 cycles
+Djnz r1, lp1                  ; 1+1+2 = 4 cycles
+Djnz r2, Delay1ms                  ; 4×250 = 1000 cycles = 1000 µs = 1 ms
+                        ret       
+;------------
+
+
+;--------------SEND COMMAND TO LCD------------------------------------------
+lcd_command:	
+call lcd_ready	//waits till the LCD is ready
+mov r0, #0a0h
+movx @r0, A
+clr LCD_RW	//we are writing to LCD so RW=0
+clr LCD_RS	//Data we are sending is a command so RS=0
+setb LCD_E	
+clr LCD_E	//LATCH data onto LCD
+ret
+;------------
+
+;-----------------DISPLAY WHATEVER IN 'ACC' TO LCD---------------------------------
+lcd_datadisplay:	
+call lcd_ready	//waits till the LCD is ready
+mov r0, #0a0h
+movx @r0, A		
+clr LCD_RW	//we are writing to LCD so RW=0
+setb LCD_RS	//Data we are sending is a command so RS=0
+setb LCD_E	
+clr LCD_E	//LATCH data onto LCD
+ret
+;------------------
+
+
+
+;----------checks the busy flag & waits till LCD is ready to ready for next instruction---------
+	
+lcd_ready:
+call Delay1ms
+ret
+;-----------------------
+
+END

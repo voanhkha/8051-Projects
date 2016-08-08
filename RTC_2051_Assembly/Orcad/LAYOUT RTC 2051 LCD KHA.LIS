@@ -1,0 +1,82 @@
+AutoECO Report
+FILE-A: C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+FILE-B: C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\RTC 2051 LCD KHA.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding footprint BATTERY CMOS
+Adding footprint BIEN TRO 103
+Adding footprint TU PI
+Adding footprint DOMINO 2
+Adding footprint BUT4_LARGE
+Adding footprint RESISTOR 1/4W
+Adding footprint CRYSTAL
+Adding footprint DIP 8 _OLB
+Adding footprint CRYSTAL_SMALL
+Adding footprint TU 470U 16V
+Adding footprint BUZZER
+Adding footprint LED 3 LY
+Adding footprint HEADER 9 _OBL
+Adding footprint LCD 16X2
+Adding package HEADER_2
+Adding package RESISTOR_VAR
+Adding package CAPACITOR_NON-POL
+Adding package SW_DPST
+Adding package RESISTOR
+Adding package CRYSTAL
+Adding package DS1307
+Adding package CRYSTAL_0
+Adding package CAPACITOR
+Adding package BUZZER
+Adding package AT89C2051_1
+Adding package LED
+Adding package HEADER_9
+Adding package HEADER_16
+Adding component J21
+Adding component R1
+Adding component C_103
+Adding component C_CRYS2
+Adding component J2
+Adding component MOD_SW
+Adding component R_RST
+Adding component Y1
+Adding component U33
+Adding component Y2
+Adding component C_BAT
+Adding component INC_SW
+Adding component C1
+Adding component J1
+Adding component LS1
+Adding component U5
+Adding component R_POWER
+Adding component C_CRYS1
+Adding component LED_POWER
+Adding component C_104
+Adding component R-BAR3
+Adding component J12
+Adding net N15934281
+Adding net P3.3
+Adding net N1533293
+Adding net N1533289
+Adding net N1533285
+Adding net VCC
+Adding net N1533297
+Adding net N1533281
+Adding net N1533273
+Adding net N1533277
+Adding net N1533301
+Adding net GND
+Adding net BUZZ
+Adding net INC_BUT
+Adding net MOD_BUT
+Adding net P3.4
+Adding net LCD_RS
+Adding net LCD_EN
+Adding net N1349881
+Adding net N1349891
+Adding net N1533017
+Adding net N1350553
+Adding net N1538338
+Adding net N1538144
+Adding net N1538328
+Deleting net DEFAULT
+*EOF*
+No errors found

@@ -1,0 +1,556 @@
+Thu Dec 18 16:09:13 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:09:13 Saved as file BACKUP1.MAX
+Thu Dec 18 16:09:13 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:09:14 UserDiv from Layout.INI for AutoECO: 60
+Thu Dec 18 16:09:14 Loaded file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:09:14 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN LAYOUT BETA.LLB
+Thu Dec 18 16:09:14 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN.LLB
+Thu Dec 18 16:09:14 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:14 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Dec 18 16:09:14 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\DCON050T.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\DCON085T.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050F.llb
+Thu Dec 18 16:09:14 Loaded file C:\Program Files\Orcad\Layout\library\DIMM050T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\DIN.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\DIP100B.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\DIP100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\DSUBT_HD.LLB
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\ECON100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\FBUS.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\ISA.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\JUMPER.LLB
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\LAYOUT.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\LCON100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PC104.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PCI.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PCON100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PCON156T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PGA.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\PLCC.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\QUAD.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\QUADB.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\RELAY.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\RF.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SBUS.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050F.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SIMM050T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100F.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SIMM100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SIP.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SM.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SOG.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\SOJ.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\STIFF.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TELE.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_AXIAL.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_CAP_P.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_CYLND.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_DIODE.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_DISC.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TM_RAD.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TO.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\TRAINING.LLB
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\VRES.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\WCON100T.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\XT.llb
+Thu Dec 18 16:09:15 Loaded file C:\Program Files\Orcad\Layout\library\ZIGZAG.llb
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN LAYOUT BETA.LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN LAYOUT BETA.LLB
+Thu Dec 18 16:09:15 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:09:16 Library file not found:USER.PRT
+Thu Dec 18 16:09:16 Library file not found:USER.PRT
+Thu Dec 18 16:10:08 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:08 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:12 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN LAYOUT BETA.LLB
+Thu Dec 18 16:10:12 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN.LLB
+Thu Dec 18 16:10:12 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:10:12 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Dec 18 16:10:12 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Dec 18 16:10:18 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:18 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:21 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:22 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:23 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:25 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:27 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:10:28 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:12:00 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Dec 18 16:12:00 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Dec 18 16:12:01 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN LAYOUT BETA.LLB
+Thu Dec 18 16:12:01 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN.LLB
+Thu Dec 18 16:12:01 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:12:01 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Thu Dec 18 16:12:01 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\PAYITFORWARD_FOOTPRINT_10082012.LLB
+Thu Dec 18 16:12:01 Loaded file C:\Program Files\Orcad\Layout\library\BCON100T.llb
+Thu Dec 18 16:12:01 Loaded file C:\Program Files\Orcad\Layout\library\BCON156T.llb
+Thu Dec 18 16:12:01 Loaded file C:\Program Files\Orcad\Layout\library\BGA.llb
+Thu Dec 18 16:12:01 Loaded file C:\Program Files\Orcad\Layout\library\CLCC.llb
+Thu Dec 18 16:12:02 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Thu Dec 18 16:12:05 Loaded file C:\PROGRAM FILES\ORCAD\LAYOUT\data\template.imp
+Thu Dec 18 16:12:07 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\THU VIEN ORCAD FULL\THU VIEN ORCAD FULL\LAYOUT FULL\THU VIEN.LLB
+Thu Dec 18 16:12:07 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:12:07 Loaded file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:12:27 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:12:29 Error code 5200.306
+Thu Dec 18 16:12:29 Saved as file Backup0.max
+Thu Dec 18 16:12:29 Windows which were open at time of error:
+Thu Dec 18 16:12:29 	ActiveWindow: Library Manager
+Thu Dec 18 16:12:29 End-of-list
+Thu Dec 18 16:12:30 Loaded file BACKUP0.MAX
+Thu Dec 18 16:12:33 Error code 5200.306
+Thu Dec 18 16:12:33 Saved as file Backup0.max
+Thu Dec 18 16:12:33 Windows which were open at time of error:
+Thu Dec 18 16:12:33 	ActiveWindow: Library Manager
+Thu Dec 18 16:12:33 End-of-list
+Thu Dec 18 16:12:34 Loaded file BACKUP0.MAX
+Thu Dec 18 16:13:16 Saved as file ~undo.max
+Thu Dec 18 16:13:37 Saved as file ~undo.max
+Thu Dec 18 16:13:50 Saved as file ~undo.max
+Thu Dec 18 16:14:11 Saved as file ~undo.max
+Thu Dec 18 16:15:01 Saved as file ~undo.max
+Thu Dec 18 16:15:38 Saved as file ~undo.max
+Thu Dec 18 16:15:38 Saved as file ~undo.max
+Thu Dec 18 16:15:51 Saved as file ~undo.max
+Thu Dec 18 16:15:59 Saved as file ~undo.max
+Thu Dec 18 16:16:07 Saved as file ~undo.max
+Thu Dec 18 16:16:30 Saved as file ~undo.max
+Thu Dec 18 16:16:30 Saved as file ~undo.max
+Thu Dec 18 16:16:30 Saved as file ~undo.max
+Thu Dec 18 16:16:36 Saved as file ~undo.max
+Thu Dec 18 16:16:36 Saved as file ~undo.max
+Thu Dec 18 16:16:54 Saved as file ~undo.max
+Thu Dec 18 16:16:56 Saved as file ~undo.max
+Thu Dec 18 16:16:57 Saved as file ~undo.max
+Thu Dec 18 16:16:57 Saved as file ~undo.max
+Thu Dec 18 16:17:04 Saved as file ~undo.max
+Thu Dec 18 16:17:10 Saved as file ~undo.max
+Thu Dec 18 16:17:11 Saved as file ~undo.max
+Thu Dec 18 16:18:13 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Thu Dec 18 16:18:37 Saved as file ~undo.max
+Thu Dec 18 16:19:17 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Fri Dec 19 14:07:06 Saved as file ~undo.max
+Fri Dec 19 14:07:06 Saved as file ~undo.max
+Fri Dec 19 14:08:31 Saved as file ~undo.max
+Fri Dec 19 14:08:31 Saved as file ~undo.max
+Fri Dec 19 14:08:47 Saved as file ~undo.max
+Fri Dec 19 14:09:03 Saved as file ~undo.max
+Fri Dec 19 14:09:04 Saved as file ~undo.max
+Fri Dec 19 14:09:04 Saved as file ~undo.max
+Fri Dec 19 14:09:05 Saved as file ~undo.max
+Fri Dec 19 14:09:06 Saved as file ~undo.max
+Fri Dec 19 14:09:06 Saved as file ~undo.max
+Fri Dec 19 14:09:14 Saved as file ~undo.max
+Fri Dec 19 14:09:15 Saved as file ~undo.max
+Fri Dec 19 14:09:25 Saved as file ~undo.max
+Fri Dec 19 14:09:25 Saved as file ~undo.max
+Fri Dec 19 14:09:30 Saved as file ~undo.max
+Fri Dec 19 14:09:35 Saved as file ~undo.max
+Fri Dec 19 14:09:35 Saved as file ~undo.max
+Fri Dec 19 14:09:36 Saved as file ~undo.max
+Fri Dec 19 14:09:36 Saved as file ~undo.max
+Fri Dec 19 14:09:36 Saved as file ~undo.max
+Fri Dec 19 14:09:36 Saved as file ~undo.max
+Fri Dec 19 14:09:36 Saved as file ~undo.max
+Fri Dec 19 14:10:48 Saved as file ~undo.max
+Fri Dec 19 14:10:48 Saved as file ~undo.max
+Fri Dec 19 14:10:48 Saved as file ~undo.max
+Fri Dec 19 14:10:49 Saved as file ~undo.max
+Fri Dec 19 14:11:02 Saved as file ~undo.max
+Fri Dec 19 14:11:18 Saved as file ~undo.max
+Fri Dec 19 14:11:18 Saved as file ~undo.max
+Fri Dec 19 14:11:25 Saved as file ~undo.max
+Fri Dec 19 14:11:34 Saved as file ~undo.max
+Fri Dec 19 14:12:22 Saved as file ~undo.max
+Fri Dec 19 14:12:23 Saved as file ~undo.max
+Fri Dec 19 14:12:26 Saved as file ~undo.max
+Fri Dec 19 14:12:26 Saved as file ~undo.max
+Fri Dec 19 14:12:26 Saved as file ~undo.max
+Fri Dec 19 14:12:27 Saved as file ~undo.max
+Fri Dec 19 14:12:29 Saved as file ~undo.max
+Fri Dec 19 14:12:30 Saved as file ~undo.max
+Fri Dec 19 14:12:30 Saved as file ~undo.max
+Fri Dec 19 14:12:30 Saved as file ~undo.max
+Fri Dec 19 14:12:31 Saved as file ~undo.max
+Fri Dec 19 14:12:31 Saved as file ~undo.max
+Fri Dec 19 14:12:32 Saved as file ~undo.max
+Fri Dec 19 14:12:32 Saved as file ~undo.max
+Fri Dec 19 14:12:58 Saved as file ~undo.max
+Fri Dec 19 14:12:58 Saved as file ~undo.max
+Fri Dec 19 14:12:59 Saved as file ~undo.max
+Fri Dec 19 14:13:01 Saved as file ~undo.max
+Fri Dec 19 14:13:02 Saved as file ~undo.max
+Fri Dec 19 14:13:29 Saved as file ~undo.max
+Fri Dec 19 14:13:36 Saved as file ~undo.max
+Fri Dec 19 14:13:45 Saved as file ~undo.max
+Fri Dec 19 14:13:55 Saved as file ~undo.max
+Fri Dec 19 14:13:55 Saved as file ~undo.max
+Fri Dec 19 14:13:56 Saved as file ~undo.max
+Fri Dec 19 14:13:56 Saved as file ~undo.max
+Fri Dec 19 14:13:57 Saved as file ~undo.max
+Fri Dec 19 14:13:58 Saved as file BACKUP1.MAX
+Fri Dec 19 14:14:30 Saved as file ~undo.max
+Fri Dec 19 14:14:31 Saved as file ~undo.max
+Fri Dec 19 14:14:31 Saved as file ~undo.max
+Fri Dec 19 14:14:32 Saved as file ~undo.max
+Fri Dec 19 14:14:32 Saved as file ~undo.max
+Fri Dec 19 14:14:33 Saved as file ~undo.max
+Fri Dec 19 14:14:33 Saved as file ~undo.max
+Fri Dec 19 14:14:33 Saved as file ~undo.max
+Fri Dec 19 14:14:34 Saved as file ~undo.max
+Fri Dec 19 14:14:34 Saved as file ~undo.max
+Fri Dec 19 14:14:34 Saved as file ~undo.max
+Fri Dec 19 14:14:35 Saved as file ~undo.max
+Fri Dec 19 14:14:46 Saved as file ~undo.max
+Fri Dec 19 14:14:47 Saved as file ~undo.max
+Fri Dec 19 14:14:47 Saved as file ~undo.max
+Fri Dec 19 14:14:48 Saved as file ~undo.max
+Fri Dec 19 14:15:00 Saved as file ~undo.max
+Fri Dec 19 14:15:00 Saved as file ~undo.max
+Fri Dec 19 14:15:01 Saved as file ~undo.max
+Fri Dec 19 14:15:01 Saved as file ~undo.max
+Fri Dec 19 14:15:02 Saved as file ~undo.max
+Fri Dec 19 14:15:02 Saved as file ~undo.max
+Fri Dec 19 14:15:03 Saved as file ~undo.max
+Fri Dec 19 14:15:04 Saved as file ~undo.max
+Fri Dec 19 14:15:04 Saved as file ~undo.max
+Fri Dec 19 14:15:06 Saved as file ~undo.max
+Fri Dec 19 14:15:15 Saved as file ~undo.max
+Fri Dec 19 14:15:15 Saved as file ~undo.max
+Fri Dec 19 14:15:16 Saved as file ~undo.max
+Fri Dec 19 14:15:19 Saved as file ~undo.max
+Fri Dec 19 14:15:29 Saved as file ~undo.max
+Fri Dec 19 14:15:29 Saved as file ~undo.max
+Fri Dec 19 14:15:29 Saved as file ~undo.max
+Fri Dec 19 14:15:43 Saved as file ~undo.max
+Fri Dec 19 14:15:45 Saved as file ~undo.max
+Fri Dec 19 14:15:47 Saved as file ~undo.max
+Fri Dec 19 14:15:49 Saved as file ~undo.max
+Fri Dec 19 14:15:55 Saved as file ~undo.max
+Fri Dec 19 14:15:57 Saved as file ~undo.max
+Fri Dec 19 14:16:24 Saved as file ~undo.max
+Fri Dec 19 14:16:35 Saved as file ~undo.max
+Fri Dec 19 14:16:39 Saved as file ~undo.max
+Fri Dec 19 14:16:49 Saved as file ~undo.max
+Fri Dec 19 14:16:49 Saved as file ~undo.max
+Fri Dec 19 14:16:49 Saved as file ~undo.max
+Fri Dec 19 14:16:51 Saved as file ~undo.max
+Fri Dec 19 14:16:59 Saved as file ~undo.max
+Fri Dec 19 14:16:59 Saved as file ~undo.max
+Fri Dec 19 14:17:09 Saved as file ~undo.max
+Fri Dec 19 14:17:17 Saved as file ~undo.max
+Fri Dec 19 14:17:18 Saved as file ~undo.max
+Fri Dec 19 14:17:39 Saved as file ~undo.max
+Fri Dec 19 14:17:44 Saved as file ~undo.max
+Fri Dec 19 14:17:44 Saved as file ~undo.max
+Fri Dec 19 14:17:50 Saved as file ~undo.max
+Fri Dec 19 14:18:06 Saved as file ~undo.max
+Fri Dec 19 14:18:06 Saved as file ~undo.max
+Fri Dec 19 14:18:07 Saved as file ~undo.max
+Fri Dec 19 14:18:14 Saved as file ~undo.max
+Fri Dec 19 14:18:14 Saved as file ~undo.max
+Fri Dec 19 14:18:14 Saved as file ~undo.max
+Fri Dec 19 14:18:16 Saved as file ~undo.max
+Fri Dec 19 14:18:17 Saved as file ~undo.max
+Fri Dec 19 14:18:58 Saved as file ~undo.max
+Fri Dec 19 14:18:59 Saved as file ~undo.max
+Fri Dec 19 14:19:36 Saved as file ~undo.max
+Fri Dec 19 14:19:48 Saved as file ~undo.max
+Fri Dec 19 14:20:03 Saved as file ~undo.max
+Fri Dec 19 14:20:13 Saved as file ~undo.max
+Fri Dec 19 14:20:14 Saved as file ~undo.max
+Fri Dec 19 14:20:14 Saved as file ~undo.max
+Fri Dec 19 14:20:15 Saved as file ~undo.max
+Fri Dec 19 14:20:30 Saved as file ~undo.max
+Fri Dec 19 14:20:38 Saved as file ~undo.max
+Fri Dec 19 14:21:13 Saved as file ~undo.max
+Fri Dec 19 14:21:16 Saved as file ~undo.max
+Fri Dec 19 14:21:17 Saved as file ~undo.max
+Fri Dec 19 14:21:17 Saved as file ~undo.max
+Fri Dec 19 14:21:35 Saved as file ~undo.max
+Fri Dec 19 14:21:36 Saved as file ~undo.max
+Fri Dec 19 14:21:36 Saved as file ~undo.max
+Fri Dec 19 14:21:39 Saved as file ~undo.max
+Fri Dec 19 14:21:39 Saved as file ~undo.max
+Fri Dec 19 14:21:54 Saved as file ~undo.max
+Fri Dec 19 14:22:10 Saved as file ~undo.max
+Fri Dec 19 14:22:10 Saved as file ~undo.max
+Fri Dec 19 14:22:11 Saved as file ~undo.max
+Fri Dec 19 14:22:11 Saved as file ~undo.max
+Fri Dec 19 14:22:25 Saved as file ~undo.max
+Fri Dec 19 14:22:25 Saved as file ~undo.max
+Fri Dec 19 14:22:39 Saved as file ~undo.max
+Fri Dec 19 14:22:40 Saved as file ~undo.max
+Fri Dec 19 14:22:40 Saved as file ~undo.max
+Fri Dec 19 14:22:53 Saved as file ~undo.max
+Fri Dec 19 14:22:53 Saved as file ~undo.max
+Fri Dec 19 14:22:53 Saved as file ~undo.max
+Fri Dec 19 14:22:53 Saved as file ~undo.max
+Fri Dec 19 14:22:54 Saved as file ~undo.max
+Fri Dec 19 14:22:58 Saved as file ~undo.max
+Fri Dec 19 14:22:58 Saved as file ~undo.max
+Fri Dec 19 14:23:40 Saved as file ~undo.max
+Fri Dec 19 14:23:40 Saved as file ~undo.max
+Fri Dec 19 14:23:41 Saved as file ~undo.max
+Fri Dec 19 14:23:41 Saved as file ~undo.max
+Fri Dec 19 14:23:41 Saved as file ~undo.max
+Fri Dec 19 14:23:58 Saved as file BACKUP1.MAX
+Fri Dec 19 14:24:07 Saved as file ~undo.max
+Fri Dec 19 14:24:08 Saved as file ~undo.max
+Fri Dec 19 14:24:08 Saved as file ~undo.max
+Fri Dec 19 14:24:08 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:32 Saved as file ~undo.max
+Fri Dec 19 14:24:49 Saved as file ~undo.max
+Fri Dec 19 14:24:50 Saved as file ~undo.max
+Fri Dec 19 14:24:50 Saved as file ~undo.max
+Fri Dec 19 14:24:50 Saved as file ~undo.max
+Fri Dec 19 14:25:31 Saved as file ~undo.max
+Fri Dec 19 14:25:31 Saved as file ~undo.max
+Fri Dec 19 14:25:51 Saved as file ~undo.max
+Fri Dec 19 14:25:52 Saved as file ~undo.max
+Fri Dec 19 14:25:52 Saved as file ~undo.max
+Fri Dec 19 14:25:52 Saved as file ~undo.max
+Fri Dec 19 14:26:06 Saved as file ~undo.max
+Fri Dec 19 14:26:06 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:07 Saved as file ~undo.max
+Fri Dec 19 14:26:56 Saved as file ~undo.max
+Fri Dec 19 14:28:22 Saved as file ~undo.max
+Fri Dec 19 14:28:51 Saved as file ~undo.max
+Fri Dec 19 14:29:00 Saved as file ~undo.max
+Fri Dec 19 14:29:33 Saved as file ~undo.max
+Fri Dec 19 14:29:33 Saved as file ~undo.max
+Fri Dec 19 14:30:07 Saved as file ~undo.max
+Fri Dec 19 14:30:07 Saved as file ~undo.max
+Fri Dec 19 14:30:08 Saved as file ~undo.max
+Fri Dec 19 14:30:24 Saved as file ~undo.max
+Fri Dec 19 14:31:43 Saved as file ~undo.max
+Fri Dec 19 14:31:59 Saved as file ~undo.max
+Fri Dec 19 14:32:22 Saved as file ~undo.max
+Fri Dec 19 14:32:23 Saved as file ~undo.max
+Fri Dec 19 14:32:28 Saved as file ~undo.max
+Fri Dec 19 14:32:28 Saved as file ~undo.max
+Fri Dec 19 14:32:28 Saved as file ~undo.max
+Fri Dec 19 14:32:42 Saved as file ~undo.max
+Fri Dec 19 14:32:43 Saved as file ~undo.max
+Fri Dec 19 14:32:46 Saved as file ~undo.max
+Fri Dec 19 14:32:47 Saved as file ~undo.max
+Fri Dec 19 14:32:47 Saved as file ~undo.max
+Fri Dec 19 14:32:47 Saved as file ~undo.max
+Fri Dec 19 14:32:57 Saved as file ~undo.max
+Fri Dec 19 14:32:57 Saved as file ~undo.max
+Fri Dec 19 14:32:57 Saved as file ~undo.max
+Fri Dec 19 14:32:57 Saved as file ~undo.max
+Fri Dec 19 14:33:54 Saved as file ~undo.max
+Fri Dec 19 14:33:58 Saved as file BACKUP1.MAX
+Fri Dec 19 14:34:21 Saved as file ~undo.max
+Fri Dec 19 14:34:26 Saved as file ~undo.max
+Fri Dec 19 14:34:27 Saved as file ~undo.max
+Fri Dec 19 14:34:42 Saved as file ~undo.max
+Fri Dec 19 14:34:42 Saved as file ~undo.max
+Fri Dec 19 14:34:52 Saved as file ~undo.max
+Fri Dec 19 14:35:13 Saved as file ~undo.max
+Fri Dec 19 14:35:16 Saved as file ~undo.max
+Fri Dec 19 14:36:15 Saved as file ~undo.max
+Fri Dec 19 14:38:11 Saved as file ~undo.max
+Fri Dec 19 14:38:11 Saved as file ~undo.max
+Fri Dec 19 14:38:11 Saved as file ~undo.max
+Fri Dec 19 14:38:22 Saved as file ~undo.max
+Fri Dec 19 14:38:41 Saved as file ~undo.max
+Fri Dec 19 14:38:42 Saved as file ~undo.max
+Fri Dec 19 14:38:44 Saved as file ~undo.max
+Fri Dec 19 14:38:53 Saved as file ~undo.max
+Fri Dec 19 14:38:53 Saved as file ~undo.max
+Fri Dec 19 14:38:56 Saved as file ~undo.max
+Fri Dec 19 14:39:03 Saved as file ~undo.max
+Fri Dec 19 14:39:17 Saved as file ~undo.max
+Fri Dec 19 14:39:29 Saved as file ~undo.max
+Fri Dec 19 14:39:32 Saved as file ~undo.max
+Fri Dec 19 14:39:33 Saved as file ~undo.max
+Fri Dec 19 14:39:33 Saved as file ~undo.max
+Fri Dec 19 14:39:33 Saved as file ~undo.max
+Fri Dec 19 14:40:39 Saved as file ~undo.max
+Fri Dec 19 14:40:40 Saved as file ~undo.max
+Fri Dec 19 14:40:40 Saved as file ~undo.max
+Fri Dec 19 14:40:50 Saved as file ~undo.max
+Fri Dec 19 14:41:07 Saved as file ~undo.max
+Fri Dec 19 14:41:08 Saved as file ~undo.max
+Fri Dec 19 14:41:10 Saved as file ~undo.max
+Fri Dec 19 14:41:10 Saved as file ~undo.max
+Fri Dec 19 14:41:11 Saved as file ~undo.max
+Fri Dec 19 14:41:45 Saved as file ~undo.max
+Fri Dec 19 14:41:45 Saved as file ~undo.max
+Fri Dec 19 14:41:46 Saved as file ~undo.max
+Fri Dec 19 14:41:53 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Fri Dec 19 14:44:29 Saved as file BACKUP1.MAX
+Fri Dec 19 14:54:29 Saved as file BACKUP1.MAX
+Fri Dec 19 14:58:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:37 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:38 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:38 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:39 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Dec 19 14:58:40 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:42 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 14:58:49 Saved as file ~undo.max
+Fri Dec 19 14:58:49 Saved as file ~undo.max
+Fri Dec 19 15:00:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:16 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA (DAT MACH IN).LLB
+Fri Dec 19 15:00:17 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Dec 19 15:00:17 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:18 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:19 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:00:25 Saved as file ~undo.max
+Fri Dec 19 15:00:26 Saved as file ~undo.max
+Fri Dec 19 15:00:26 Saved as file ~undo.max
+Fri Dec 19 15:00:26 Saved as file ~undo.max
+Fri Dec 19 15:01:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:01:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:01:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:01:09 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:01:13 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Dec 19 15:01:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:01:25 Saved as file ~undo.max
+Fri Dec 19 15:01:25 Saved as file ~undo.max
+Fri Dec 19 15:01:54 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Fri Dec 19 15:04:29 Saved as file BACKUP1.MAX
+Fri Dec 19 15:11:52 Saved as file ~undo.max
+Fri Dec 19 15:14:30 Saved as file BACKUP1.MAX
+Fri Dec 19 15:15:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:15:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:15:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:15:10 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:15:11 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Dec 19 15:15:14 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:15:15 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:16:11 Saved as file ~undo.max
+Fri Dec 19 15:16:50 Saved as file ~undo.max
+Fri Dec 19 15:17:07 Saved as file ~undo.max
+Fri Dec 19 15:17:09 Saved as file ~undo.max
+Fri Dec 19 15:17:15 Saved as file ~undo.max
+Fri Dec 19 15:17:16 Saved as file ~undo.max
+Fri Dec 19 15:17:24 Saved as file ~undo.max
+Fri Dec 19 15:17:32 Saved as file ~undo.max
+Fri Dec 19 15:17:50 Saved as file ~undo.max
+Fri Dec 19 15:18:33 Saved as file ~undo.max
+Fri Dec 19 15:19:36 Saved as file ~undo.max
+Fri Dec 19 15:20:23 Saved as file ~undo.max
+Fri Dec 19 15:20:42 Saved as file ~undo.max
+Fri Dec 19 15:20:50 Saved as file ~undo.max
+Fri Dec 19 15:20:51 Saved as file ~undo.max
+Fri Dec 19 15:20:54 Saved as file ~undo.max
+Fri Dec 19 15:21:34 Saved as file ~undo.max
+Fri Dec 19 15:21:35 Saved as file ~undo.max
+Fri Dec 19 15:21:35 Saved as file ~undo.max
+Fri Dec 19 15:21:58 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:21:58 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:21:59 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:21:59 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:22:04 Loaded file E:\(CLOSED)PROJECTS\THU VIEN ORCAD 9.2\KHA 1 LAYER.LLB
+Fri Dec 19 15:22:06 Loaded file C:\Program Files\Orcad\Layout\data\template.imp
+Fri Dec 19 15:22:17 Saved as file ~undo.max
+Fri Dec 19 15:22:32 Saved as file ~undo.max
+Fri Dec 19 15:22:33 Saved as file ~undo.max
+Fri Dec 19 15:22:34 Saved as file ~undo.max
+Fri Dec 19 15:22:34 Saved as file ~undo.max
+Fri Dec 19 15:22:35 Saved as file ~undo.max
+Fri Dec 19 15:22:44 Saved as file ~undo.max
+Fri Dec 19 15:23:01 Saved as file ~undo.max
+Fri Dec 19 15:24:30 Saved as file ~undo.max
+Fri Dec 19 15:24:54 Saved as file ~undo.max
+Fri Dec 19 15:25:00 Saved as file BACKUP1.MAX
+Fri Dec 19 15:27:04 Saved as file ~undo.max
+Fri Dec 19 15:28:18 Saved as file ~undo.max
+Fri Dec 19 15:28:36 Saved as file ~undo.max
+Fri Dec 19 15:28:37 Saved as file ~undo.max
+Fri Dec 19 15:28:37 Saved as file ~undo.max
+Fri Dec 19 15:29:25 Saved as file ~undo.max
+Fri Dec 19 15:29:26 Saved as file ~undo.max
+Fri Dec 19 15:29:44 Saved as file ~undo.max
+Fri Dec 19 15:29:45 Saved as file ~undo.max
+Fri Dec 19 15:29:45 Saved as file ~undo.max
+Fri Dec 19 15:29:46 Saved as file ~undo.max
+Fri Dec 19 15:29:47 Saved as file ~undo.max
+Fri Dec 19 15:29:48 Saved as file ~undo.max
+Fri Dec 19 15:31:02 Saved as file ~undo.max
+Fri Dec 19 15:31:02 Saved as file ~undo.max
+Fri Dec 19 15:32:47 Saved as file ~undo.max
+Fri Dec 19 15:32:51 Saved as file ~undo.max
+Fri Dec 19 15:34:14 Saved as file ~undo.max
+Fri Dec 19 15:34:15 Saved as file ~undo.max
+Fri Dec 19 15:34:15 Saved as file ~undo.max
+Fri Dec 19 15:34:16 Saved as file ~undo.max
+Fri Dec 19 15:34:16 Saved as file ~undo.max
+Fri Dec 19 15:35:30 Saved as file BACKUP1.MAX
+Fri Dec 19 15:35:58 Saved as file ~undo.max
+Fri Dec 19 15:35:58 Saved as file ~undo.max
+Fri Dec 19 15:37:38 Saved as file ~undo.max
+Fri Dec 19 15:37:38 Saved as file ~undo.max
+Fri Dec 19 15:37:40 Saved as file ~undo.max
+Fri Dec 19 15:37:55 Saved as file ~undo.max
+Fri Dec 19 15:37:56 Saved as file ~undo.max
+Fri Dec 19 15:38:02 Saved as file ~undo.max
+Fri Dec 19 15:38:02 Saved as file ~undo.max
+Fri Dec 19 15:38:02 Saved as file ~undo.max
+Fri Dec 19 15:38:03 Saved as file ~undo.max
+Fri Dec 19 15:38:03 Saved as file ~undo.max
+Fri Dec 19 15:38:04 Saved as file ~undo.max
+Fri Dec 19 15:38:05 Saved as file ~undo.max
+Fri Dec 19 15:38:05 Saved as file ~undo.max
+Fri Dec 19 15:38:06 Saved as file ~undo.max
+Fri Dec 19 15:38:06 Saved as file ~undo.max
+Fri Dec 19 15:38:07 Saved as file ~undo.max
+Fri Dec 19 15:38:07 Saved as file ~undo.max
+Fri Dec 19 15:38:08 Saved as file ~undo.max
+Fri Dec 19 15:38:08 Saved as file ~undo.max
+Fri Dec 19 15:41:42 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Fri Dec 19 15:45:30 Saved as file BACKUP1.MAX
+Fri Dec 19 15:46:22 Saved as file C:\USERS\KHAV\DESKTOP\RTC 2051 KHA\ORCAD\LAYOUT RTC 2051 LCD KHA.MAX
+Tue Dec 23 09:54:02 Saved as file BACKUP1.MAX
+Tue Dec 23 10:04:02 Saved as file BACKUP1.MAX
+Tue Dec 23 10:14:03 Saved as file BACKUP1.MAX
+Tue Dec 23 10:24:03 Saved as file BACKUP1.MAX
+Tue Dec 23 10:34:03 Saved as file BACKUP1.MAX
+Tue Dec 23 10:44:03 Saved as file BACKUP1.MAX
+Tue Dec 23 10:54:04 Saved as file BACKUP1.MAX
+Tue Dec 23 11:04:04 Saved as file BACKUP1.MAX
+Tue Dec 23 11:14:04 Saved as file BACKUP1.MAX
+Tue Dec 23 11:24:05 Saved as file BACKUP1.MAX
+Tue Dec 23 11:34:05 Saved as file BACKUP1.MAX
+Tue Dec 23 11:44:05 Saved as file BACKUP1.MAX
+Tue Dec 23 11:54:05 Saved as file BACKUP1.MAX
+Tue Dec 23 12:04:06 Saved as file BACKUP1.MAX
+Tue Dec 23 12:14:06 Saved as file BACKUP1.MAX
+Tue Dec 23 13:04:10 Saved as file BACKUP1.MAX
+Tue Dec 23 13:14:06 Saved as file BACKUP1.MAX
+Tue Dec 23 13:24:07 Saved as file BACKUP1.MAX
+Tue Dec 23 13:34:07 Saved as file BACKUP1.MAX
+Tue Dec 23 13:44:07 Saved as file BACKUP1.MAX
